@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="dnevnik_ishraneModelStoreContainer" CdmEntityContainer="dnevnik_ishraneEntities">
+    <EntitySetMapping Name="kandidats">
+      <EntityTypeMapping TypeName="dnevnik_ishraneModel.kandidat">
+        <MappingFragment StoreEntitySet="kandidat">
+          <ScalarProperty Name="KORISNIK_idKORISNIK" ColumnName="KORISNIK_idKORISNIK" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="korisniks">
+      <EntityTypeMapping TypeName="dnevnik_ishraneModel.korisnik">
+        <MappingFragment StoreEntitySet="korisnik">
+          <ScalarProperty Name="idKORISNIK" ColumnName="idKORISNIK" />
+          <ScalarProperty Name="Ime" ColumnName="Ime" />
+          <ScalarProperty Name="Prezime" ColumnName="Prezime" />
+          <ScalarProperty Name="KorisnickoIme" ColumnName="KorisnickoIme" />
+          <ScalarProperty Name="Lozinka" ColumnName="Lozinka" />
+          <ScalarProperty Name="Godiste" ColumnName="Godiste" />
+          <ScalarProperty Name="Tema" ColumnName="Tema" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mjerenjes">
+      <EntityTypeMapping TypeName="dnevnik_ishraneModel.mjerenje">
+        <MappingFragment StoreEntitySet="mjerenje">
+          <ScalarProperty Name="idMJERENJE" ColumnName="idMJERENJE" />
+          <ScalarProperty Name="DatumVrijeme" ColumnName="DatumVrijeme" />
+          <ScalarProperty Name="Tezina" ColumnName="Tezina" />
+          <ScalarProperty Name="KANDIDAT_KORISNIK_idKORISNIK" ColumnName="KANDIDAT_KORISNIK_idKORISNIK" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="namirnicas">
+      <EntityTypeMapping TypeName="dnevnik_ishraneModel.namirnica">
+        <MappingFragment StoreEntitySet="namirnica">
+          <ScalarProperty Name="idNAMIRNICA" ColumnName="idNAMIRNICA" />
+          <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+          <ScalarProperty Name="Kolicina" ColumnName="Kolicina" />
+          <ScalarProperty Name="KalorijskaVrijednost" ColumnName="KalorijskaVrijednost" />
+          <ScalarProperty Name="Proteini" ColumnName="Proteini" />
+          <ScalarProperty Name="Masti" ColumnName="Masti" />
+          <ScalarProperty Name="UgljikoHidrati" ColumnName="UgljikoHidrati" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="namirnica_obrok">
+      <EntityTypeMapping TypeName="dnevnik_ishraneModel.namirnica_obrok">
+        <MappingFragment StoreEntitySet="namirnica_obrok">
+          <ScalarProperty Name="NAMIRNICA_idNAMIRNICA" ColumnName="NAMIRNICA_idNAMIRNICA" />
+          <ScalarProperty Name="OBROK_KANDIDAT_KORISNIK_idKORISNIK" ColumnName="OBROK_KANDIDAT_KORISNIK_idKORISNIK" />
+          <ScalarProperty Name="OBROK_DatumVrijeme" ColumnName="OBROK_DatumVrijeme" />
+          <ScalarProperty Name="Kolicina" ColumnName="Kolicina" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="obroks">
+      <EntityTypeMapping TypeName="dnevnik_ishraneModel.obrok">
+        <MappingFragment StoreEntitySet="obrok">
+          <ScalarProperty Name="tipObroka" ColumnName="tipObroka" />
+          <ScalarProperty Name="DatumVrijeme" ColumnName="DatumVrijeme" />
+          <ScalarProperty Name="KANDIDAT_KORISNIK_idKORISNIK" ColumnName="KANDIDAT_KORISNIK_idKORISNIK" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="plan_ishrane">
+      <EntityTypeMapping TypeName="dnevnik_ishraneModel.plan_ishrane">
+        <MappingFragment StoreEntitySet="plan_ishrane">
+          <ScalarProperty Name="idPLAN_ISHRANE" ColumnName="idPLAN_ISHRANE" />
+          <ScalarProperty Name="DatumVirjeme" ColumnName="DatumVirjeme" />
+          <ScalarProperty Name="Opis" ColumnName="Opis" />
+          <ScalarProperty Name="TRENER_KORISNIK_idKORISNIK" ColumnName="TRENER_KORISNIK_idKORISNIK" />
+          <ScalarProperty Name="KANDIDAT_KORISNIK_idKORISNIK" ColumnName="KANDIDAT_KORISNIK_idKORISNIK" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="plan_vjezbanja">
+      <EntityTypeMapping TypeName="dnevnik_ishraneModel.plan_vjezbanja">
+        <MappingFragment StoreEntitySet="plan_vjezbanja">
+          <ScalarProperty Name="idPLAN_VJEZBANJA" ColumnName="idPLAN_VJEZBANJA" />
+          <ScalarProperty Name="DatumVrijeme" ColumnName="DatumVrijeme" />
+          <ScalarProperty Name="Opis" ColumnName="Opis" />
+          <ScalarProperty Name="TRENER_KORISNIK_idKORISNIK" ColumnName="TRENER_KORISNIK_idKORISNIK" />
+          <ScalarProperty Name="KANDIDAT_KORISNIK_idKORISNIK" ColumnName="KANDIDAT_KORISNIK_idKORISNIK" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="treners">
+      <EntityTypeMapping TypeName="dnevnik_ishraneModel.trener">
+        <MappingFragment StoreEntitySet="trener">
+          <ScalarProperty Name="KORISNIK_idKORISNIK" ColumnName="KORISNIK_idKORISNIK" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

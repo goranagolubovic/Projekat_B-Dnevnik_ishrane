@@ -1,0 +1,256 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="dnevnik_ishrane_db_Model.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="8.0" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="kandidat">
+    <Key>
+      <PropertyRef Name="KORISNIK_idKORISNIK" />
+    </Key>
+    <Property Name="KORISNIK_idKORISNIK" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="korisnik">
+    <Key>
+      <PropertyRef Name="idKORISNIK" />
+    </Key>
+    <Property Name="idKORISNIK" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Ime" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="Prezime" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="KorisnickoIme" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="Lozinka" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="Godiste" Type="int" Nullable="false" />
+    <Property Name="Tema" Type="varchar" MaxLength="45" Nullable="false" />
+  </EntityType>
+  <EntityType Name="mjerenje">
+    <Key>
+      <PropertyRef Name="TRENER_KORISNIK_idKORISNIK" />
+      <PropertyRef Name="KANDIDAT_KORISNIK_idKORISNIK" />
+    </Key>
+    <Property Name="TRENER_KORISNIK_idKORISNIK" Type="int" Nullable="false" />
+    <Property Name="KANDIDAT_KORISNIK_idKORISNIK" Type="int" Nullable="false" />
+    <Property Name="DatumVrijeme" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="Tezina" Type="decimal" Precision="4" Scale="1" Nullable="false" />
+  </EntityType>
+  <EntityType Name="namirnica">
+    <Key>
+      <PropertyRef Name="idNAMIRNICA" />
+    </Key>
+    <Property Name="idNAMIRNICA" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Naziv" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="Kolicina" Type="decimal" Precision="10" Scale="0" Nullable="false" />
+    <Property Name="KalorijskaVrijednost" Type="decimal" Precision="4" Scale="1" Nullable="false" />
+    <Property Name="Proteini" Type="decimal" Precision="3" Scale="1" Nullable="false" />
+    <Property Name="Masti" Type="decimal" Precision="3" Scale="1" Nullable="false" />
+    <Property Name="UgljikoHidrati" Type="decimal" Precision="3" Scale="1" Nullable="false" />
+  </EntityType>
+  <EntityType Name="obrok">
+    <Key>
+      <PropertyRef Name="KANDIDAT_KORISNIK_idKORISNIK" />
+      <PropertyRef Name="NAMIRNICA_idNAMIRNICA" />
+      <PropertyRef Name="TipObroka" />
+      <PropertyRef Name="Datum" />
+    </Key>
+    <Property Name="KANDIDAT_KORISNIK_idKORISNIK" Type="int" Nullable="false" />
+    <Property Name="NAMIRNICA_idNAMIRNICA" Type="int" Nullable="false" />
+    <Property Name="Kolicina" Type="decimal" Precision="5" Scale="1" Nullable="false" />
+    <Property Name="TipObroka" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="Datum" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="plan_ishrane">
+    <Key>
+      <PropertyRef Name="idPLAN_ISHRANE" />
+      <PropertyRef Name="Dan" />
+    </Key>
+    <Property Name="idPLAN_ISHRANE" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DatumVrijeme" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="Opis" Type="varchar" MaxLength="700" Nullable="false" />
+    <Property Name="TRENER_KORISNIK_idKORISNIK" Type="int" Nullable="false" />
+    <Property Name="KANDIDAT_KORISNIK_idKORISNIK" Type="int" Nullable="false" />
+    <Property Name="Dan" Type="varchar" MaxLength="45" Nullable="false" />
+  </EntityType>
+  <EntityType Name="plan_vjezbanja">
+    <Key>
+      <PropertyRef Name="idPLAN_VJEZBANJA" />
+      <PropertyRef Name="Dan" />
+    </Key>
+    <Property Name="idPLAN_VJEZBANJA" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DatumVrijeme" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="Opis" Type="varchar" MaxLength="700" Nullable="false" />
+    <Property Name="TRENER_KORISNIK_idKORISNIK" Type="int" Nullable="false" />
+    <Property Name="KANDIDAT_KORISNIK_idKORISNIK" Type="int" Nullable="false" />
+    <Property Name="Dan" Type="varchar" MaxLength="45" Nullable="false" />
+  </EntityType>
+  <EntityType Name="trener">
+    <Key>
+      <PropertyRef Name="KORISNIK_idKORISNIK" />
+    </Key>
+    <Property Name="KORISNIK_idKORISNIK" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="fk_KANDIDAT_has_NAMIRNICA_KANDIDAT1">
+    <End Role="kandidat" Type="Self.kandidat" Multiplicity="1" />
+    <End Role="obrok" Type="Self.obrok" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="kandidat">
+        <PropertyRef Name="KORISNIK_idKORISNIK" />
+      </Principal>
+      <Dependent Role="obrok">
+        <PropertyRef Name="KANDIDAT_KORISNIK_idKORISNIK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_KANDIDAT_has_NAMIRNICA_NAMIRNICA1">
+    <End Role="namirnica" Type="Self.namirnica" Multiplicity="1" />
+    <End Role="obrok" Type="Self.obrok" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="namirnica">
+        <PropertyRef Name="idNAMIRNICA" />
+      </Principal>
+      <Dependent Role="obrok">
+        <PropertyRef Name="NAMIRNICA_idNAMIRNICA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_KANDIDAT_KORISNIK">
+    <End Role="korisnik" Type="Self.korisnik" Multiplicity="1" />
+    <End Role="kandidat" Type="Self.kandidat" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="korisnik">
+        <PropertyRef Name="idKORISNIK" />
+      </Principal>
+      <Dependent Role="kandidat">
+        <PropertyRef Name="KORISNIK_idKORISNIK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_PLAN_ISHRANE_KANDIDAT1">
+    <End Role="kandidat" Type="Self.kandidat" Multiplicity="1" />
+    <End Role="plan_ishrane" Type="Self.plan_ishrane" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="kandidat">
+        <PropertyRef Name="KORISNIK_idKORISNIK" />
+      </Principal>
+      <Dependent Role="plan_ishrane">
+        <PropertyRef Name="KANDIDAT_KORISNIK_idKORISNIK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_PLAN_ISHRANE_TRENER1">
+    <End Role="trener" Type="Self.trener" Multiplicity="1" />
+    <End Role="plan_ishrane" Type="Self.plan_ishrane" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="trener">
+        <PropertyRef Name="KORISNIK_idKORISNIK" />
+      </Principal>
+      <Dependent Role="plan_ishrane">
+        <PropertyRef Name="TRENER_KORISNIK_idKORISNIK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_PLAN_VJEZBANJA_KANDIDAT1">
+    <End Role="kandidat" Type="Self.kandidat" Multiplicity="1" />
+    <End Role="plan_vjezbanja" Type="Self.plan_vjezbanja" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="kandidat">
+        <PropertyRef Name="KORISNIK_idKORISNIK" />
+      </Principal>
+      <Dependent Role="plan_vjezbanja">
+        <PropertyRef Name="KANDIDAT_KORISNIK_idKORISNIK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_PLAN_VJEZBANJA_TRENER1">
+    <End Role="trener" Type="Self.trener" Multiplicity="1" />
+    <End Role="plan_vjezbanja" Type="Self.plan_vjezbanja" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="trener">
+        <PropertyRef Name="KORISNIK_idKORISNIK" />
+      </Principal>
+      <Dependent Role="plan_vjezbanja">
+        <PropertyRef Name="TRENER_KORISNIK_idKORISNIK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_TRENER_has_KANDIDAT_KANDIDAT1">
+    <End Role="kandidat" Type="Self.kandidat" Multiplicity="1" />
+    <End Role="mjerenje" Type="Self.mjerenje" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="kandidat">
+        <PropertyRef Name="KORISNIK_idKORISNIK" />
+      </Principal>
+      <Dependent Role="mjerenje">
+        <PropertyRef Name="KANDIDAT_KORISNIK_idKORISNIK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_TRENER_has_KANDIDAT_TRENER1">
+    <End Role="trener" Type="Self.trener" Multiplicity="1" />
+    <End Role="mjerenje" Type="Self.mjerenje" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="trener">
+        <PropertyRef Name="KORISNIK_idKORISNIK" />
+      </Principal>
+      <Dependent Role="mjerenje">
+        <PropertyRef Name="TRENER_KORISNIK_idKORISNIK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_TRENER_KORISNIK1">
+    <End Role="korisnik" Type="Self.korisnik" Multiplicity="1" />
+    <End Role="trener" Type="Self.trener" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="korisnik">
+        <PropertyRef Name="idKORISNIK" />
+      </Principal>
+      <Dependent Role="trener">
+        <PropertyRef Name="KORISNIK_idKORISNIK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="dnevnik_ishrane_db_ModelStoreContainer">
+    <EntitySet Name="kandidat" EntityType="Self.kandidat" Schema="dnevnik_ishrane" store:Type="Tables" />
+    <EntitySet Name="korisnik" EntityType="Self.korisnik" Schema="dnevnik_ishrane" store:Type="Tables" />
+    <EntitySet Name="mjerenje" EntityType="Self.mjerenje" Schema="dnevnik_ishrane" store:Type="Tables" />
+    <EntitySet Name="namirnica" EntityType="Self.namirnica" Schema="dnevnik_ishrane" store:Type="Tables" />
+    <EntitySet Name="obrok" EntityType="Self.obrok" Schema="dnevnik_ishrane" store:Type="Tables" />
+    <EntitySet Name="plan_ishrane" EntityType="Self.plan_ishrane" Schema="dnevnik_ishrane" store:Type="Tables" />
+    <EntitySet Name="plan_vjezbanja" EntityType="Self.plan_vjezbanja" Schema="dnevnik_ishrane" store:Type="Tables" />
+    <EntitySet Name="trener" EntityType="Self.trener" Schema="dnevnik_ishrane" store:Type="Tables" />
+    <AssociationSet Name="fk_KANDIDAT_has_NAMIRNICA_KANDIDAT1" Association="Self.fk_KANDIDAT_has_NAMIRNICA_KANDIDAT1">
+      <End Role="kandidat" EntitySet="kandidat" />
+      <End Role="obrok" EntitySet="obrok" />
+    </AssociationSet>
+    <AssociationSet Name="fk_KANDIDAT_has_NAMIRNICA_NAMIRNICA1" Association="Self.fk_KANDIDAT_has_NAMIRNICA_NAMIRNICA1">
+      <End Role="namirnica" EntitySet="namirnica" />
+      <End Role="obrok" EntitySet="obrok" />
+    </AssociationSet>
+    <AssociationSet Name="fk_KANDIDAT_KORISNIK" Association="Self.fk_KANDIDAT_KORISNIK">
+      <End Role="korisnik" EntitySet="korisnik" />
+      <End Role="kandidat" EntitySet="kandidat" />
+    </AssociationSet>
+    <AssociationSet Name="fk_PLAN_ISHRANE_KANDIDAT1" Association="Self.fk_PLAN_ISHRANE_KANDIDAT1">
+      <End Role="kandidat" EntitySet="kandidat" />
+      <End Role="plan_ishrane" EntitySet="plan_ishrane" />
+    </AssociationSet>
+    <AssociationSet Name="fk_PLAN_ISHRANE_TRENER1" Association="Self.fk_PLAN_ISHRANE_TRENER1">
+      <End Role="trener" EntitySet="trener" />
+      <End Role="plan_ishrane" EntitySet="plan_ishrane" />
+    </AssociationSet>
+    <AssociationSet Name="fk_PLAN_VJEZBANJA_KANDIDAT1" Association="Self.fk_PLAN_VJEZBANJA_KANDIDAT1">
+      <End Role="kandidat" EntitySet="kandidat" />
+      <End Role="plan_vjezbanja" EntitySet="plan_vjezbanja" />
+    </AssociationSet>
+    <AssociationSet Name="fk_PLAN_VJEZBANJA_TRENER1" Association="Self.fk_PLAN_VJEZBANJA_TRENER1">
+      <End Role="trener" EntitySet="trener" />
+      <End Role="plan_vjezbanja" EntitySet="plan_vjezbanja" />
+    </AssociationSet>
+    <AssociationSet Name="fk_TRENER_has_KANDIDAT_KANDIDAT1" Association="Self.fk_TRENER_has_KANDIDAT_KANDIDAT1">
+      <End Role="kandidat" EntitySet="kandidat" />
+      <End Role="mjerenje" EntitySet="mjerenje" />
+    </AssociationSet>
+    <AssociationSet Name="fk_TRENER_has_KANDIDAT_TRENER1" Association="Self.fk_TRENER_has_KANDIDAT_TRENER1">
+      <End Role="trener" EntitySet="trener" />
+      <End Role="mjerenje" EntitySet="mjerenje" />
+    </AssociationSet>
+    <AssociationSet Name="fk_TRENER_KORISNIK1" Association="Self.fk_TRENER_KORISNIK1">
+      <End Role="korisnik" EntitySet="korisnik" />
+      <End Role="trener" EntitySet="trener" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

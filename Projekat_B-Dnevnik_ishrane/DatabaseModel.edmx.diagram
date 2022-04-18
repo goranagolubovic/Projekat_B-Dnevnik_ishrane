@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="3639f3f741954ed0a913837e311964af" Name="Diagram1">
+        <EntityTypeShape EntityType="dnevnik_ishrane_db_Model.kandidat" Width="1.5" PointX="3" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="dnevnik_ishrane_db_Model.korisnik" Width="1.5" PointX="0.75" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="dnevnik_ishrane_db_Model.mjerenje" Width="1.5" PointX="5.25" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="dnevnik_ishrane_db_Model.namirnica" Width="1.5" PointX="3" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="dnevnik_ishrane_db_Model.obrok" Width="1.5" PointX="5.25" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="dnevnik_ishrane_db_Model.plan_ishrane" Width="1.5" PointX="8.25" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="dnevnik_ishrane_db_Model.plan_vjezbanja" Width="1.5" PointX="5.25" PointY="11.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="dnevnik_ishrane_db_Model.trener" Width="1.5" PointX="3" PointY="9.375" IsExpanded="true" />
+        <AssociationConnector Association="dnevnik_ishrane_db_Model.fk_KANDIDAT_has_NAMIRNICA_KANDIDAT1" ManuallyRouted="false" />
+        <AssociationConnector Association="dnevnik_ishrane_db_Model.fk_KANDIDAT_KORISNIK" ManuallyRouted="false" />
+        <AssociationConnector Association="dnevnik_ishrane_db_Model.fk_PLAN_ISHRANE_KANDIDAT1" ManuallyRouted="false" />
+        <AssociationConnector Association="dnevnik_ishrane_db_Model.fk_PLAN_VJEZBANJA_KANDIDAT1" ManuallyRouted="false" />
+        <AssociationConnector Association="dnevnik_ishrane_db_Model.fk_TRENER_has_KANDIDAT_KANDIDAT1" ManuallyRouted="false" />
+        <AssociationConnector Association="dnevnik_ishrane_db_Model.fk_TRENER_KORISNIK1" ManuallyRouted="false" />
+        <AssociationConnector Association="dnevnik_ishrane_db_Model.fk_TRENER_has_KANDIDAT_TRENER1" ManuallyRouted="false" />
+        <AssociationConnector Association="dnevnik_ishrane_db_Model.fk_KANDIDAT_has_NAMIRNICA_NAMIRNICA1" ManuallyRouted="false" />
+        <AssociationConnector Association="dnevnik_ishrane_db_Model.fk_PLAN_ISHRANE_TRENER1" ManuallyRouted="false" />
+        <AssociationConnector Association="dnevnik_ishrane_db_Model.fk_PLAN_VJEZBANJA_TRENER1" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
