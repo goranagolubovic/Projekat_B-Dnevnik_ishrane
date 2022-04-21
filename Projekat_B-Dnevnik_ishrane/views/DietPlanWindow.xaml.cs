@@ -26,7 +26,7 @@ namespace Projekat_B_Dnevnik_ishrane
     private string selectedNameOfTrener;
     private  string selectedSurnameOfTrener;
     private int candidateId;
-    private List<PlanIshraneView> listOfDietPlans = new List<PlanIshraneView>();
+    private List<PlanView> listOfDietPlans = new List<PlanView>();
     private dnevnik_ishrane_db_Entities dnevnikIshraneEntities = new dnevnik_ishrane_db_Entities();
     public DietPlanWindow(int candidateId)
     {
@@ -35,13 +35,13 @@ namespace Projekat_B_Dnevnik_ishrane
 
       listOfDietPlans = dnevnikIshraneEntities.plan_ishrane.Join(
      dnevnikIshraneEntities.korisniks, pi => pi.TRENER_KORISNIK_idKORISNIK, k => k.idKORISNIK, (pi, k) =>
-     new PlanIshraneView
+     new PlanView
      {
        DateAndTime = pi.DatumVrijeme,
        IdCandidate = pi.KANDIDAT_KORISNIK_idKORISNIK,
        SurnameOfTrener = k.Prezime,
        NameOfTrener = k.Ime,
-       IdDietPlan = pi.idPLAN_ISHRANE
+       IdPlan = pi.idPLAN_ISHRANE
      })
        .Where(elem => elem.IdCandidate == candidateId).ToList();
 
@@ -49,7 +49,7 @@ namespace Projekat_B_Dnevnik_ishrane
       int previousId = 0;
       foreach (var elem in listOfDietPlans)
       {// i%7 da ne prikazuje za svaki dan posebno jedan te isti plan
-        if (previousId!=elem.IdDietPlan)
+        if (previousId!=elem.IdPlan)
         {
           list.Add(new
           {
@@ -59,7 +59,7 @@ namespace Projekat_B_Dnevnik_ishrane
 
           });
         }
-        previousId = elem.IdDietPlan;
+        previousId = elem.IdPlan;
       }
       dataGridViewDietPlan.ItemsSource = list;
       if (MainWindow.checkIfUserIsCandidate(candidateId))
@@ -90,8 +90,8 @@ namespace Projekat_B_Dnevnik_ishrane
         selectedNameOfTrener = name;
         selectedSurnameOfTrener = surname;
         selectedDateAndTime = dateAndTime;
+        Window dietPlanScheduleWindow = new DietPlanScheduleWindow(selectedDateAndTime,selectedNameOfTrener,selectedSurnameOfTrener,this);
         this.Hide();
-        Window dietPlanScheduleWindow = new DietPlanScheduleWindow(candidateId,selectedDateAndTime,selectedNameOfTrener,selectedSurnameOfTrener);
         dietPlanScheduleWindow.Show();
 
 

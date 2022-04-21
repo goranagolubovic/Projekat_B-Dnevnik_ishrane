@@ -25,13 +25,14 @@ namespace Projekat_B_Dnevnik_ishrane
     private DateTime selectedDateTime;
     private string nameOfTrener;
     private string surnameOfTrener;
-    private int candidateId;
-    public DietPlanScheduleWindow(int candidateId,DateTime selectedDateTime,string nameOfTrener,string surnameOfTrener)
+    private Window previousWindow;
+    public DietPlanScheduleWindow(DateTime selectedDateTime,string nameOfTrener,string surnameOfTrener,Window previousWindow)
     {
 
       this.selectedDateTime = selectedDateTime;
       this.nameOfTrener = nameOfTrener;
       this.surnameOfTrener = surnameOfTrener;
+      this.previousWindow = previousWindow;
       InitializeComponent();
       InitializeFields();
 
@@ -158,8 +159,7 @@ namespace Projekat_B_Dnevnik_ishrane
     private void Previous_Window_Click(object sender, RoutedEventArgs e)
     {
       this.Hide();
-      DietPlanWindow dw = new DietPlanWindow(candidateId);
-      dw.Show();
+      previousWindow.Show();
     }
   }
 }

@@ -1,0 +1,53 @@
+<Window x:Class="Projekat_B_Dnevnik_ishrane.ExercisePlanWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Projekat_B_Dnevnik_ishrane"
+        mc:Ignorable="d"
+        Title="ExercisePlanWindow" Height="700" Width="622.4">
+  <Grid Background="#FFDEE9ED">
+
+    <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Height="86" Margin="90,34,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="478" FontSize="48" Foreground="#FF408090" FontFamily="Lucida Calligraphy"><Run Text=" Plan vježbanja"/><LineBreak/><Run/><LineBreak/><Run Text="  "/><LineBreak/><Run Text=" "/><LineBreak/><Run Text="ISHRANE"/></TextBlock>
+    <DataGrid x:Name="dataGridViewExercisePlan" Margin="0,158,-0.4,228.4" AutoGenerateColumns="False" SelectionChanged="dataGridViewExercisePlan_SelectionChanged">
+      <DataGrid.Columns>
+        <DataGridTextColumn Header="Ime trenera" Binding="{Binding Path='ImeTrenera'}" IsReadOnly="True" />
+        <DataGridTextColumn Header="Prezime trenera" Binding="{Binding Path='PrezimeTrenera'}" IsReadOnly="True" />
+        <DataGridTextColumn Header="Datum i vrijeme" Binding="{Binding Path='DatumVrijeme'}" IsReadOnly="True" />
+        <DataGridTextColumn Header="Ime kandidata" Binding="{Binding Path='ImeKandidata'}" IsReadOnly="True" />
+        <DataGridTextColumn Header="Prezime kandidata" Binding="{Binding Path='PrezimeKandidata'}" IsReadOnly="True" />
+        <DataGridTemplateColumn Header="Pregledaj">
+          <DataGridTemplateColumn.CellTemplate>
+            <DataTemplate>
+              <Button Name="btnView" Content="View" Click="btnView_Click" />
+            </DataTemplate>
+          </DataGridTemplateColumn.CellTemplate>
+        </DataGridTemplateColumn>
+        <DataGridTemplateColumn Header="Ažuriraj">
+          <DataGridTemplateColumn.CellTemplate>
+            <DataTemplate>
+              <Button Name="btnUpdate" Content="Update" Click="btnUpdate_Click" />
+            </DataTemplate>
+          </DataGridTemplateColumn.CellTemplate>
+        </DataGridTemplateColumn>
+        <DataGridTemplateColumn Header="Izbriši">
+          <DataGridTemplateColumn.CellTemplate>
+            <DataTemplate>
+              <Button Name="btnDelete" Content="Delete" Click="btnDelete_Click" />
+            </DataTemplate>
+          </DataGridTemplateColumn.CellTemplate>
+        </DataGridTemplateColumn>
+      </DataGrid.Columns>
+    </DataGrid>
+    <Button Margin="90,461,415,132" Click="Previous_Window_Click" BorderBrush="#FFDEE9ED" Background="{x:Null}"  >
+      <Image  Source="/images/back.png" Stretch="Uniform" Height="46" Width="57" RenderTransformOrigin="0.539,1.916">
+      </Image>
+
+    </Button>
+    <Button Margin="402,461,90,132" Click="Exit_Click" Background="#FFDEE9ED" BorderBrush="#FFDEE9ED"  >
+      <Image  Source="/images/power-off2.png" Stretch="Uniform" Height="46" Width="68" RenderTransformOrigin="0.539,1.916">
+      </Image>
+
+    </Button>
+  </Grid>
+</Window>

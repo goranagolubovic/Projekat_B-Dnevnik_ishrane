@@ -34,7 +34,6 @@ C:\Users\goran\Desktop\Projekat_B-Dnevnik_ishrane\Projekat_B-Dnevnik_ishrane\bin
 C:\Users\goran\Desktop\Projekat_B-Dnevnik_ishrane\Projekat_B-Dnevnik_ishrane\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
 C:\Users\goran\Desktop\Projekat_B-Dnevnik_ishrane\Projekat_B-Dnevnik_ishrane\bin\Debug\System.Threading.Tasks.Extensions.dll
 C:\Users\goran\Desktop\Projekat_B-Dnevnik_ishrane\Projekat_B-Dnevnik_ishrane\bin\Debug\Ubiety.Dns.Core.dll
-C:\Users\goran\Desktop\Projekat_B-Dnevnik_ishrane\Projekat_B-Dnevnik_ishrane\bin\Debug\Zstandard.Net.dll
 C:\Users\goran\Desktop\Projekat_B-Dnevnik_ishrane\Projekat_B-Dnevnik_ishrane\bin\Debug\EntityFramework.xml
 C:\Users\goran\Desktop\Projekat_B-Dnevnik_ishrane\Projekat_B-Dnevnik_ishrane\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\goran\Desktop\Projekat_B-Dnevnik_ishrane\Projekat_B-Dnevnik_ishrane\bin\Debug\Google.Protobuf.pdb
@@ -89,3 +88,18 @@ C:\Users\goran\Desktop\Projekat_B-Dnevnik_ishrane\Projekat_B-Dnevnik_ishrane\obj
 C:\Users\goran\Desktop\Projekat_B-Dnevnik_ishrane\Projekat_B-Dnevnik_ishrane\obj\Debug\views\MainWindow.baml
 C:\Users\goran\Desktop\Projekat_B-Dnevnik_ishrane\Projekat_B-Dnevnik_ishrane\obj\Debug\views\DietPlanScheduleWindow.g.cs
 C:\Users\goran\Desktop\Projekat_B-Dnevnik_ishrane\Projekat_B-Dnevnik_ishrane\obj\Debug\views\DietPlanScheduleWindow.baml
+C:\Users\goran\Desktop\Projekat_B-Dnevnik_ishrane\Projekat_B-Dnevnik_ishrane\obj\Debug\views\ExercisePlanWindow.g.cs
+C:\Users\goran\Desktop\Projekat_B-Dnevnik_ishrane\Projekat_B-Dnevnik_ishrane\obj\Debug\views\ExercisePlanWindow.baml
+C:\Users\goran\Desktop\Projekat_B-Dnevnik_ishrane\Projekat_B-Dnevnik_ishrane\obj\Debug\views\ExercisePlanScheduleWindow.g.cs
+C:\Users\goran\Desktop\Projekat_B-Dnevnik_ishrane\Projekat_B-Dnevnik_ishrane\obj\Debug\views\ExercisePlanScheduleWindow.baml
+C:\Users\goran\Desktop\Projekat_B-Dnevnik_ishrane\Projekat_B-Dnevnik_ishrane\obj\Debug\views\MeasurementWindow.g.cs
+C:\Users\goran\Desktop\Projekat_B-Dnevnik_ishrane\Projekat_B-Dnevnik_ishrane\obj\Debug\views\MeasurementWindow.baml
+C:\Users\goran\Desktop\Projekat_B-Dnevnik_ishrane\Projekat_B-Dnevnik_ishrane\obj\Debug\views\FoodStuffWindow.g.cs
+C:\Users\goran\Desktop\Projekat_B-Dnevnik_ishrane\Projekat_B-Dnevnik_ishrane\obj\Debug\views\MealsWindow.g.cs
+C:\Users\goran\Desktop\Projekat_B-Dnevnik_ishrane\Projekat_B-Dnevnik_ishrane\obj\Debug\views\FoodStuffWindow.baml
+C:\Users\goran\Desktop\Projekat_B-Dnevnik_ishrane\Projekat_B-Dnevnik_ishrane\obj\Debug\views\MealsWindow.baml
+C:\Users\goran\Desktop\Projekat_B-Dnevnik_ishrane\Projekat_B-Dnevnik_ishrane\obj\Debug\views\FoodStuffDetailsWindow.g.cs
+C:\Users\goran\Desktop\Projekat_B-Dnevnik_ishrane\Projekat_B-Dnevnik_ishrane\obj\Debug\views\FoodStuffDetailsWindow.baml
+C:\Users\goran\Desktop\Projekat_B-Dnevnik_ishrane\Projekat_B-Dnevnik_ishrane\bin\Debug\Renci.SshNet.dll
+C:\Users\goran\Desktop\Projekat_B-Dnevnik_ishrane\Projekat_B-Dnevnik_ishrane\bin\Debug\Renci.SshNet.xml
+C:\Users\goran\Desktop\Projekat_B-Dnevnik_ishrane\Projekat_B-Dnevnik_ishrane\bin\Debug\ZstdNet.dll

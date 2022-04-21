@@ -1,4 +1,5 @@
 using Projekat_B_Dnevnik_ishrane.db_views;
+using Projekat_B_Dnevnik_ishrane.views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,7 +24,7 @@ namespace Projekat_B_Dnevnik_ishrane
   
     private int candidateId = -1;
     private dnevnik_ishrane_db_Entities dnevnikIshraneEntities;
-    private List<PlanIshraneView> listOfDietPlans = new List<PlanIshraneView>();
+    private List<PlanView> listOfDietPlans = new List<PlanView>();
     public KandidatWindow(int candidateId,dnevnik_ishrane_db_Entities dnevnikIshraneEntities)
     {
       this.dnevnikIshraneEntities = dnevnikIshraneEntities;
@@ -41,22 +42,28 @@ namespace Projekat_B_Dnevnik_ishrane
 
     private void ExitButton_Click(object sender, RoutedEventArgs e)
     {
-
+      Application.Current.Shutdown();
     }
 
     private void Exercise_Plan_Click(object sender, RoutedEventArgs e)
     {
-
+      Window window=new ExercisePlanWindow(candidateId);
+      this.Hide();
+      window.Show();
     }
 
     private void Meals_Click(object sender, RoutedEventArgs e)
     {
-
+      Window window = new MealsWindow(candidateId);
+      this.Hide();
+      window.Show();
     }
 
     private void Measurement_Click(object sender, RoutedEventArgs e)
     {
-
+      Window window = new MeasurementWindow(candidateId);
+      this.Hide();
+      window.Show();
     }
   }
 }
