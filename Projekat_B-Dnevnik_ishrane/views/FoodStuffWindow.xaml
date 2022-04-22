@@ -6,19 +6,24 @@
         xmlns:local="clr-namespace:Projekat_B_Dnevnik_ishrane.views"
         mc:Ignorable="d"
         Title="FoodStuffWindow" Height="565.909" Width="800">
-  <Grid>
-    <DataGrid HeadersVisibility="None" x:Name="dataGridFoodStuff" HorizontalAlignment="Left" Height="290" Margin="47,144,0,0" VerticalAlignment="Top" Width="690" AutoGenerateColumns="False" Background="#FFDFE6F4" SelectionChanged="dataGridViewFoodStuff_SelectionChanged">
-      <DataGrid.Columns>
-        <DataGridTextColumn  Header="Namirnica" Binding="{Binding Path='Namirnica'}" IsReadOnly="True" />
-        <DataGridTemplateColumn Header="Izaberi">
-          <DataGridTemplateColumn.CellTemplate>
-            <DataTemplate>
-              <Button Name="btnAdd" Content="Izaberi" Click="btnChoose_Click" />
-            </DataTemplate>
-          </DataGridTemplateColumn.CellTemplate>
-        </DataGridTemplateColumn>
-      </DataGrid.Columns>
-    </DataGrid>
-    <Button Content="Pretraga" HorizontalAlignment="Left" Margin="351,47,0,0" VerticalAlignment="Top" Width="189" Height="33"/>
-  </Grid>
+    <Grid Background="#FFE7F3DA">
+        <DataGrid HeadersVisibility="None" x:Name="dataGridFoodStuff" HorizontalAlignment="Left" Height="290" Margin="47,144,0,0" VerticalAlignment="Top" Width="690" AutoGenerateColumns="False" Background="#FFFEEBBB" SelectionChanged="dataGridViewFoodStuff_SelectionChanged">
+            <DataGrid.Columns>
+                <DataGridTextColumn  Header="Namirnica" Binding="{Binding Path='Namirnica'}" IsReadOnly="True" />
+                <DataGridTemplateColumn Header="Izaberi">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Name="btnAdd" Content="Izaberi" Click="btnChoose_Click" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <TextBox x:Name="searchTextBox" FontSize="24px" HorizontalAlignment="Left" Height="48" Margin="303,41,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="218" Background="#FFFAF0B3"/>
+        <Canvas PreviewMouseDown="search" HorizontalAlignment="Left" Height="48" Margin="471,41,0,0" VerticalAlignment="Top" Width="50">
+            <Canvas.Background>
+                <ImageBrush ImageSource="search.png"/>
+            </Canvas.Background>
+        </Canvas>
+    </Grid>
 </Window>

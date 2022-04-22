@@ -79,11 +79,12 @@ namespace Projekat_B_Dnevnik_ishrane.views
       if (action.Equals("update"))
       {
         MealsWindow.sumOfKcals -= previousAmount;
+        MealsWindow.sumOfKcals +=Double.Parse(kcalTextBlock.Text);
         dnevnikIshraneEntities.Entry(meal).State = System.Data.Entity.EntityState.Modified;
       }
       dnevnikIshraneEntities.SaveChanges();
 
-      Window window = new MealsWindow(candidateId);
+      Window window = new MealsWindow(candidateId,action);
       this.Hide();
       window.Show();
       

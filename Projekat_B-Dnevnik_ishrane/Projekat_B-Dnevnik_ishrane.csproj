@@ -406,6 +406,7 @@
       <DependentUpon>DatabaseModel.edmx</DependentUpon>
       <LastGenOutput>DatabaseModel.cs</LastGenOutput>
     </Content>
+    <Resource Include="views\search.png" />
     <Resource Include="views\plus.png" />
     <Resource Include="views\button_box6.jpg" />
     <Resource Include="views\power-off.png" />

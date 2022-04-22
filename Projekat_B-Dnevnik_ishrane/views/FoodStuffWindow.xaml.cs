@@ -55,5 +55,20 @@ namespace Projekat_B_Dnevnik_ishrane.views
     {
 
     }
+
+    private void search(object sender, MouseButtonEventArgs e)
+    {
+      listOfFoodStuffs = dnevnikIshraneEntities.namirnicas.Select(n => n.Naziv).Where(elem => elem.Equals(searchTextBox.Text)).ToList();
+      var list = new List<dynamic>();
+      foreach (var elem in listOfFoodStuffs)
+      {
+        list.Add(new
+        {
+          Namirnica = elem
+        });
+
+      }
+      dataGridFoodStuff.ItemsSource = list;
+    }
   }
 }

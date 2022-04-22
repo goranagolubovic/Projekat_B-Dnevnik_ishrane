@@ -28,18 +28,18 @@ namespace Projekat_B_Dnevnik_ishrane.views
     private List<ObrokView> lunchOfCandidate = new List<ObrokView>();
     private List<ObrokView> dinnerOfCanidate = new List<ObrokView>();
     private List<ObrokView> snackOfCanidate = new List<ObrokView>();
-    public MealsWindow(int candidateId)
+    public MealsWindow(int candidateId,string action)
     {
+      sumOfKcals = 0.0;
       this.candidateId = candidateId;
       InitializeComponent();
-      initializeBreakfastGrid("add");
-      initializeLunchGrid("add");
-      initializeDinnerGrid("add");
-      initializeSnackGrid("add");
-      totalyKcals.Text = sumOfKcals.ToString();
+      initializeBreakfastGrid();
+      initializeLunchGrid();
+      initializeDinnerGrid();
+      initializeSnackGrid();
     }
 
-    private void initializeLunchGrid(string action)
+    private void initializeLunchGrid()
     {
       lunchOfCandidate = dnevnikIshraneEntities.obroks.Join(
 dnevnikIshraneEntities.namirnicas, o => o.NAMIRNICA_idNAMIRNICA, n => n.idNAMIRNICA, (o, n) =>
@@ -58,9 +58,6 @@ new ObrokView
       {
         if (elem.Date.Equals(DateTime.UtcNow.Date))
         {
-          if (action.Equals("delete"))
-            sumOfKcals -= elem.KcalFoodStuff;
-          else
             sumOfKcals += elem.KcalFoodStuff;
           list.Add(new
           {
@@ -72,7 +69,7 @@ new ObrokView
       totalyKcals.Text = sumOfKcals.ToString();
       dataGridLunch.ItemsSource = list;
     }
-    private void initializeDinnerGrid(string action)
+    private void initializeDinnerGrid()
     {
   dinnerOfCanidate = dnevnikIshraneEntities.obroks.Join(
 dnevnikIshraneEntities.namirnicas, o => o.NAMIRNICA_idNAMIRNICA, n => n.idNAMIRNICA, (o, n) =>
@@ -91,9 +88,6 @@ new ObrokView
       {
         if (elem.Date.Equals(DateTime.UtcNow.Date))
         {
-          if (action.Equals("delete"))
-            sumOfKcals -= elem.KcalFoodStuff;
-          else
             sumOfKcals += elem.KcalFoodStuff;
           list.Add(new
           {
@@ -105,7 +99,7 @@ new ObrokView
       totalyKcals.Text = sumOfKcals.ToString();
       dataGridDinner.ItemsSource = list;
     }
-    private void initializeSnackGrid(string action)
+    private void initializeSnackGrid()
     {
       snackOfCanidate = dnevnikIshraneEntities.obroks.Join(
 dnevnikIshraneEntities.namirnicas, o => o.NAMIRNICA_idNAMIRNICA, n => n.idNAMIRNICA, (o, n) =>
@@ -124,9 +118,6 @@ new ObrokView
       {
         if (elem.Date.Equals(DateTime.UtcNow.Date))
         {
-          if (action.Equals("delete"))
-            sumOfKcals -= elem.KcalFoodStuff;
-          else
             sumOfKcals += elem.KcalFoodStuff;
           list.Add(new
           {
@@ -138,7 +129,7 @@ new ObrokView
       totalyKcals.Text = sumOfKcals.ToString();
       dataGridSnack.ItemsSource = list;
     }
-    private void initializeBreakfastGrid(string action)
+    private void initializeBreakfastGrid()
     {
       breakfastOfCanidate = dnevnikIshraneEntities.obroks.Join(
   dnevnikIshraneEntities.namirnicas, o => o.NAMIRNICA_idNAMIRNICA, n => n.idNAMIRNICA, (o, n) =>
@@ -157,9 +148,6 @@ new ObrokView
       {
         if (elem.Date.Equals(DateTime.UtcNow.Date))
         {
-          if (action.Equals("delete"))
-            sumOfKcals -= elem.KcalFoodStuff;
-          else
             sumOfKcals += elem.KcalFoodStuff;
           list.Add(new
           {
@@ -200,7 +188,11 @@ new ObrokView
     private void btnDeleteBreakfast_Click(object sender, RoutedEventArgs e)
     {
       deleteMeal(e,"doručak");
-      initializeBreakfastGrid("delete");
+      sumOfKcals = 0.0;
+      initializeBreakfastGrid();
+      initializeLunchGrid();
+      initializeSnackGrid();
+      initializeDinnerGrid();
     }
 
     private void dataGridViewExercisePlan_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -232,7 +224,11 @@ new ObrokView
     private void btnDeleteSnack_Click(object sender, RoutedEventArgs e)
     {
       deleteMeal(e,"užina");
-      initializeSnackGrid("delete");
+      sumOfKcals = 0.0;
+      initializeBreakfastGrid();
+      initializeLunchGrid();
+      initializeSnackGrid();
+      initializeDinnerGrid();
     }
     private void deleteMeal(RoutedEventArgs e,string typeOfMeal)
     {
@@ -268,7 +264,11 @@ new ObrokView
     private void btnDeleteDinner_Click(object sender, RoutedEventArgs e)
     {
       deleteMeal(e,"večera");
-      initializeDinnerGrid("delete");
+      sumOfKcals = 0.0;
+      initializeBreakfastGrid();
+      initializeLunchGrid();
+      initializeSnackGrid();
+      initializeDinnerGrid();
     }
 
     private void btnUpdateDinner_Click(object sender, RoutedEventArgs e)
@@ -283,7 +283,11 @@ new ObrokView
     private void btnDeleteLunch_Click(object sender, RoutedEventArgs e)
     {
       deleteMeal(e,"ručak");
-      initializeLunchGrid("delete");
+      sumOfKcals = 0.0;
+      initializeBreakfastGrid();
+      initializeLunchGrid();
+      initializeSnackGrid();
+      initializeDinnerGrid();
     }
 
     private void btnUpdateLunch_Click(object sender, RoutedEventArgs e)

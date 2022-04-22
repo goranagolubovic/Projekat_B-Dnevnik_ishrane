@@ -21,7 +21,6 @@
     <Label FontSize="20px" Content="Ručak" HorizontalAlignment="Left" Height="44" Margin="404,146,0,0" VerticalAlignment="Top" Width="116"/>
     <Label FontSize="20px" Content="Večera" HorizontalAlignment="Left" Height="43" Margin="708,146,0,0" VerticalAlignment="Top" Width="116"/>
     <Label FontSize="20px" Content="Užina" HorizontalAlignment="Left" Height="44" Margin="1037,146,0,0" VerticalAlignment="Top" Width="114" Grid.ColumnSpan="3"/>
-    <Button Content="Dodaj" Click="addBreakfast" HorizontalAlignment="Left" Margin="10,452,0,0" VerticalAlignment="Top" Width="75"/>
     <DataGrid x:Name="dataGridBreakfast" Margin="32,195,771,175.4" AutoGenerateColumns="False" SelectionChanged="dataGridViewExercisePlan_SelectionChanged">
       <DataGrid.Columns>
         <DataGridTextColumn Header="Namirnica" Binding="{Binding Path='Namirnica'}" IsReadOnly="True" Width="Auto" />
@@ -122,7 +121,7 @@
         <ImageBrush ImageSource="plus.png"/>
       </Canvas.Background>
     </Canvas>
-    <TextBlock Height="65" Margin="646,10,76,0" TextWrapping="Wrap" Text="Dnevni unos kalorija" VerticalAlignment="Top" FontSize="36"/>
+    <TextBlock Height="65" Margin="757,10,76,0" TextWrapping="Wrap" Text="Dnevni unos(kcal)" VerticalAlignment="Top" FontSize="24"/>
     <TextBlock x:Name="totalyKcals" FontSize="24px"  HorizontalAlignment="Left"  Margin="973,10,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="125" RenderTransformOrigin="0.426,0.942" FontWeight="Bold" Grid.ColumnSpan="2"/>
   </Grid>
 </Window>

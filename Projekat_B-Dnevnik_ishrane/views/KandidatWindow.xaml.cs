@@ -54,7 +54,7 @@ namespace Projekat_B_Dnevnik_ishrane
 
     private void Meals_Click(object sender, RoutedEventArgs e)
     {
-      Window window = new MealsWindow(candidateId);
+      Window window = new MealsWindow(candidateId,"add");
       this.Hide();
       window.Show();
     }
