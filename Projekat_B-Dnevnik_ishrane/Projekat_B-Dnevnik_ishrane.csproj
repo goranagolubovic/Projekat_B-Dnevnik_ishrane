@@ -192,6 +192,9 @@
     <Compile Include="db_views\MeasurementView.cs" />
     <Compile Include="db_views\ObrokView.cs" />
     <Compile Include="db_views\PlanView.cs" />
+    <Compile Include="exceptions\CandidateDoesNotExistException.cs" />
+    <Compile Include="exceptions\JMBExistsInDatabaseException.cs" />
+    <Compile Include="exceptions\NotAllTextFieldsFilledException.cs" />
     <Compile Include="kandidat.cs">
       <DependentUpon>DatabaseModel.tt</DependentUpon>
     </Compile>
@@ -215,9 +218,6 @@
     </Compile>
     <Compile Include="trener.cs">
       <DependentUpon>DatabaseModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="TrenerWindow.xaml.cs">
-      <DependentUpon>TrenerWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="views\DietPlanScheduleWindow.xaml.cs">
       <DependentUpon>DietPlanScheduleWindow.xaml</DependentUpon>
@@ -253,10 +253,15 @@
     <Compile Include="views\MeasurementWindow.xaml.cs">
       <DependentUpon>MeasurementWindow.xaml</DependentUpon>
     </Compile>
-    <Page Include="TrenerWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
+    <Compile Include="views\TrenerWindow.xaml.cs">
+      <DependentUpon>TrenerWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="views\UpdateWindow.xaml.cs">
+      <DependentUpon>UpdateWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="views\WeightWindow.xaml.cs">
+      <DependentUpon>WeightWindow.xaml</DependentUpon>
+    </Compile>
     <Page Include="views\DietPlanScheduleWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -294,6 +299,18 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="views\MeasurementWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="views\TrenerWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="views\UpdateWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="views\WeightWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -406,6 +423,10 @@
       <DependentUpon>DatabaseModel.edmx</DependentUpon>
       <LastGenOutput>DatabaseModel.cs</LastGenOutput>
     </Content>
+    <Resource Include="views\add.png" />
+    <Resource Include="views\left-arrow3.png" />
+    <Resource Include="views\gain-weight.png" />
+    <Resource Include="views\usericon.png" />
     <Resource Include="views\search.png" />
     <Resource Include="views\plus.png" />
     <Resource Include="views\button_box6.jpg" />

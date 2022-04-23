@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
+using Projekat_B_Dnevnik_ishrane.views;
 namespace Projekat_B_Dnevnik_ishrane
 {
     /// <summary>
@@ -32,7 +32,7 @@ namespace Projekat_B_Dnevnik_ishrane
     {
       user = dnevnikIshraneEntities.korisniks.Where(elem =>
       elem.KorisnickoIme.Equals(UserNameField.Text.Trim())
-      && elem.Lozinka.Equals(PasswordField.Password.ToString().Trim())).First();
+      && elem.Lozinka.Equals(PasswordField.Password.ToString().Trim())).FirstOrDefault();
       if (user != null)
       {
         matchedUserId = user.idKORISNIK;
@@ -44,7 +44,7 @@ namespace Projekat_B_Dnevnik_ishrane
           }
           else
           {
-            Window TrenerWindow = new TrenerWindow();
+          Window TrenerWindow = new TrenerWindow(matchedUserId, dnevnikIshraneEntities);
             this.Hide();
             TrenerWindow.Show();
           }

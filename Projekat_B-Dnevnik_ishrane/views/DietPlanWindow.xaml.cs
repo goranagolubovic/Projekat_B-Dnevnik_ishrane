@@ -1,5 +1,7 @@
+using Dnevnik_ishrane.views;
 using MySql.Data.MySqlClient;
 using Projekat_B_Dnevnik_ishrane.db_views;
+using Projekat_B_Dnevnik_ishrane.views;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -25,72 +27,130 @@ namespace Projekat_B_Dnevnik_ishrane
     private  DateTime selectedDateAndTime;
     private string selectedNameOfTrener;
     private  string selectedSurnameOfTrener;
-    private int candidateId;
+    private int userId;
     private List<PlanView> listOfDietPlans = new List<PlanView>();
     private dnevnik_ishrane_db_Entities dnevnikIshraneEntities = new dnevnik_ishrane_db_Entities();
-    public DietPlanWindow(int candidateId)
+    public DietPlanWindow(int userId)
     {
-      this.candidateId = candidateId;
+      this.userId = userId;
       InitializeComponent();
+      initializeDataGrid();
+    }
 
-      listOfDietPlans = dnevnikIshraneEntities.plan_ishrane.Join(
-     dnevnikIshraneEntities.korisniks, pi => pi.TRENER_KORISNIK_idKORISNIK, k => k.idKORISNIK, (pi, k) =>
-     new PlanView
-     {
-       DateAndTime = pi.DatumVrijeme,
-       IdCandidate = pi.KANDIDAT_KORISNIK_idKORISNIK,
-       SurnameOfTrener = k.Prezime,
-       NameOfTrener = k.Ime,
-       IdPlan = pi.idPLAN_ISHRANE
-     })
-       .Where(elem => elem.IdCandidate == candidateId).ToList();
-
-      var list = new List<dynamic>();
-      int previousId = 0;
-      foreach (var elem in listOfDietPlans)
-      {// i%7 da ne prikazuje za svaki dan posebno jedan te isti plan
-        if (previousId!=elem.IdPlan)
-        {
-          list.Add(new
-          {
-            ImeTrenera = elem.NameOfTrener,
-            PrezimeTrenera = elem.SurnameOfTrener,
-            DatumVrijeme = elem.DateAndTime
-
-          });
-        }
-        previousId = elem.IdPlan;
-      }
-      dataGridViewDietPlan.ItemsSource = list;
-      if (MainWindow.checkIfUserIsCandidate(candidateId))
+    private void initializeDataGrid()
+    {
+      if (MainWindow.checkIfUserIsCandidate(userId))
       {
+        listOfDietPlans = dnevnikIshraneEntities.plan_ishrane.Join(
+       dnevnikIshraneEntities.korisniks, pi => pi.TRENER_KORISNIK_idKORISNIK, k => k.idKORISNIK, (pi, k) =>
+       new PlanView
+       {
+         DateAndTime = pi.DatumVrijeme,
+         IdCandidate = pi.KANDIDAT_KORISNIK_idKORISNIK,
+         SurnameOfTrener = k.Prezime,
+         NameOfTrener = k.Ime,
+         IdPlan = pi.idPLAN_ISHRANE
+       })
+         .Where(elem => elem.IdCandidate == userId).ToList();
 
+        var list = new List<dynamic>();
+        int previousId = 0;
+        foreach (var elem in listOfDietPlans)
+        {// i%7 da ne prikazuje za svaki dan posebno jedan te isti plan
+          if (previousId != elem.IdPlan)
+          {
+            list.Add(new
+            {
+              ImeTrenera = elem.NameOfTrener,
+              PrezimeTrenera = elem.SurnameOfTrener,
+              DatumVrijeme = elem.DateAndTime
+
+            });
+          }
+          previousId = elem.IdPlan;
+        }
+        dataGridViewDietPlan.ItemsSource = list;
+
+        addingDietPlan.Visibility = Visibility.Hidden;
         dataGridViewDietPlan.Columns[3].Visibility = Visibility.Hidden;
         dataGridViewDietPlan.Columns[4].Visibility = Visibility.Hidden;
         dataGridViewDietPlan.Columns[6].Visibility = Visibility.Hidden;
         dataGridViewDietPlan.Columns[7].Visibility = Visibility.Hidden;
       }
+      else
+      {
+        listOfDietPlans = dnevnikIshraneEntities.plan_ishrane.Join(
+    dnevnikIshraneEntities.korisniks, pi => pi.KANDIDAT_KORISNIK_idKORISNIK, k => k.idKORISNIK, (pi, k) =>
+    new PlanView
+    {
+      DateAndTime = pi.DatumVrijeme,
+      IdCandidate = pi.KANDIDAT_KORISNIK_idKORISNIK,
+      IdCoach = pi.TRENER_KORISNIK_idKORISNIK,
+      SurnameOfCandidate = k.Prezime,
+      NameOfCandidate = k.Ime,
+      IdPlan = pi.idPLAN_ISHRANE
+    })
+      .Where(elem => elem.IdCoach == userId).ToList();
+
+        var list = new List<dynamic>();
+        int previousId = 0;
+        foreach (var elem in listOfDietPlans)
+        {// i%7 da ne prikazuje za svaki dan posebno jedan te isti plan
+          if (previousId != elem.IdPlan)
+          {
+            list.Add(new
+            {
+              ImeKandidata = elem.NameOfCandidate,
+              PrezimeKandidata = elem.SurnameOfCandidate,
+              DatumVrijeme = elem.DateAndTime
+
+            });
+          }
+          previousId = elem.IdPlan;
+        }
+        dataGridViewDietPlan.ItemsSource = list;
+
+        dataGridViewDietPlan.Columns[0].Visibility = Visibility.Hidden;
+        dataGridViewDietPlan.Columns[1].Visibility = Visibility.Hidden;
+      }
     }
 
-
-
-    /*private void btnDelete_Click(object sender, EventArgs e)
+    private void btnDelete_Click(object sender, RoutedEventArgs e)
     {
 
-    }*/
+      dynamic dataRowView = ((Button)e.Source).DataContext;      string nameOfCandidate = dataRowView.ImeKandidata;
+      string surnameOfCandidate = dataRowView.PrezimeKandidata;
+      DateTime dateTime =Convert.ToDateTime(dataRowView.DatumVrijeme);
+      List< PlanView> listOfPlanViews = dnevnikIshraneEntities.plan_ishrane.Join(
+    dnevnikIshraneEntities.korisniks, pi => pi.KANDIDAT_KORISNIK_idKORISNIK, k => k.idKORISNIK, (pi, k) =>
+    new PlanView
+    {
+      DateAndTime = pi.DatumVrijeme,
+      IdCoach = pi.TRENER_KORISNIK_idKORISNIK,
+      IdCandidate=k.idKORISNIK,
+      NameOfCandidate = k.Ime,
+      SurnameOfCandidate = k.Prezime,
+      IdPlan=pi.idPLAN_ISHRANE
+    })
+      .Where(elem => elem.IdCoach == userId && elem.NameOfCandidate.Equals(nameOfCandidate) && elem.SurnameOfCandidate.Equals(surnameOfCandidate)).ToList();
+      DateTime date = dateTime.Date.AddHours(dateTime.Hour).AddMinutes(dateTime.Minute);
+      List<PlanView> planForSelectedDateTime = listOfPlanViews.Where(elem => elem.DateAndTime.Date.AddHours(elem.DateAndTime.Hour).AddMinutes(elem.DateAndTime.Minute).Equals(date)).ToList();
+      foreach(var elem in planForSelectedDateTime) {
+        plan_ishrane dietPlan = dnevnikIshraneEntities.plan_ishrane.Where(el => el.idPLAN_ISHRANE == elem.IdPlan).First();
+        dnevnikIshraneEntities.plan_ishrane.Remove(dietPlan);
+        dnevnikIshraneEntities.SaveChanges();
+      }
+      initializeDataGrid();
+    }
 
     private void btnView_Click(object sender, RoutedEventArgs e)
     {
       try
       {
         dynamic dataRowView = ((Button)e.Source).DataContext;
-        string name = dataRowView.ImeTrenera;
-        string surname = dataRowView.PrezimeTrenera;
         DateTime dateAndTime = dataRowView.DatumVrijeme;
-        selectedNameOfTrener = name;
-        selectedSurnameOfTrener = surname;
         selectedDateAndTime = dateAndTime;
-        Window dietPlanScheduleWindow = new DietPlanScheduleWindow(selectedDateAndTime,selectedNameOfTrener,selectedSurnameOfTrener,this);
+        Window dietPlanScheduleWindow = new DietPlanScheduleWindow(selectedDateAndTime,userId,this);
         this.Hide();
         dietPlanScheduleWindow.Show();
 
@@ -109,25 +169,27 @@ namespace Projekat_B_Dnevnik_ishrane
 
     private void btnUpdate_Click(object sender, RoutedEventArgs e)
     {
-
+      dynamic dataRowView = ((Button)e.Source).DataContext;
+      DateTime selectedDateAndTime = dataRowView.DatumVrijeme;
+      string selectedNameOfCandidate = dataRowView.ImeKandidata;
+      string selectedSurnameOfCandidate = dataRowView.PrezimeKandidata;
+      Window window = new UpdateWindow(userId,"dietPlan",selectedDateAndTime,selectedNameOfCandidate,selectedSurnameOfCandidate);
+      this.Hide();
+      window.Show();
     }
 
-    private void btnDelete_Click(object sender, RoutedEventArgs e)
-    {
-
-    }
 
     private void Previous_Window_Click(object sender, RoutedEventArgs e)
     {
         this.Hide();
-        if (MainWindow.checkIfUserIsCandidate(candidateId))
+        if (MainWindow.checkIfUserIsCandidate(userId))
         {
-          KandidatWindow kandidatWindow = new KandidatWindow(candidateId,dnevnikIshraneEntities);
+          KandidatWindow kandidatWindow = new KandidatWindow(userId,dnevnikIshraneEntities);
           kandidatWindow.Show();
         }
         else
         {
-          TrenerWindow trenerWindow = new TrenerWindow();
+        TrenerWindow trenerWindow = new TrenerWindow(userId, dnevnikIshraneEntities);
           trenerWindow.Show();
         }
     }
@@ -135,6 +197,11 @@ namespace Projekat_B_Dnevnik_ishrane
     private void Exit_Click(object sender, RoutedEventArgs e)
     {
       Application.Current.Shutdown();
+    }
+
+    private void addDietPlan(object sender, MouseButtonEventArgs e)
+    {
+
     }
     /*private void btnDelete_Click(object sender, RoutedEventArgs e)
 {

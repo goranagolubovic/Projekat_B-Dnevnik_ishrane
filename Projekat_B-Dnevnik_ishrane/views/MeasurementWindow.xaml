@@ -6,30 +6,37 @@
         xmlns:local="clr-namespace:Projekat_B_Dnevnik_ishrane.views"
         mc:Ignorable="d"
         Title="MeasurementWindow" Height="606.818" Width="831.655">
-    <Grid Background="#FFDFF4ED">
-        <DataGrid x:Name="dataGridViewMeasurementPlan" HorizontalAlignment="Left" Height="290" Margin="102,144,0,0" VerticalAlignment="Top" Width="635" AutoGenerateColumns="False" Background="#FFDFE6F4" SelectionChanged="dataGridViewDietPlan_SelectionChanged">
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="Ime trenera" Binding="{Binding Path='ImeTrenera'}" IsReadOnly="True" />
-                <DataGridTextColumn Header="Prezime trenera" Binding="{Binding Path='PrezimeTrenera'}" IsReadOnly="True" />
-                <DataGridTextColumn Header="Datum i vrijeme" Binding="{Binding Path='DatumVrijeme'}" IsReadOnly="True" />
+  <Grid Background="#FFDFF4ED">
+    <DataGrid x:Name="dataGridViewMeasurementPlan" HorizontalAlignment="Left" Height="290" Margin="102,144,0,0" VerticalAlignment="Top" Width="635" AutoGenerateColumns="False" Background="#FFDFE6F4" SelectionChanged="dataGridViewDietPlan_SelectionChanged">
+      <DataGrid.Columns>
+        <DataGridTextColumn Header="Ime trenera" Binding="{Binding Path='ImeTrenera'}" IsReadOnly="True" />
+        <DataGridTextColumn Header="Prezime trenera" Binding="{Binding Path='PrezimeTrenera'}" IsReadOnly="True" />
+        <DataGridTextColumn Header="Datum i vrijeme" Binding="{Binding Path='DatumVrijeme'}" IsReadOnly="True" />
         <DataGridTextColumn Header="Tezina" Binding="{Binding Path='Tezina'}" IsReadOnly="True" />
         <DataGridTextColumn Header="Ime kandidata" Binding="{Binding Path='ImeKandidata'}" IsReadOnly="True" />
-        <DataGridTextColumn Header="Prezime kandidata" Binding="{Binding Path='PrezimeKandiata'}" IsReadOnly="True" />
+        <DataGridTextColumn Header="Prezime kandidata" Binding="{Binding Path='PrezimeKandidata'}" IsReadOnly="True" />
+        <DataGridTextColumn Header="Godište" Binding="{Binding Path='Godiste'}" IsReadOnly="True" />
+        
         <DataGridTemplateColumn Header="Ažuriraj">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <Button Name="btnUpdate" Content="Ažuriraj" Click="btnUpdate_Click" />
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
-                <DataGridTemplateColumn Header="Izbriši">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <Button Name="btnDelete" Content="Izbriši" Click="btnDelete_Click" />
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
-            </DataGrid.Columns>
-        </DataGrid>
-    </Grid>
+          <DataGridTemplateColumn.CellTemplate>
+            <DataTemplate>
+              <Button Name="btnUpdate" Content="Ažuriraj" Click="btnUpdate_Click" />
+            </DataTemplate>
+          </DataGridTemplateColumn.CellTemplate>
+        </DataGridTemplateColumn>
+        <DataGridTemplateColumn Header="Izbriši">
+          <DataGridTemplateColumn.CellTemplate>
+            <DataTemplate>
+              <Button Name="btnDelete" Content="Izbriši" Click="btnDelete_Click" />
+            </DataTemplate>
+          </DataGridTemplateColumn.CellTemplate>
+        </DataGridTemplateColumn>
+      </DataGrid.Columns>
+    </DataGrid>
+    <Canvas x:Name="addWeightCanvas" PreviewMouseDown="addWeight" HorizontalAlignment="Left" Height="73" Margin="655,10,0,0" VerticalAlignment="Top" Width="82">
+      <Canvas.Background>
+        <ImageBrush ImageSource="gain-weight.png"/>
+      </Canvas.Background>
+    </Canvas>
+  </Grid>
 </Window>

@@ -6,54 +6,59 @@
         xmlns:local="clr-namespace:Projekat_B_Dnevnik_ishrane"
         mc:Ignorable="d"
         Title="DietPlanWindow" Height="750" Width="618">
-    <Grid Background="#FFF0ED89">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="221*"/>
-            <ColumnDefinition Width="35*"/>
-            <ColumnDefinition Width="344*"/>
-        </Grid.ColumnDefinitions>
-        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Height="52" Margin="122,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="478" FontSize="48" Foreground="#FF408090" Grid.ColumnSpan="3" FontFamily="Lucida Calligraphy"><Run Text=" Plan ishrane"/><LineBreak/><Run/><LineBreak/><Run Text="  "/><LineBreak/><Run Text=" "/><LineBreak/><Run Text="ISHRANE"/></TextBlock>
-        <DataGrid x:Name="dataGridViewDietPlan" HorizontalAlignment="Left" Height="290" Margin="0,160,0,0" VerticalAlignment="Top" Width="611" AutoGenerateColumns="False" Grid.ColumnSpan="3" Background="#FFCDE5C9" SelectionChanged="dataGridViewDietPlan_SelectionChanged">
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="Ime trenera" Binding="{Binding Path='ImeTrenera'}" IsReadOnly="True" />
-                <DataGridTextColumn Header="Prezime trenera" Binding="{Binding Path='PrezimeTrenera'}" IsReadOnly="True" />
-                <DataGridTextColumn Header="Datum i vrijeme" Binding="{Binding Path='DatumVrijeme'}" IsReadOnly="True" />
-                <DataGridTextColumn Header="Ime kandidata" Binding="{Binding Path='ImeKandidata'}" IsReadOnly="True" />
-                <DataGridTextColumn Header="Prezime kandidata" Binding="{Binding Path='PrezimeKandiata'}" IsReadOnly="True" />
-                <DataGridTemplateColumn Header="Pregledaj">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <Button Name="btnView" Content="Pregledaj" Click="btnView_Click" />
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
-                <DataGridTemplateColumn Header="Ažuriraj">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <Button Name="btnUpdate" Content="Ažuriraj" Click="btnUpdate_Click" />
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
-                <DataGridTemplateColumn Header="Izbriši">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <Button Name="btnDelete" Content="Izbriši" Click="btnDelete_Click" />
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
-            </DataGrid.Columns>
-        </DataGrid>
-        <Button Margin="84,455,40,183" Click="Previous_Window_Click" Background="#FFF0ED89" BorderBrush="#FFF0ED89"  >
-            <Image  Source="/images/previous_page.png" Stretch="Uniform" Height="34" Width="57" RenderTransformOrigin="0.539,1.916">
-            </Image>
+  <Grid Background="#FFF0ED89">
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="221*"/>
+      <ColumnDefinition Width="35*"/>
+      <ColumnDefinition Width="344*"/>
+    </Grid.ColumnDefinitions>
+    <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Height="52" Margin="122,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="357" FontSize="48" Foreground="#FF408090" Grid.ColumnSpan="3" FontFamily="Lucida Calligraphy"><Run Text=" Plan ishrane"/><LineBreak/><Run/><LineBreak/><Run Text="  "/><LineBreak/><Run Text=" "/><LineBreak/><Run Text="ISHRANE"/></TextBlock>
+    <DataGrid x:Name="dataGridViewDietPlan" HorizontalAlignment="Left" Height="290" Margin="0,160,0,0" VerticalAlignment="Top" Width="611" AutoGenerateColumns="False" Grid.ColumnSpan="3" Background="#FFCDE5C9" SelectionChanged="dataGridViewDietPlan_SelectionChanged">
+      <DataGrid.Columns>
+        <DataGridTextColumn Header="Ime trenera" Binding="{Binding Path='ImeTrenera'}" IsReadOnly="True" />
+        <DataGridTextColumn Header="Prezime trenera" Binding="{Binding Path='PrezimeTrenera'}" IsReadOnly="True" />
+        <DataGridTextColumn Header="Datum i vrijeme" Binding="{Binding Path='DatumVrijeme'}" IsReadOnly="True" />
+        <DataGridTextColumn Header="Ime kandidata" Binding="{Binding Path='ImeKandidata'}" IsReadOnly="True" />
+        <DataGridTextColumn Header="Prezime kandidata" Binding="{Binding Path='PrezimeKandidata'}" IsReadOnly="True" />
+        <DataGridTemplateColumn Header="Pregledaj">
+          <DataGridTemplateColumn.CellTemplate>
+            <DataTemplate>
+              <Button Name="btnView" Content="Pregledaj" Click="btnView_Click" />
+            </DataTemplate>
+          </DataGridTemplateColumn.CellTemplate>
+        </DataGridTemplateColumn>
+        <DataGridTemplateColumn Header="Ažuriraj">
+          <DataGridTemplateColumn.CellTemplate>
+            <DataTemplate>
+              <Button Name="btnUpdate" Content="Ažuriraj" Click="btnUpdate_Click" />
+            </DataTemplate>
+          </DataGridTemplateColumn.CellTemplate>
+        </DataGridTemplateColumn>
+        <DataGridTemplateColumn Header="Izbriši">
+          <DataGridTemplateColumn.CellTemplate>
+            <DataTemplate>
+              <Button Name="btnDelete" Content="Izbriši" Click="btnDelete_Click" />
+            </DataTemplate>
+          </DataGridTemplateColumn.CellTemplate>
+        </DataGridTemplateColumn>
+      </DataGrid.Columns>
+    </DataGrid>
+    <Button Margin="84,455,40,183" Click="Previous_Window_Click" Background="#FFF0ED89" BorderBrush="#FFF0ED89"  >
+      <Image  Source="/images/previous_page.png" Stretch="Uniform" Height="34" Width="57" RenderTransformOrigin="0.539,1.916">
+      </Image>
 
-        </Button>
-        <Button Margin="158,455,89,183" Click="Exit_Click" Background="#FFF0ED89" BorderBrush="#FFF0ED89" Grid.Column="2"  >
-            <Image  Source="/images/power-off1.png" Stretch="Uniform" Height="34" Width="57" RenderTransformOrigin="0.539,1.916">
-            </Image>
+    </Button>
+    <Button Margin="158,455,89,183" Click="Exit_Click" Background="#FFF0ED89" BorderBrush="#FFF0ED89" Grid.Column="2"  >
+      <Image  Source="/images/power-off1.png" Stretch="Uniform" Height="34" Width="57" RenderTransformOrigin="0.539,1.916">
+      </Image>
 
-        </Button>
+    </Button>
+    <Canvas x:Name="addingDietPlan" PreviewMouseDown="addDietPlan" Grid.Column="2" HorizontalAlignment="Left" Height="71" Margin="237.2,40,0,0" VerticalAlignment="Top" Width="71">
+      <Canvas.Background>
+        <ImageBrush ImageSource="add.png"/>
+      </Canvas.Background>
+    </Canvas>
 
-    </Grid>
+  </Grid>
 </Window>
 

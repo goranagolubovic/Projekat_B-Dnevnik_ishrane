@@ -21,18 +21,17 @@ namespace Projekat_B_Dnevnik_ishrane
   public partial class DietPlanScheduleWindow : Window
   {
     private static dnevnik_ishrane_db_Entities dnevnikIshraneEntities = new dnevnik_ishrane_db_Entities();
+    private List<plan_ishrane> listDietPlan = new List<plan_ishrane>();
     private List<plan_ishrane> selectedDietPlan = new List<plan_ishrane>();
     private DateTime selectedDateTime;
-    private string nameOfTrener;
-    private string surnameOfTrener;
     private Window previousWindow;
-    public DietPlanScheduleWindow(DateTime selectedDateTime,string nameOfTrener,string surnameOfTrener,Window previousWindow)
+    private int userId;
+    public DietPlanScheduleWindow(DateTime selectedDateTime,int userId,Window previousWindow)
     {
 
       this.selectedDateTime = selectedDateTime;
-      this.nameOfTrener = nameOfTrener;
-      this.surnameOfTrener = surnameOfTrener;
       this.previousWindow = previousWindow;
+      this.userId = userId;
       InitializeComponent();
       InitializeFields();
 
@@ -40,8 +39,10 @@ namespace Projekat_B_Dnevnik_ishrane
 
     private void InitializeFields()
     {
-      selectedDietPlan = dnevnikIshraneEntities.plan_ishrane
-        .Where(el => el.DatumVrijeme.Equals(selectedDateTime)).ToList();
+      DateTime date1 = selectedDateTime.Date.AddHours(selectedDateTime.Hour).AddMinutes(selectedDateTime.Minute);
+      listDietPlan = dnevnikIshraneEntities.plan_ishrane
+        .Where(el=> el.KANDIDAT_KORISNIK_idKORISNIK==userId || el.TRENER_KORISNIK_idKORISNIK == userId).ToList();
+      selectedDietPlan = listDietPlan.Where(el => el.DatumVrijeme.Date.AddHours(el.DatumVrijeme.Hour).AddMinutes(el.DatumVrijeme.Minute).Equals(date1)).ToList();
       plan_ishrane mondayDietPlan = selectedDietPlan.Where(elem => elem.Dan.Equals("ponedjeljak")).First();
       if (mondayDietPlan.Opis.Contains(","))
       {
