@@ -54,20 +54,18 @@ namespace Projekat_B_Dnevnik_ishrane
          .Where(elem => elem.IdCandidate == userId).ToList();
 
         var list = new List<dynamic>();
-        int previousId = 0;
-        foreach (var elem in listOfDietPlans)
+        for (int i=0;i<listOfDietPlans.Count;i++)
         {// i%7 da ne prikazuje za svaki dan posebno jedan te isti plan
-          if (previousId != elem.IdPlan)
+          if ((listOfDietPlans[i].IdPlan % 7)==0)
           {
             list.Add(new
             {
-              ImeTrenera = elem.NameOfTrener,
-              PrezimeTrenera = elem.SurnameOfTrener,
-              DatumVrijeme = elem.DateAndTime
+              ImeTrenera = listOfDietPlans[i].NameOfTrener,
+              PrezimeTrenera = listOfDietPlans[i].SurnameOfTrener,
+              DatumVrijeme = listOfDietPlans[i].DateAndTime
 
             });
           }
-          previousId = elem.IdPlan;
         }
         dataGridViewDietPlan.ItemsSource = list;
 
@@ -93,20 +91,18 @@ namespace Projekat_B_Dnevnik_ishrane
       .Where(elem => elem.IdCoach == userId).ToList();
 
         var list = new List<dynamic>();
-        int previousId = 0;
-        foreach (var elem in listOfDietPlans)
+        for (int i = 0; i < listOfDietPlans.Count; i++)
         {// i%7 da ne prikazuje za svaki dan posebno jedan te isti plan
-          if (previousId != elem.IdPlan)
-          {
+          if ((listOfDietPlans[i].IdPlan % 7) == 0)
+            {
             list.Add(new
             {
-              ImeKandidata = elem.NameOfCandidate,
-              PrezimeKandidata = elem.SurnameOfCandidate,
-              DatumVrijeme = elem.DateAndTime
+              ImeKandidata = listOfDietPlans[i].NameOfCandidate,
+              PrezimeKandidata = listOfDietPlans[i].SurnameOfCandidate,
+              DatumVrijeme = listOfDietPlans[i].DateAndTime
 
             });
           }
-          previousId = elem.IdPlan;
         }
         dataGridViewDietPlan.ItemsSource = list;
 
@@ -173,7 +169,7 @@ namespace Projekat_B_Dnevnik_ishrane
       DateTime selectedDateAndTime = dataRowView.DatumVrijeme;
       string selectedNameOfCandidate = dataRowView.ImeKandidata;
       string selectedSurnameOfCandidate = dataRowView.PrezimeKandidata;
-      Window window = new UpdateWindow(userId,"dietPlan",selectedDateAndTime,selectedNameOfCandidate,selectedSurnameOfCandidate);
+      Window window = new PlanWindow(userId,"dietPlan",selectedDateAndTime,selectedNameOfCandidate,selectedSurnameOfCandidate);
       this.Hide();
       window.Show();
     }
@@ -201,7 +197,9 @@ namespace Projekat_B_Dnevnik_ishrane
 
     private void addDietPlan(object sender, MouseButtonEventArgs e)
     {
-
+      this.Hide();
+      Window window = new PlanWindow(userId, "dietPlan");
+      window.Show();
     }
     /*private void btnDelete_Click(object sender, RoutedEventArgs e)
 {

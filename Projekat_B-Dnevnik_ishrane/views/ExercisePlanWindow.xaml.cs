@@ -81,24 +81,22 @@ namespace Projekat_B_Dnevnik_ishrane
          .Where(elem => elem.IdCandidate == userId).ToList();
 
         var list = new List<dynamic>();
-        int previousId = 0;
-        foreach (var elem in listOfExercisePlans)
+        for (int i = 0; i < listOfExercisePlans.Count; i++)
         {// i%7 da ne prikazuje za svaki dan posebno jedan te isti plan
-          if (previousId != elem.IdPlan)
+          if ((listOfExercisePlans[i].IdPlan % 7) == 0)
           {
             list.Add(new
             {
-              ImeTrenera = elem.NameOfTrener,
-              PrezimeTrenera = elem.SurnameOfTrener,
-              DatumVrijeme = elem.DateAndTime
+              ImeTrenera = listOfExercisePlans[i].NameOfTrener,
+              PrezimeTrenera = listOfExercisePlans[i].SurnameOfTrener,
+              DatumVrijeme = listOfExercisePlans[i].DateAndTime
 
             });
           }
-          previousId = elem.IdPlan;
         }
         dataGridViewExercisePlan.ItemsSource = list;
 
-
+        addingExercise.Visibility = Visibility.Hidden;
         dataGridViewExercisePlan.Columns[3].Visibility = Visibility.Hidden;
         dataGridViewExercisePlan.Columns[4].Visibility = Visibility.Hidden;
         dataGridViewExercisePlan.Columns[6].Visibility = Visibility.Hidden;
@@ -121,19 +119,18 @@ namespace Projekat_B_Dnevnik_ishrane
 
         var list = new List<dynamic>();
         int previousId = 0;
-        foreach (var elem in listOfExercisePlans)
+        for (int i = 0; i < listOfExercisePlans.Count; i++)
         {// i%7 da ne prikazuje za svaki dan posebno jedan te isti plan
-          if (previousId != elem.IdPlan)
+          if ((listOfExercisePlans[i].IdPlan % 7) == 0)
           {
             list.Add(new
             {
-              ImeKandidata = elem.NameOfCandidate,
-              PrezimeKandidata = elem.SurnameOfCandidate,
-              DatumVrijeme = elem.DateAndTime
+              ImeKandidata = listOfExercisePlans[i].NameOfCandidate,
+              PrezimeKandidata = listOfExercisePlans[i].SurnameOfCandidate,
+              DatumVrijeme = listOfExercisePlans[i].DateAndTime
 
             });
           }
-          previousId = elem.IdPlan;
         }
         dataGridViewExercisePlan.ItemsSource = list;
 
@@ -148,7 +145,7 @@ namespace Projekat_B_Dnevnik_ishrane
       DateTime selectedDateAndTime = dataRowView.DatumVrijeme;
       string selectedNameOfCandidate = dataRowView.ImeKandidata;
       string selectedSurnameOfCandidate = dataRowView.PrezimeKandidata;
-      Window window = new UpdateWindow(userId, "exercisePlan", selectedDateAndTime, selectedNameOfCandidate, selectedSurnameOfCandidate);
+      Window window = new PlanWindow(userId, "exercisePlan", selectedDateAndTime, selectedNameOfCandidate, selectedSurnameOfCandidate);
       this.Hide();
       window.Show();
     }
@@ -305,6 +302,13 @@ namespace Projekat_B_Dnevnik_ishrane
     private void dataGridViewExercisePlan_SelectionChanged(object sender, SelectionChangedEventArgs e)
     {
 
+    }
+
+    private void addExercisePlan(object sender, MouseButtonEventArgs e)
+    {
+      this.Hide();
+      Window window = new PlanWindow(userId, "exercisePlan");
+      window.Show();
     }
   }
   }

@@ -25,67 +25,67 @@ set @datetime_var=current_timestamp();
 insert into plan_ishrane
 values(1,@datetime_var,"Proja sa sirom,Voće,Bijela čorba,Salata sa boranijom",3,2,"ponedjeljak");
 insert into plan_ishrane
-values(1,@datetime_var,"Pita sa prosom,Voće,Punjene paprike,Musli sa jogurtom",3,2,"utorak");
+values(2,@datetime_var,"Pita sa prosom,Voće,Punjene paprike,Musli sa jogurtom",3,2,"utorak");
 insert into plan_ishrane
-values(1,@datetime_var,"Palačinke od banane,Voće,Sočivo sa povrćem,Integralni sutlijaš",3,2,"srijeda");
+values(3,@datetime_var,"Palačinke od banane,Voće,Sočivo sa povrćem,Integralni sutlijaš",3,2,"srijeda");
 insert into plan_ishrane
-values(1,@datetime_var,"Namaz od leblebije,Voće,Potaž sa tikvicama,Salata sa tunjevinom",3,2,"četvrtak");
+values(4,@datetime_var,"Namaz od leblebije,Voće,Potaž sa tikvicama,Salata sa tunjevinom",3,2,"četvrtak");
 insert into plan_ishrane
-values(1,@datetime_var,"Pita od heljde,Voće,Riba,Humus i tost",3,2,"petak");
+values(5,@datetime_var,"Pita od heljde,Voće,Riba,Humus i tost",3,2,"petak");
 insert into plan_ishrane
-values(1,@datetime_var,"Kukuruzni hljeb i riblji namaz,Voće,Varivo od piletine,Proja sa tikvicama,Kiselo mlijeko",3,2,"subota");
+values(6,@datetime_var,"Kukuruzni hljeb i riblji namaz,Voće,Varivo od piletine,Proja sa tikvicama,Kiselo mlijeko",3,2,"subota");
 insert into plan_ishrane
-values(1,@datetime_var,"Palačinka od heljdinog brašna,Voće,Rižoto sa piletinom,Paprike sa sirom",3,2,"nedjelja");
+values(7,@datetime_var,"Palačinka od heljdinog brašna,Voće,Rižoto sa piletinom,Paprike sa sirom",3,2,"nedjelja");
 
 set @datetime_var=current_timestamp();
 insert into plan_ishrane
-values(2,@datetime_var,"Proteinske palačinke,Jogurt,Pileće ćufte,Ovsena kaša",1,4,"ponedjeljak");
+values(8,@datetime_var,"Proteinske palačinke,Jogurt,Pileće ćufte,Ovsena kaša",1,4,"ponedjeljak");
 insert into plan_ishrane
-values(2,@datetime_var,"Omlet sa šampinjonima,Voće,Losos i špargle,Riblja pašteta",1,4,"utorak");
+values(9,@datetime_var,"Omlet sa šampinjonima,Voće,Losos i špargle,Riblja pašteta",1,4,"utorak");
 insert into plan_ishrane
-values(2,@datetime_var,"Palačinke sa aronijom,Brusketi sa mocarelom,Sočivo sa povrćem,Grčka salata",1,4,"srijeda");
+values(10,@datetime_var,"Palačinke sa aronijom,Brusketi sa mocarelom,Sočivo sa povrćem,Grčka salata",1,4,"srijeda");
 insert into plan_ishrane
-values(2,@datetime_var,"Humus i tost,Voće,Low carb piletina,Grčka salata",1,4,"četvrtak");
+values(11,@datetime_var,"Humus i tost,Voće,Low carb piletina,Grčka salata",1,4,"četvrtak");
 insert into plan_ishrane
-values(2,@datetime_var,"Muffini bez brašna,Jogurt sa sjemenkama,Riba,Ovsena kaša",1,4,"petak");
+values(12,@datetime_var,"Muffini bez brašna,Jogurt sa sjemenkama,Riba,Ovsena kaša",1,4,"petak");
 insert into plan_ishrane
-values(2,@datetime_var,"Omlet sa povrćem,Voće,Varivo od piletine,Mango sutlijaš",1,4,"subota");
+values(13,@datetime_var,"Omlet sa povrćem,Voće,Varivo od piletine,Mango sutlijaš",1,4,"subota");
 insert into plan_ishrane
-values(2,@datetime_var,"Zeleni sendvič,Voće,Rižoto sa piletinom,Paprike sa sirom",1,4,"nedjelja");
+values(14,@datetime_var,"Zeleni sendvič,Voće,Rižoto sa piletinom,Paprike sa sirom",1,4,"nedjelja");
 
 set @datetime_var=current_timestamp();
 
 insert into plan_vjezbanja
 values(1, @datetime_var,"Gornji dio tijela,Šetanje",1,4,"ponedjeljak");
 insert into plan_vjezbanja
-values(1, @datetime_var,"Kardio",1,4,"utorak");
+values(2, @datetime_var,"Kardio",1,4,"utorak");
 insert into plan_vjezbanja
-values(1, @datetime_var,"Odmor",1,4,"srijeda");
+values(3, @datetime_var,"Odmor",1,4,"srijeda");
 insert into plan_vjezbanja
-values(1, @datetime_var,"Donji dio tijela,Trčanje",1,4,"četvrtak");
+values(4, @datetime_var,"Donji dio tijela,Trčanje",1,4,"četvrtak");
 insert into plan_vjezbanja
-values(1, @datetime_var,"Odmor",1,4,"petak");
+values(5, @datetime_var,"Odmor",1,4,"petak");
 insert into plan_vjezbanja
-values(1, @datetime_var,"Trčanje",1,4,"subota");
+values(6, @datetime_var,"Trčanje",1,4,"subota");
 insert into plan_vjezbanja
-values(1, @datetime_var,"Odmor",1,4,"nedjelja");
+values(7, @datetime_var,"Odmor",1,4,"nedjelja");
 
 set @datetime_var=current_timestamp();
 
 insert into plan_vjezbanja
-values(2, @datetime_var,"Donji dio tijela,Plivanje",3,5,"ponedjeljak");
+values(8, @datetime_var,"Donji dio tijela,Plivanje",3,5,"ponedjeljak");
 insert into plan_vjezbanja
-values(2, @datetime_var,"Gornji dio tijela,Šetanje",3,5,"utorak");
+values(9, @datetime_var,"Gornji dio tijela,Šetanje",3,5,"utorak");
 insert into plan_vjezbanja
-values(2, @datetime_var,"Šetanje",3,5,"srijeda");
+values(10, @datetime_var,"Šetanje",3,5,"srijeda");
 insert into plan_vjezbanja
-values(2, @datetime_var,"Odmor",3,5,"četvrtak");
+values(11, @datetime_var,"Odmor",3,5,"četvrtak");
 insert into plan_vjezbanja
-values(2, @datetime_var,"Donji dio tijela,Šetanje",3,5,"petak");
+values(12, @datetime_var,"Donji dio tijela,Šetanje",3,5,"petak");
 insert into plan_vjezbanja
-values(2, @datetime_var,"Trčanje,Šetanje",3,5,"subota");
+values(13, @datetime_var,"Trčanje,Šetanje",3,5,"subota");
 insert into plan_vjezbanja
-values(2, @datetime_var,"Odmor",3,5,"nedjelja");
+values(14, @datetime_var,"Odmor",3,5,"nedjelja");
 
 
 insert into namirnica(idNAMIRNICA,Naziv,KalorijskaVrijednost,Proteini,Masti,UgljikoHidrati)

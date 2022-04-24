@@ -11,10 +11,11 @@ namespace Projekat_B_Dnevnik_ishrane
 {
     using System;
     using System.Collections.Generic;
-    
-    public partial class plan_ishrane
+  using System.ComponentModel.DataAnnotations.Schema;
+
+  public partial class plan_ishrane
     {
-        public int idPLAN_ISHRANE { get; set; }
+    public int idPLAN_ISHRANE { get; set; }
         public System.DateTime DatumVrijeme { get; set; }
         public string Opis { get; set; }
         public int TRENER_KORISNIK_idKORISNIK { get; set; }
