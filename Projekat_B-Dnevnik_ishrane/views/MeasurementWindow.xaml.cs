@@ -1,4 +1,5 @@
 using Projekat_B_Dnevnik_ishrane.db_views;
+using Projekat_B_Dnevnik_ishrane.models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,7 +23,7 @@ namespace Projekat_B_Dnevnik_ishrane.views
   {
     private int userId;
     private List<MeasurementView> listOfMeasurements = new List<MeasurementView>();
-    private dnevnik_ishrane_db_Entities dnevnikIshraneEntities = new dnevnik_ishrane_db_Entities();
+    private dbModel dnevnikIshraneEntities = new dbModel();
 
     public MeasurementWindow(int userId)
     {

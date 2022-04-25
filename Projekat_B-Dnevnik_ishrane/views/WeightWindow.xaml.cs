@@ -1,4 +1,5 @@
 using Dnevnik_ishrane.exceptions;
+using Projekat_B_Dnevnik_ishrane.models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,7 +22,7 @@ namespace Projekat_B_Dnevnik_ishrane.views
   public partial class WeightWindow : Window
   {
     private int userId;
-    private dnevnik_ishrane_db_Entities dnevnikIshraneEntites = new dnevnik_ishrane_db_Entities();
+    private dbModel dnevnikIshraneEntites = new dbModel();
     private Window previousWindow;
     public WeightWindow(int userId,Window previousWindow)
     {

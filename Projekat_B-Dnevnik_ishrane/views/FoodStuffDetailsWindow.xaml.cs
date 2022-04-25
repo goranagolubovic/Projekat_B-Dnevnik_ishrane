@@ -1,3 +1,4 @@
+using Projekat_B_Dnevnik_ishrane.models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,7 +23,7 @@ namespace Projekat_B_Dnevnik_ishrane.views
     private string name;
     private int candidateId;
     private string typeOfMeal;
-    private dnevnik_ishrane_db_Entities dnevnikIshraneEntities = new dnevnik_ishrane_db_Entities();
+    private dbModel dnevnikIshraneEntities = new dbModel();
     private namirnica stuff;
     private double previousAmount;
     private double gkcalValue;

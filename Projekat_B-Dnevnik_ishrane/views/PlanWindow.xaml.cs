@@ -3,6 +3,7 @@ using Dnevnik_ishrane.exceptions;
 using MySql.Data.MySqlClient;
 using Projekat_B_Dnevnik_ishrane;
 using Projekat_B_Dnevnik_ishrane.db_views;
+using Projekat_B_Dnevnik_ishrane.models;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -30,7 +31,7 @@ namespace Dnevnik_ishrane.views
     private string selectedNameOfCandidate;
     private string selectedSurnameOfCandidate;
     private string whatIsAdding;
-    private dnevnik_ishrane_db_Entities dnevnikIshraneEntities = new dnevnik_ishrane_db_Entities();
+    private dbModel dnevnikIshraneEntities = new dbModel();
     private string[] days = { "ponedjeljak", "utorak", "srijeda", "četvrtak", "petak", "subota", "nedjelja" };
     public PlanWindow(int userId,string whatIsAdding)
     {
@@ -186,7 +187,7 @@ namespace Dnevnik_ishrane.views
           return;
         }
       }
-      dnevnik_ishrane_db_Entities db = new dnevnik_ishrane_db_Entities();
+      dbModel db = new dbModel();
       DateTime datetime = DateTime.Now;
       for (int j = 0; j < 7; j++)
       {
@@ -235,7 +236,7 @@ namespace Dnevnik_ishrane.views
           return;
         }
       }
-      dnevnik_ishrane_db_Entities db = new dnevnik_ishrane_db_Entities();
+      dbModel db = new dbModel();
       DateTime datetime = DateTime.Now;
       for (int j = 0; j < 7; j++)
       {
@@ -295,7 +296,7 @@ namespace Dnevnik_ishrane.views
           Opis = texts[j].Text.Replace(Environment.NewLine, ","),
           DatumVrijeme = datetime
         };
-        dnevnik_ishrane_db_Entities db = new dnevnik_ishrane_db_Entities();
+        dbModel db = new dbModel();
         db.plan_ishrane.Add(planIshrane);
         db.Entry(planIshrane).State = System.Data.Entity.EntityState.Modified;
         db.SaveChanges();
@@ -332,7 +333,7 @@ namespace Dnevnik_ishrane.views
           Opis = texts[j].Text.Replace(Environment.NewLine, ","),
           DatumVrijeme = datetime
         };
-        dnevnik_ishrane_db_Entities db = new dnevnik_ishrane_db_Entities();
+        dbModel db = new dbModel();
         db.plan_vjezbanja.Add(planVjezbanja);
         db.Entry(planVjezbanja).State = System.Data.Entity.EntityState.Modified;
         db.SaveChanges();

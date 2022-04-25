@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Projekat_B_Dnevnik_ishrane.models;
 using Projekat_B_Dnevnik_ishrane.views;
 namespace Projekat_B_Dnevnik_ishrane
 {
@@ -20,7 +21,7 @@ namespace Projekat_B_Dnevnik_ishrane
     /// </summary>
     public partial class MainWindow : Window
     {
-    private static dnevnik_ishrane_db_Entities dnevnikIshraneEntities = new dnevnik_ishrane_db_Entities();
+    private static dbModel dnevnikIshraneEntities = new dbModel();
     private korisnik user;
     private static List<kandidat> listOfCandidates = new List<kandidat>();
     private int matchedUserId = -1;

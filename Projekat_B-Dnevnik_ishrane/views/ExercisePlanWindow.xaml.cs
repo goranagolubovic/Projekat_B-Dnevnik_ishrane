@@ -1,6 +1,7 @@
 using Dnevnik_ishrane.views;
 using MySql.Data.MySqlClient;
 using Projekat_B_Dnevnik_ishrane.db_views;
+using Projekat_B_Dnevnik_ishrane.models;
 using Projekat_B_Dnevnik_ishrane.views;
 using System;
 using System.Collections.Generic;
@@ -28,7 +29,7 @@ namespace Projekat_B_Dnevnik_ishrane
     private string selectedSurnameOfTrener;
     private int userId;
     private List<PlanView> listOfExercisePlans = new List<PlanView>();
-    private dnevnik_ishrane_db_Entities dnevnikIshraneEntities = new dnevnik_ishrane_db_Entities();
+    private dbModel dnevnikIshraneEntities = new dbModel();
     public ExercisePlanWindow(int candidateId)
     {
       this.userId = candidateId;

@@ -1,4 +1,5 @@
 using MySql.Data.MySqlClient;
+using Projekat_B_Dnevnik_ishrane.models;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -20,7 +21,7 @@ namespace Projekat_B_Dnevnik_ishrane
   /// </summary>
   public partial class ExercisePlanScheduleWindow : Window
   {
-    private static dnevnik_ishrane_db_Entities dnevnikIshraneEntities = new dnevnik_ishrane_db_Entities();
+    private static dbModel dnevnikIshraneEntities = new dbModel();
     private List<plan_vjezbanja> selectedExercisePlan = new List<plan_vjezbanja>();
     private DateTime selectedDateTime;
     private int userId;

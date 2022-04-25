@@ -1,4 +1,5 @@
 using Projekat_B_Dnevnik_ishrane.db_views;
+using Projekat_B_Dnevnik_ishrane.models;
 using Projekat_B_Dnevnik_ishrane.views;
 using System;
 using System.Collections.Generic;
@@ -23,9 +24,9 @@ namespace Projekat_B_Dnevnik_ishrane
   {
   
     private int candidateId = -1;
-    private dnevnik_ishrane_db_Entities dnevnikIshraneEntities;
+    private dbModel dnevnikIshraneEntities;
     private List<PlanView> listOfDietPlans = new List<PlanView>();
-    public KandidatWindow(int candidateId,dnevnik_ishrane_db_Entities dnevnikIshraneEntities)
+    public KandidatWindow(int candidateId,dbModel dnevnikIshraneEntities)
     {
       this.dnevnikIshraneEntities = dnevnikIshraneEntities;
       this.candidateId = candidateId;

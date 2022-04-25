@@ -15,10 +15,10 @@ insert into trener values (1);
 insert into trener values(3);
 
 
-insert into kandidat values(2);
-insert into kandidat values(4);
-insert into kandidat values(5);
-insert into kandidat values(6);
+insert into kandidat values(2,1);
+insert into kandidat values(4,1);
+insert into kandidat values(5,1);
+insert into kandidat values(6,1);
 
 set @datetime_var=current_timestamp();
 

@@ -1,3 +1,4 @@
+using Projekat_B_Dnevnik_ishrane.models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,7 +22,7 @@ namespace Projekat_B_Dnevnik_ishrane.views
   {
     private Window previousWindow;
     private int coachId;
-    private dnevnik_ishrane_db_Entities dnevnikIshraneEntities = new dnevnik_ishrane_db_Entities();
+    private dbModel dnevnikIshraneEntities = new dbModel();
     public UsersWindow(int coachId,Window previousWindow)
     {
       this.coachId = coachId;
@@ -86,6 +87,11 @@ namespace Projekat_B_Dnevnik_ishrane.views
     {
       this.Hide();
       previousWindow.Show();
+    }
+
+    private void dataGridViewUsers_SelectionChanged(object sender, SelectionChangedEventArgs e)
+    {
+
     }
   }
 }

@@ -1,4 +1,5 @@
 using Projekat_B_Dnevnik_ishrane.db_views;
+using Projekat_B_Dnevnik_ishrane.models;
 using Projekat_B_Dnevnik_ishrane.views;
 using System;
 using System.Collections.Generic;
@@ -21,9 +22,9 @@ namespace Projekat_B_Dnevnik_ishrane.views
   {
 
     private int coachId = -1;
-    private dnevnik_ishrane_db_Entities dnevnikIshraneEntities;
+    private dbModel dnevnikIshraneEntities;
     private List<PlanView> listOfDietPlans = new List<PlanView>();
-    public TrenerWindow(int coachId, dnevnik_ishrane_db_Entities dnevnikIshraneEntities)
+    public TrenerWindow(int coachId, dbModel dnevnikIshraneEntities)
     {
       this.dnevnikIshraneEntities = dnevnikIshraneEntities;
       this.coachId = coachId;

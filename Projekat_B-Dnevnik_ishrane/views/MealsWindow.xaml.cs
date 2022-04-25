@@ -1,4 +1,5 @@
 using Projekat_B_Dnevnik_ishrane.db_views;
+using Projekat_B_Dnevnik_ishrane.models;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity.Core.Objects;
@@ -23,7 +24,7 @@ namespace Projekat_B_Dnevnik_ishrane.views
   {
     private int candidateId;
     public static double sumOfKcals=0.0;
-    private dnevnik_ishrane_db_Entities dnevnikIshraneEntities = new dnevnik_ishrane_db_Entities();
+    private dbModel dnevnikIshraneEntities = new dbModel();
     private List<ObrokView> breakfastOfCanidate = new List<ObrokView>();
     private List<ObrokView> lunchOfCandidate = new List<ObrokView>();
     private List<ObrokView> dinnerOfCanidate = new List<ObrokView>();

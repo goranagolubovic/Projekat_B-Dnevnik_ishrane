@@ -10,8 +10,6 @@ C:\Users\goran\Desktop\Projekat_B-Dnevnik_ishrane\Projekat_B-Dnevnik_ishrane\bin
 C:\Users\goran\Desktop\Projekat_B-Dnevnik_ishrane\Projekat_B-Dnevnik_ishrane\bin\Debug\K4os.Hash.xxHash.dll
 C:\Users\goran\Desktop\Projekat_B-Dnevnik_ishrane\Projekat_B-Dnevnik_ishrane\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
 C:\Users\goran\Desktop\Projekat_B-Dnevnik_ishrane\Projekat_B-Dnevnik_ishrane\bin\Debug\Microsoft.Bcl.HashCode.dll
-C:\Users\goran\Desktop\Projekat_B-Dnevnik_ishrane\Projekat_B-Dnevnik_ishrane\bin\Debug\Microsoft.EntityFrameworkCore.Abstractions.dll
-C:\Users\goran\Desktop\Projekat_B-Dnevnik_ishrane\Projekat_B-Dnevnik_ishrane\bin\Debug\Microsoft.EntityFrameworkCore.dll
 C:\Users\goran\Desktop\Projekat_B-Dnevnik_ishrane\Projekat_B-Dnevnik_ishrane\bin\Debug\Microsoft.Extensions.Caching.Abstractions.dll
 C:\Users\goran\Desktop\Projekat_B-Dnevnik_ishrane\Projekat_B-Dnevnik_ishrane\bin\Debug\Microsoft.Extensions.Caching.Memory.dll
 C:\Users\goran\Desktop\Projekat_B-Dnevnik_ishrane\Projekat_B-Dnevnik_ishrane\bin\Debug\Microsoft.Extensions.Configuration.Abstractions.dll
@@ -42,8 +40,6 @@ C:\Users\goran\Desktop\Projekat_B-Dnevnik_ishrane\Projekat_B-Dnevnik_ishrane\bin
 C:\Users\goran\Desktop\Projekat_B-Dnevnik_ishrane\Projekat_B-Dnevnik_ishrane\bin\Debug\K4os.Hash.xxHash.xml
 C:\Users\goran\Desktop\Projekat_B-Dnevnik_ishrane\Projekat_B-Dnevnik_ishrane\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
 C:\Users\goran\Desktop\Projekat_B-Dnevnik_ishrane\Projekat_B-Dnevnik_ishrane\bin\Debug\Microsoft.Bcl.HashCode.xml
-C:\Users\goran\Desktop\Projekat_B-Dnevnik_ishrane\Projekat_B-Dnevnik_ishrane\bin\Debug\Microsoft.EntityFrameworkCore.xml
-C:\Users\goran\Desktop\Projekat_B-Dnevnik_ishrane\Projekat_B-Dnevnik_ishrane\bin\Debug\Microsoft.EntityFrameworkCore.Abstractions.xml
 C:\Users\goran\Desktop\Projekat_B-Dnevnik_ishrane\Projekat_B-Dnevnik_ishrane\bin\Debug\Microsoft.Extensions.Caching.Abstractions.xml
 C:\Users\goran\Desktop\Projekat_B-Dnevnik_ishrane\Projekat_B-Dnevnik_ishrane\bin\Debug\Microsoft.Extensions.Caching.Memory.xml
 C:\Users\goran\Desktop\Projekat_B-Dnevnik_ishrane\Projekat_B-Dnevnik_ishrane\bin\Debug\Microsoft.Extensions.Configuration.xml
@@ -74,7 +70,6 @@ C:\Users\goran\Desktop\Projekat_B-Dnevnik_ishrane\Projekat_B-Dnevnik_ishrane\obj
 C:\Users\goran\Desktop\Projekat_B-Dnevnik_ishrane\Projekat_B-Dnevnik_ishrane\obj\Debug\Projekat_B-Dnevnik_ishrane.csproj.CopyComplete
 C:\Users\goran\Desktop\Projekat_B-Dnevnik_ishrane\Projekat_B-Dnevnik_ishrane\obj\Debug\Projekat_B-Dnevnik_ishrane.exe
 C:\Users\goran\Desktop\Projekat_B-Dnevnik_ishrane\Projekat_B-Dnevnik_ishrane\obj\Debug\Projekat_B-Dnevnik_ishrane.pdb
-C:\Users\goran\Desktop\Projekat_B-Dnevnik_ishrane\Projekat_B-Dnevnik_ishrane\obj\Debug\Projekat_B-Dnevnik_ishrane_Content.g.cs
 C:\Users\goran\Desktop\Projekat_B-Dnevnik_ishrane\Projekat_B-Dnevnik_ishrane\obj\Debug\views\DietPlanWindow.g.cs
 C:\Users\goran\Desktop\Projekat_B-Dnevnik_ishrane\Projekat_B-Dnevnik_ishrane\obj\Debug\views\KandidatWindow.g.cs
 C:\Users\goran\Desktop\Projekat_B-Dnevnik_ishrane\Projekat_B-Dnevnik_ishrane\obj\Debug\views\MainWindow.g.cs
@@ -102,8 +97,6 @@ C:\Users\goran\Desktop\Projekat_B-Dnevnik_ishrane\Projekat_B-Dnevnik_ishrane\obj
 C:\Users\goran\Desktop\Projekat_B-Dnevnik_ishrane\Projekat_B-Dnevnik_ishrane\obj\Debug\views\TrenerWindow.baml
 C:\Users\goran\Desktop\Projekat_B-Dnevnik_ishrane\Projekat_B-Dnevnik_ishrane\obj\Debug\views\WeightWindow.g.cs
 C:\Users\goran\Desktop\Projekat_B-Dnevnik_ishrane\Projekat_B-Dnevnik_ishrane\obj\Debug\views\WeightWindow.baml
-C:\Users\goran\Desktop\Projekat_B-Dnevnik_ishrane\Projekat_B-Dnevnik_ishrane\bin\Debug\Ubiety.Dns.Core.dll
-C:\Users\goran\Desktop\Projekat_B-Dnevnik_ishrane\Projekat_B-Dnevnik_ishrane\bin\Debug\ZstdNet.dll
 C:\Users\goran\Desktop\Projekat_B-Dnevnik_ishrane\Projekat_B-Dnevnik_ishrane\obj\Debug\views\PlanWindow.g.cs
 C:\Users\goran\Desktop\Projekat_B-Dnevnik_ishrane\Projekat_B-Dnevnik_ishrane\obj\Debug\views\PlanWindow.baml
 C:\Users\goran\Desktop\Projekat_B-Dnevnik_ishrane\Projekat_B-Dnevnik_ishrane\obj\Debug\Projekat_B-Dnevnik_ishrane.csproj.AssemblyReference.cache
@@ -114,3 +107,6 @@ C:\Users\goran\Desktop\Projekat_B-Dnevnik_ishrane\Projekat_B-Dnevnik_ishrane\bin
 C:\Users\goran\Desktop\Projekat_B-Dnevnik_ishrane\Projekat_B-Dnevnik_ishrane\bin\Debug\MaterialDesignThemes.Wpf.xml
 C:\Users\goran\Desktop\Projekat_B-Dnevnik_ishrane\Projekat_B-Dnevnik_ishrane\obj\Debug\views\UsersWindow.g.cs
 C:\Users\goran\Desktop\Projekat_B-Dnevnik_ishrane\Projekat_B-Dnevnik_ishrane\obj\Debug\views\UsersWindow.baml
+C:\Users\goran\Desktop\Projekat_B-Dnevnik_ishrane\Projekat_B-Dnevnik_ishrane\bin\Debug\mysql.data.entity.EF6.dll
+C:\Users\goran\Desktop\Projekat_B-Dnevnik_ishrane\Projekat_B-Dnevnik_ishrane\bin\Debug\Ubiety.Dns.Core.dll
+C:\Users\goran\Desktop\Projekat_B-Dnevnik_ishrane\Projekat_B-Dnevnik_ishrane\bin\Debug\ZstdNet.dll

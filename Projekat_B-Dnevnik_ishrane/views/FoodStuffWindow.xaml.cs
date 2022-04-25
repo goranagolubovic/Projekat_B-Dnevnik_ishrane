@@ -1,3 +1,4 @@
+using Projekat_B_Dnevnik_ishrane.models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,7 +21,7 @@ namespace Projekat_B_Dnevnik_ishrane.views
   public partial class FoodStuffWindow : Window
   {
     private List<string> listOfFoodStuffs = new List<string>();
-    private dnevnik_ishrane_db_Entities dnevnikIshraneEntities = new dnevnik_ishrane_db_Entities();
+    private dbModel dnevnikIshraneEntities = new dbModel();
     private string nameOfSelectedFoodStuff;
     private int candidateId;
     private string typeOfMeal;

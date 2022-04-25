@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Linq;
+using Projekat_B_Dnevnik_ishrane.models;
 
 namespace Projekat_B_Dnevnik_ishrane
 {
@@ -20,7 +21,7 @@ namespace Projekat_B_Dnevnik_ishrane
   /// </summary>
   public partial class DietPlanScheduleWindow : Window
   {
-    private static dnevnik_ishrane_db_Entities dnevnikIshraneEntities = new dnevnik_ishrane_db_Entities();
+    private static dbModel dnevnikIshraneEntities = new dbModel();
     private List<plan_ishrane> listDietPlan = new List<plan_ishrane>();
     private List<plan_ishrane> selectedDietPlan = new List<plan_ishrane>();
     private DateTime selectedDateTime;
