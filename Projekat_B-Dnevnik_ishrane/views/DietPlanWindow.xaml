@@ -5,14 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Projekat_B_Dnevnik_ishrane"
         mc:Ignorable="d"
+        Style="{StaticResource WindowStyle}"
         Title="DietPlanWindow" Height="750" Width="618">
-  <Grid Background="#FFF0ED89">
+  <Grid>
     <Grid.ColumnDefinitions>
       <ColumnDefinition Width="221*"/>
       <ColumnDefinition Width="35*"/>
       <ColumnDefinition Width="344*"/>
     </Grid.ColumnDefinitions>
-    <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Height="52" Margin="122,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="357" FontSize="48" Foreground="#FF408090" Grid.ColumnSpan="3" FontFamily="Lucida Calligraphy"><Run Text=" Plan ishrane"/><LineBreak/><Run/><LineBreak/><Run Text="  "/><LineBreak/><Run Text=" "/><LineBreak/><Run Text="ISHRANE"/></TextBlock>
+    <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Height="52" Margin="122,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="357" FontSize="48" Foreground="#FF408090" Grid.ColumnSpan="3" ><Run Text=" Plan ishrane"/><LineBreak/><Run/><LineBreak/><Run Text="  "/><LineBreak/><Run Text=" "/><LineBreak/><Run Text="ISHRANE"/></TextBlock>
     <DataGrid x:Name="dataGridViewDietPlan" HorizontalAlignment="Left" Height="290" Margin="0,160,0,0" VerticalAlignment="Top" Width="611" AutoGenerateColumns="False" Grid.ColumnSpan="3" Background="#FFCDE5C9" SelectionChanged="dataGridViewDietPlan_SelectionChanged">
       <DataGrid.Columns>
         <DataGridTextColumn Header="Ime trenera" Binding="{Binding Path='ImeTrenera'}" IsReadOnly="True" />

@@ -24,10 +24,27 @@ namespace Projekat_B_Dnevnik_ishrane.views
     private int userId;
     private dbModel dnevnikIshraneEntites = new dbModel();
     private Window previousWindow;
-    public WeightWindow(int userId,Window previousWindow)
+    private string action;
+    private DateTime selectedDateTime;
+    private MeasurementWindow measurementWindow;
+    private string v;
+
+    public WeightWindow(int userId,Window previousWindow,string action,DateTime dateTime)
     {
       this.previousWindow = previousWindow;
       this.userId = userId;
+      this.action = action;
+      this.selectedDateTime = dateTime;
+      Properties.Settings.Default.ColorMode = MainWindow.theme;
+      InitializeComponent();
+    }
+
+    public WeightWindow(int userId, MeasurementWindow measurementWindow, string action)
+    {
+      this.userId = userId;
+      this.measurementWindow = measurementWindow;
+      this.action = action;
+      Properties.Settings.Default.ColorMode = MainWindow.theme;
       InitializeComponent();
     }
 
@@ -58,11 +75,14 @@ namespace Projekat_B_Dnevnik_ishrane.views
       };
       if (measurement.KANDIDAT_KORISNIK_idKORISNIK != 0)
       {
-        var old_measurement = dnevnikIshraneEntites.mjerenjes.
-          Where(elem => elem.KANDIDAT_KORISNIK_idKORISNIK == measurement.KANDIDAT_KORISNIK_idKORISNIK && elem.TRENER_KORISNIK_idKORISNIK == measurement.TRENER_KORISNIK_idKORISNIK).FirstOrDefault();
-        if (old_measurement!=null)
+        if (action.Equals("update"))
         {
-          dnevnikIshraneEntites.mjerenjes.Remove(old_measurement);
+          var old_measurement = dnevnikIshraneEntites.mjerenjes.
+            Where(elem => elem.KANDIDAT_KORISNIK_idKORISNIK == measurement.KANDIDAT_KORISNIK_idKORISNIK && elem.TRENER_KORISNIK_idKORISNIK == measurement.TRENER_KORISNIK_idKORISNIK && elem.DatumVrijeme.Equals(selectedDateTime)).FirstOrDefault();
+          if (old_measurement != null)
+          {
+            dnevnikIshraneEntites.mjerenjes.Remove(old_measurement);
+          }
         }
         dnevnikIshraneEntites.mjerenjes.Add(measurement);
         dnevnikIshraneEntites.SaveChanges();

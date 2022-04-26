@@ -32,6 +32,7 @@ namespace Projekat_B_Dnevnik_ishrane
       this.selectedDateTime = selectedDateTime;
       this.userId = userId;
       this.previousWindow = previousWindow;
+      Properties.Settings.Default.ColorMode = MainWindow.theme;
       InitializeComponent();
       InitializeFields();
 

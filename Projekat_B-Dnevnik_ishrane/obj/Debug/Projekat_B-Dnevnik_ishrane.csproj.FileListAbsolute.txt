@@ -110,3 +110,8 @@ C:\Users\goran\Desktop\Projekat_B-Dnevnik_ishrane\Projekat_B-Dnevnik_ishrane\obj
 C:\Users\goran\Desktop\Projekat_B-Dnevnik_ishrane\Projekat_B-Dnevnik_ishrane\bin\Debug\mysql.data.entity.EF6.dll
 C:\Users\goran\Desktop\Projekat_B-Dnevnik_ishrane\Projekat_B-Dnevnik_ishrane\bin\Debug\Ubiety.Dns.Core.dll
 C:\Users\goran\Desktop\Projekat_B-Dnevnik_ishrane\Projekat_B-Dnevnik_ishrane\bin\Debug\ZstdNet.dll
+C:\Users\goran\Desktop\Projekat_B-Dnevnik_ishrane\Projekat_B-Dnevnik_ishrane\obj\Debug\views\AddUserWindow.g.cs
+C:\Users\goran\Desktop\Projekat_B-Dnevnik_ishrane\Projekat_B-Dnevnik_ishrane\obj\Debug\views\AddUserWindow.baml
+C:\Users\goran\Desktop\Projekat_B-Dnevnik_ishrane\Projekat_B-Dnevnik_ishrane\obj\Debug\views\ViewUserWindow.g.cs
+C:\Users\goran\Desktop\Projekat_B-Dnevnik_ishrane\Projekat_B-Dnevnik_ishrane\obj\Debug\views\ViewUserWindow.baml
+C:\Users\goran\Desktop\Projekat_B-Dnevnik_ishrane\Projekat_B-Dnevnik_ishrane\obj\Debug\App.baml

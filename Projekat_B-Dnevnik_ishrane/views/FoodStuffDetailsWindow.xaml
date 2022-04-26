@@ -5,8 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Projekat_B_Dnevnik_ishrane.views"
         mc:Ignorable="d"
+        Style="{StaticResource WindowStyle}"
         Title="FoodStuffDetailsWindow" Height="411.364" Width="462.382">
-    <Grid Background="#FFF9C5C3">
+    <Grid>
         <Grid.Resources>
             <Style TargetType="Border">
                 <Setter Property="CornerRadius" Value="50"/>

@@ -6,25 +6,18 @@
         xmlns:local="clr-namespace:Projekat_B_Dnevnik_ishrane"
         mc:Ignorable="d"
         Title="MainWindow" Height="700" Width="900"
-        WindowStyle="SingleBorderWindow"
+        Style="{StaticResource WindowStyle}"
         ResizeMode="NoResize">
   <Grid>
-    <Grid.Background>
-      <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-        <GradientStop Color="#FFD8F2F4"/>
-        <GradientStop Color="#FFDDCCEE" Offset="1"/>
-      </LinearGradientBrush>
-    </Grid.Background>
-    <Button BorderThickness="4" Content="Prijavi se" HorizontalAlignment="Left" Margin="478,453,0,0" VerticalAlignment="Top" Height="38" Width="129" Click="Button_Click" FontSize="20" FontFamily="Lucida Calligraphy" RenderTransformOrigin="-0.095,0.54"/>
-    <TextBox BorderThickness="2" x:Name="UserNameField" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="428,238,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="229" Height="76" Cursor="" RenderTransformOrigin="0.531,1.55" FontFamily="Lucida Calligraphy" FontSize="24"/>
-    <PasswordBox BorderThickness="2" x:Name="PasswordField" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="428,342,0,0" VerticalAlignment="Top" Width="229" Height="80" FontFamily="Lucida Calligraphy" FontSize="24"/>
-    <TextBlock HorizontalAlignment="Center" Height="54" Margin="0,48,0,0" Text="  Dnevnik ishrane" TextWrapping="Wrap" VerticalAlignment="Top" Width="388" FontFamily="Lucida Calligraphy" FontSize="36"/>
-    <TextBlock HorizontalAlignment="Left" Height="76" Margin="215,252,0,0" Text="Korisničko ime" TextWrapping="Wrap" VerticalAlignment="Top" Width="208" FontFamily="Lucida Calligraphy" FontSize="24" RenderTransformOrigin="0.524,0.801"/>
-    <TextBlock HorizontalAlignment="Left" Height="58" Margin="301,364,0,0" Text="Lozinka" TextWrapping="Wrap" VerticalAlignment="Top" Width="122" FontSize="24" FontFamily="Lucida Calligraphy"/>
-    <Rectangle HorizontalAlignment="Left" Height="90" Margin="618,30,0,0" VerticalAlignment="Top" Width="95">
-      <Rectangle.Fill>
-        <ImageBrush ImageSource="notebook.png"/>
-      </Rectangle.Fill>
-    </Rectangle>
+    <Button BorderThickness="4" Content="Prijavi se" HorizontalAlignment="Left" Margin="450,447,0,0" VerticalAlignment="Top" Height="64" Width="178" Click="Button_Click" FontSize="20"  RenderTransformOrigin="-0.095,0.54"/>
+    <TextBox BorderThickness="2" x:Name="UserNameField" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="428,238,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="229" Height="76" Cursor="" RenderTransformOrigin="0.531,1.55"  FontSize="24"/>
+    <PasswordBox BorderThickness="2" x:Name="PasswordField" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="428,342,0,0" VerticalAlignment="Top" Width="229" Height="80"  FontSize="24"/>
+    <TextBlock HorizontalAlignment="Center" Height="102" Margin="331,76,122.6,0" Text="  Dnevnik ishrane" TextWrapping="Wrap" VerticalAlignment="Top" Width="440"  FontSize="36"/>
+    <TextBlock HorizontalAlignment="Left" Height="58" Margin="260,256,0,0" Text="Korisničko ime" TextWrapping="Wrap" VerticalAlignment="Top" Width="168"  FontSize="24" RenderTransformOrigin="0.524,0.801"/>
+    <TextBlock HorizontalAlignment="Left" Height="58" Margin="301,364,0,0" Text="Lozinka" TextWrapping="Wrap" VerticalAlignment="Top" Width="122" FontSize="24" />
+    <RadioButton GroupName="modesSelection" IsChecked="True" Content="Candy" HorizontalAlignment="Left" Height="19" Margin="776,28,0,0" VerticalAlignment="Top" Width="94" Checked="CandyMode_Checked"/>
+    <RadioButton GroupName="modesSelection" Content="Light" HorizontalAlignment="Left" Margin="776,52,0,0" VerticalAlignment="Top" Checked="LightMode_Checked"/>
+    <RadioButton GroupName="modesSelection" Content="Dark" HorizontalAlignment="Left" Margin="776,76,0,0" VerticalAlignment="Top" Checked="DarkMode_Checked"/>
+
   </Grid>
 </Window>

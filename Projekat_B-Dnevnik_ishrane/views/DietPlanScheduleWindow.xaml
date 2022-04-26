@@ -5,8 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Projekat_B_Dnevnik_ishrane"
         mc:Ignorable="d"
+         Style="{StaticResource WindowStyle}"
         Title="DietPlanScheduleWindow" Height="850" Width="1000">
-  <Grid Opacity="0.8" Background="#FFF0ED89">
+  <Grid Opacity="0.8" >
     <Grid.ColumnDefinitions>
       <ColumnDefinition Width="107*"/>
       <ColumnDefinition Width="343*"/>
@@ -60,7 +61,7 @@
     <TextBlock x:Name="ThuersdayTextBlock" HorizontalAlignment="Left" Margin="213,432,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="1"/>
     <TextBlock x:Name="SaturdayTextBlock" HorizontalAlignment="Left" Margin="188,670,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="1"/>
     <TextBlock x:Name="SundayTextBlock" HorizontalAlignment="Left" Margin="537,542,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="1"/>
-    <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="52,0,0,719" Text="Sedmični plan ishrane" TextWrapping="Wrap" VerticalAlignment="Bottom" FontSize="36" FontFamily="Lucida Calligraphy" Width="446" Height="67"/>
+    <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="52,0,0,719" Text="Sedmični plan ishrane" TextWrapping="Wrap" VerticalAlignment="Bottom" FontSize="36"  Width="446" Height="67"/>
     <Button Margin="65,10,17,684" Click="Previous_Window_Click" Background="#FFF0ED89" BorderBrush="#FFF0ED89"  >
       <Image  Source="/images/left-arrow2.png" Stretch="Uniform" Height="71" Width="84" RenderTransformOrigin="0.539,1.916">
       </Image>

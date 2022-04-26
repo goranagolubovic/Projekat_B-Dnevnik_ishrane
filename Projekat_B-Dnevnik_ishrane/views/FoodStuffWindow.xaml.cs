@@ -27,6 +27,7 @@ namespace Projekat_B_Dnevnik_ishrane.views
     private string typeOfMeal;
     public FoodStuffWindow(int candidateId,string typeOfMeal)
     {
+      Properties.Settings.Default.ColorMode = MainWindow.theme;
       InitializeComponent();
       this.candidateId = candidateId;
       this.typeOfMeal = typeOfMeal;

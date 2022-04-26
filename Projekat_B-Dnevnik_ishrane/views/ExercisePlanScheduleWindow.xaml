@@ -5,8 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Projekat_B_Dnevnik_ishrane"
         mc:Ignorable="d"
+        Style="{StaticResource WindowStyle}"
         Title="ExercisePlanScheduleWindow" Height="800" Width="1000">
-  <Grid Background="#FFDEE9ED">
+  <Grid >
     <Rectangle HorizontalAlignment="Left" Height="172" Margin="81,174,0,0" Stroke="Black" VerticalAlignment="Top" Width="212">
       <Rectangle.Fill>
         <ImageBrush ImageSource="/images/note1.jpg"/>
@@ -42,7 +43,7 @@
         <ImageBrush ImageSource="/images/note4.jpg"/>
       </Rectangle.Fill>
     </Rectangle>
-    <TextBlock HorizontalAlignment="Left" Margin="271,36,0,0" Text="Sedmični plan vježbanja" TextWrapping="Wrap" VerticalAlignment="Top" Height="50" Width="554" FontFamily="Lucida Calligraphy" FontSize="36"/>
+    <TextBlock HorizontalAlignment="Left" Margin="271,36,0,0" Text="Sedmični plan vježbanja" TextWrapping="Wrap" VerticalAlignment="Top" Height="50" Width="554"  FontSize="36"/>
     <TextBlock HorizontalAlignment="Left" Margin="157,190,0,0" Text="Ponedjeljak" TextWrapping="Wrap" VerticalAlignment="Top"/>
     <TextBlock x:Name="MondayTextBlock" HorizontalAlignment="Left" Margin="122,211,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top"/>
     <TextBlock HorizontalAlignment="Left" Margin="487,130,0,0" Text="Utorak" TextWrapping="Wrap" VerticalAlignment="Top"/>

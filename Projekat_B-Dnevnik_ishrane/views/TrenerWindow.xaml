@@ -5,14 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Projekat_B_Dnevnik_ishrane.views"
         mc:Ignorable="d"
+        Style="{StaticResource WindowStyle}"
         Title="TrenerWindow" Height="600" Width="603.994">
   <Grid>
-    <Grid.Background>
-      <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-        <GradientStop Color="#FFFAF0B2" Offset="1"/>
-        <GradientStop Color="#FFDAF5F7"/>
-      </LinearGradientBrush>
-    </Grid.Background>
     <Rectangle HorizontalAlignment="Left" Height="66" Margin="133,26,0,0" Stroke="#FFD9D560" VerticalAlignment="Top" Width="333">
       <Rectangle.Fill>
         <ImageBrush ImageSource="button_box1.jpg"/>
@@ -53,11 +48,11 @@
         <ImageBrush ImageSource="usericon.png"/>
       </Ellipse.Fill>
     </Ellipse>
-    <Button x:Name="ReviewDietPlanButton" Content="Planovi ishrane" HorizontalAlignment="Left" Margin="206,26,0,0" VerticalAlignment="Top" Height="66" Width="260" Click="ReviewDietPlanButton_Click" FontFamily="Lucida Calligraphy" BorderBrush="#FFE5D091" Background="White" FontSize="14"/>
-    <Button x:Name="ReviewExercisePlanButton" Content="Planovi vježbanja" HorizontalAlignment="Left" Margin="206,119,0,0" VerticalAlignment="Top" Height="66" Width="260" RenderTransformOrigin="0.527,0.758" Click="Exercise_Plan_Click" FontFamily="Lucida Calligraphy" BorderBrush="#FFEAB8B8" FontSize="14" Background="White">
+    <Button x:Name="ReviewDietPlanButton" Content="Planovi ishrane" HorizontalAlignment="Left" Margin="206,26,0,0" VerticalAlignment="Top" Height="66" Width="260" Click="ReviewDietPlanButton_Click"  BorderBrush="#FFE5D091" Background="White" FontSize="14"/>
+    <Button x:Name="ReviewExercisePlanButton" Content="Planovi vježbanja" HorizontalAlignment="Left" Margin="206,119,0,0" VerticalAlignment="Top" Height="66" Width="260" RenderTransformOrigin="0.527,0.758" Click="Exercise_Plan_Click"   BorderBrush="#FFEAB8B8" FontSize="14" Background="White">
     </Button>
-    <Button x:Name="Candidates" Content="Kandidati" HorizontalAlignment="Left" Margin="205,219,0,0" VerticalAlignment="Top" Height="66" Width="260" RenderTransformOrigin="0.527,0.758" Click="Candidate_Click" Background="White" FontFamily="Lucida Calligraphy" BorderBrush="#FFEAB8B8" FontSize="14"/>
-    <Button x:Name="AddMeasure" Content="Mjerenje" HorizontalAlignment="Left" Margin="206,321,0,0" VerticalAlignment="Top" Height="66" Width="260" RenderTransformOrigin="0.527,0.758" Click="Measurement_Click" Background="White" FontFamily="Lucida Calligraphy" BorderBrush="#FFEAB8B8" FontSize="14"/>
+    <Button x:Name="Candidates" Content="Kandidati" HorizontalAlignment="Left" Margin="205,219,0,0" VerticalAlignment="Top" Height="66" Width="260" RenderTransformOrigin="0.527,0.758" Click="Candidate_Click" Background="White"  BorderBrush="#FFEAB8B8" FontSize="14"/>
+    <Button x:Name="AddMeasure" Content="Mjerenje" HorizontalAlignment="Left" Margin="206,321,0,0" VerticalAlignment="Top" Height="66" Width="260" RenderTransformOrigin="0.527,0.758" Click="Measurement_Click" Background="White"  BorderBrush="#FFEAB8B8" FontSize="14"/>
     <Rectangle HorizontalAlignment="Left" Height="66" Margin="133,414,0,0" Stroke="#FFDCF6F5" VerticalAlignment="Top" Width="333">
       <Rectangle.Fill>
         <ImageBrush ImageSource="button_box6.jpg"/>

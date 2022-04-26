@@ -34,6 +34,7 @@ namespace Projekat_B_Dnevnik_ishrane
     public DietPlanWindow(int userId)
     {
       this.userId = userId;
+      Properties.Settings.Default.ColorMode = MainWindow.theme;
       InitializeComponent();
       initializeDataGrid();
     }

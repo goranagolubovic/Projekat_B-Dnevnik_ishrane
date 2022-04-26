@@ -33,6 +33,7 @@ namespace Projekat_B_Dnevnik_ishrane
     public ExercisePlanWindow(int candidateId)
     {
       this.userId = candidateId;
+      Properties.Settings.Default.ColorMode = MainWindow.theme;
       InitializeComponent();
       initializeDataGrid();
     }

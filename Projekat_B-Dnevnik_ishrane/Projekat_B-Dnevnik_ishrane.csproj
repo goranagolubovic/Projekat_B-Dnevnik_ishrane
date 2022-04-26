@@ -177,6 +177,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="db_views\CandidateView.cs" />
     <Compile Include="db_views\MeasurementView.cs" />
     <Compile Include="db_views\ObrokView.cs" />
     <Compile Include="db_views\PlanView.cs" />
@@ -192,6 +193,9 @@
     <Compile Include="models\plan_ishrane.cs" />
     <Compile Include="models\plan_vjezbanja.cs" />
     <Compile Include="models\trener.cs" />
+    <Compile Include="views\AddUserWindow.xaml.cs">
+      <DependentUpon>AddUserWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="views\DietPlanScheduleWindow.xaml.cs">
       <DependentUpon>DietPlanScheduleWindow.xaml</DependentUpon>
     </Compile>
@@ -235,9 +239,16 @@
     <Compile Include="views\UsersWindow.xaml.cs">
       <DependentUpon>UsersWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="views\ViewUserWindow.xaml.cs">
+      <DependentUpon>ViewUserWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="views\WeightWindow.xaml.cs">
       <DependentUpon>WeightWindow.xaml</DependentUpon>
     </Compile>
+    <Page Include="views\AddUserWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="views\DietPlanScheduleWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -290,6 +301,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="views\ViewUserWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="views\WeightWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -322,7 +337,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="views\left-arrow.png" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="images\101956288_293738928439038_2672456598646947840_n.jpg" />
     <Resource Include="images\105484953_558682524822568_3726723150727204096_n.jpg" />

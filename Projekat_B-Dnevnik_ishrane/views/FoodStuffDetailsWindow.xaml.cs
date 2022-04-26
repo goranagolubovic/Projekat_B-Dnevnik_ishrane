@@ -38,6 +38,7 @@ namespace Projekat_B_Dnevnik_ishrane.views
       this.candidateId = candidateId;
       this.typeOfMeal = typeOfMeal;
       this.action = action;
+      Properties.Settings.Default.ColorMode = MainWindow.theme;
       InitializeComponent();
       stuff = dnevnikIshraneEntities.namirnicas.Where(elem => elem.Naziv.Equals(name)).First();
       nameOfFoodStuff.Text = name;

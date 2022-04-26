@@ -5,8 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Projekat_B_Dnevnik_ishrane.views"
         mc:Ignorable="d"
+        Style="{StaticResource WindowStyle}"
         Title="WeightWindow" Height="553.846" Width="696.154">
-  <Grid Background="#FFDFF4ED">
+  <Grid>
     <Grid.RowDefinitions>
       <RowDefinition></RowDefinition>
       <RowDefinition></RowDefinition>

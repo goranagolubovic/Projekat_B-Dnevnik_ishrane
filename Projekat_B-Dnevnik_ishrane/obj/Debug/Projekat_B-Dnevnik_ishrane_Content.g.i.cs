@@ -8,7 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("databasemodel.context.tt")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("databasemodel.tt")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("views/left-arrow.png")]
 
 

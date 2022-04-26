@@ -25,6 +25,7 @@ namespace Projekat_B_Dnevnik_ishrane
     private korisnik user;
     private static List<kandidat> listOfCandidates = new List<kandidat>();
     private int matchedUserId = -1;
+    public static string theme = "candy";
     public MainWindow()
         {
             InitializeComponent();
@@ -67,6 +68,27 @@ namespace Projekat_B_Dnevnik_ishrane
         }
       }
       return isCandidate;
+    }
+
+    private void DarkMode_Checked(object sender, RoutedEventArgs e)
+    {
+      Properties.Settings.Default.ColorMode = "dark";
+      theme = "dark";
+      Properties.Settings.Default.Save();
+    }
+
+    private void LightMode_Checked(object sender, RoutedEventArgs e)
+    {
+      Properties.Settings.Default.ColorMode = "light";
+      theme = "light";
+      Properties.Settings.Default.Save();
+    }
+
+    private void CandyMode_Checked(object sender, RoutedEventArgs e)
+    {
+      Properties.Settings.Default.ColorMode = "candy";
+      theme = "candy";
+      Properties.Settings.Default.Save();
     }
   }
 }

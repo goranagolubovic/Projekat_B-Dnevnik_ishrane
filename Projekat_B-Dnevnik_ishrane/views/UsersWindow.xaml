@@ -5,16 +5,20 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Projekat_B_Dnevnik_ishrane"
         mc:Ignorable="d"
+         Style="{StaticResource WindowStyle}"
         Title="UsersWindow" Height="700" Width="600">
-  <Grid Background="#FFDEE9ED">
+  <Grid>
+    <Canvas x:Name="addingCandidate" PreviewMouseDown="addCandidate" HorizontalAlignment="Left" Height="71" Margin="433,34,0,0" VerticalAlignment="Top" Width="71">
+      <Canvas.Background>
+        <ImageBrush ImageSource="add.png"/>
+      </Canvas.Background>
+    </Canvas>
 
-    <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Height="86" Margin="90,34,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="478" FontSize="48" Foreground="#FF408090" FontFamily="Lucida Calligraphy"><Run Text=" Pregled korisnika"/><LineBreak/><Run/><LineBreak/><Run Text="  "/><LineBreak/><Run Text=" "/><LineBreak/><Run Text="ISHRANE"/></TextBlock>
     <DataGrid x:Name="dataGridViewUser" Margin="90,158,90,228" AutoGenerateColumns="False" SelectionChanged="dataGridViewUsers_SelectionChanged">
       <DataGrid.Columns>
         <DataGridTextColumn Header="Ime" Binding="{Binding Path='Ime'}" IsReadOnly="True" />
         <DataGridTextColumn Header="Prezime" Binding="{Binding Path='Prezime'}" IsReadOnly="True" />
         <DataGridTextColumn Header="Godište" Binding="{Binding Path='Godiste'}" IsReadOnly="True" />
-
         <DataGridTemplateColumn Header="Pregledaj">
           <DataGridTemplateColumn.CellTemplate>
             <DataTemplate>

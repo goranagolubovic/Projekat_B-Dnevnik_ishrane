@@ -28,6 +28,7 @@ namespace Projekat_B_Dnevnik_ishrane.views
     {
       this.dnevnikIshraneEntities = dnevnikIshraneEntities;
       this.coachId = coachId;
+      Properties.Settings.Default.ColorMode = MainWindow.theme;
       InitializeComponent();
     }
 
@@ -67,7 +68,9 @@ namespace Projekat_B_Dnevnik_ishrane.views
 
     private void Candidate_Click(object sender, RoutedEventArgs e)
     {
-
+      UsersWindow window = new UsersWindow(coachId,this);
+      this.Hide();
+      window.Show();
     }
   }
 }

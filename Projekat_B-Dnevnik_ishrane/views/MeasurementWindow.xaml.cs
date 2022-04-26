@@ -27,6 +27,7 @@ namespace Projekat_B_Dnevnik_ishrane.views
 
     public MeasurementWindow(int userId)
     {
+      Properties.Settings.Default.ColorMode = MainWindow.theme;
       InitializeComponent();
       this.userId = userId;
       initializeDataGrid();
@@ -91,9 +92,10 @@ new MeasurementView
 
     private void btnUpdate_Click(object sender, RoutedEventArgs e)
     {
-      WeightWindow window = new WeightWindow(userId,this);
-      this.Hide();
       dynamic dataRowView = ((Button)e.Source).DataContext;
+      DateTime selectedDateTime = dataRowView.DatumVrijeme;
+      WeightWindow window = new WeightWindow(userId,this,"update",selectedDateTime);
+      this.Hide();
       window.nameTextBox.Text = dataRowView.ImeKandidata;
       window.surnameTextBox.Text = dataRowView.PrezimeKandidata;
       window.yearOfBirthTextBox.Text = dataRowView.Godiste.ToString();
@@ -110,19 +112,8 @@ new MeasurementView
       string nameOfCandidate = dataRowView.ImeKandidata;
       string surnameOfCandidate = dataRowView.PrezimeKandidata;
       decimal weight = System.Convert.ToDecimal(dataRowView.Tezina);
-      MeasurementView measurementView = dnevnikIshraneEntities.mjerenjes.Join(
-    dnevnikIshraneEntities.korisniks, m => m.KANDIDAT_KORISNIK_idKORISNIK, k => k.idKORISNIK, (m, k) =>
-    new MeasurementView
-    {
-      DateAndTime = m.DatumVrijeme,
-      Id = m.KANDIDAT_KORISNIK_idKORISNIK,
-      NameOfCandidate=k.Ime,
-      SurnameOfCandidate=k.Prezime,
-      Weight=m.Tezina
-    })
-      .Where(elem => elem.Weight == weight && elem.NameOfCandidate.Equals(nameOfCandidate) && elem.SurnameOfCandidate.Equals(surnameOfCandidate)).First();
-
-      mjerenje measurement = dnevnikIshraneEntities.mjerenjes.Where(elem => elem.KANDIDAT_KORISNIK_idKORISNIK == measurementView.Id && elem.TRENER_KORISNIK_idKORISNIK==userId).First();
+      DateTime dateTime = dataRowView.DatumVrijeme;
+      mjerenje measurement = dnevnikIshraneEntities.mjerenjes.Where(elem => elem.DatumVrijeme.Equals(dateTime) && elem.TRENER_KORISNIK_idKORISNIK==userId).First();
       dnevnikIshraneEntities.mjerenjes.Remove(measurement);
       dnevnikIshraneEntities.SaveChanges();
       initializeDataGrid();
@@ -135,7 +126,7 @@ new MeasurementView
 
     private void addWeight(object sender, MouseButtonEventArgs e)
     {
-      Window window = new WeightWindow(userId,this);
+      Window window = new WeightWindow(userId,this,"add");
       this.Hide();
       window.Show();
     }

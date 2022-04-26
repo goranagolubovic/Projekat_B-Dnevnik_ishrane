@@ -33,6 +33,7 @@ namespace Projekat_B_Dnevnik_ishrane.views
     {
       sumOfKcals = 0.0;
       this.candidateId = candidateId;
+      Properties.Settings.Default.ColorMode = MainWindow.theme;
       InitializeComponent();
       initializeBreakfastGrid();
       initializeLunchGrid();

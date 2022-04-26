@@ -5,10 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Projekat_B_Dnevnik_ishrane"
         mc:Ignorable="d"
+         Style="{StaticResource WindowStyle}"
         Title="ExercisePlanWindow" Height="700" Width="622.4">
-    <Grid Background="#FFDEE9ED">
+    <Grid>
 
-        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Height="86" Margin="90,34,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="406" FontSize="48" Foreground="#FF408090" FontFamily="Lucida Calligraphy"><Run Text=" Plan vježbanja"/><LineBreak/><Run/><LineBreak/><Run Text="  "/><LineBreak/><Run Text=" "/><LineBreak/><Run Text="ISHRANE"/></TextBlock>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Height="86" Margin="90,34,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="406" FontSize="48" Foreground="#FF408090"><Run Text=" Plan vježbanja"/><LineBreak/><Run/><LineBreak/><Run Text="  "/><LineBreak/><Run Text=" "/><LineBreak/><Run Text="ISHRANE"/></TextBlock>
         <DataGrid x:Name="dataGridViewExercisePlan" Margin="0,158,-0.4,228.4" AutoGenerateColumns="False" SelectionChanged="dataGridViewExercisePlan_SelectionChanged">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Ime trenera" Binding="{Binding Path='ImeTrenera'}" IsReadOnly="True" />

@@ -5,8 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Projekat_B_Dnevnik_ishrane.views"
         mc:Ignorable="d"
+         Style="{StaticResource WindowStyle}"
         Title="MealsWindow" Height="612.582" Width="1212.4">
-  <Grid Background="#FFD7D9E7" Margin="0,0,-6.2,-0.2">
+  <Grid Margin="0,0,-6.2,-0.2">
     <Grid.ColumnDefinitions>
       <ColumnDefinition Width="1013*"/>
       <ColumnDefinition Width="62*"/>
