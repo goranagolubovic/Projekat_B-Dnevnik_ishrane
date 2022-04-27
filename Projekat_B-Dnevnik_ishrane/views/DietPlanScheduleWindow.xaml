@@ -47,13 +47,13 @@
         <ImageBrush ImageSource="/images/130745233_409884723537196_3312283219354345567_n.jpg"/>
       </Rectangle.Fill>
     </Rectangle>
-    <TextBlock HorizontalAlignment="Left" Margin="244,185,0,0" Text="Utorak" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="1"/>
-    <TextBlock HorizontalAlignment="Left" Margin="569,209,0,0" Text="Srijeda" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="1"/>
-    <TextBlock HorizontalAlignment="Left" Margin="160,217,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.502,0.997"><Run Text="Ponedjeljak"/><LineBreak/><Run/></TextBlock>
-    <TextBlock HorizontalAlignment="Left" Margin="244,401,0,0" Text="Četvrtak" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="1"/>
-    <TextBlock  HorizontalAlignment="Left" Margin="176,521,0,0" Text="Petak" TextWrapping="Wrap" VerticalAlignment="Top"/>
-    <TextBlock HorizontalAlignment="Left" Margin="213,647,0,0" Text="Subota" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="1"/>
-    <TextBlock HorizontalAlignment="Left" Margin="569,521,0,0" Text="Nedjelja" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="1"/>
+    <TextBlock HorizontalAlignment="Left" Margin="244,185,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="1"  Name="tuesdayTextBlock" Text="{DynamicResource tuesdayTextBlock}"/>
+    <TextBlock x:Name="wednesdayTextBlock" HorizontalAlignment="Left" Margin="569,209,0,0" Text="{DynamicResource wednesdayTextBlock}" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="1"/>
+    <TextBlock HorizontalAlignment="Left" Margin="160,217,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.502,0.997" Name="mondayTextBlock" Text="{DynamicResource mondayTextBlock}" ></TextBlock>
+    <TextBlock x:Name="thuersdayTextBlock" HorizontalAlignment="Left" Margin="244,401,0,0" Text="{DynamicResource thuersdayTextBlock}" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="1"/>
+    <TextBlock x:Name="fridayTextBlock"  HorizontalAlignment="Left" Margin="176,521,0,0" Text="{DynamicResource fridayTextBlock}" TextWrapping="Wrap" VerticalAlignment="Top"/>
+    <TextBlock x:Name="saturdayTextBlock" HorizontalAlignment="Left" Margin="213,647,0,0" Text="{DynamicResource saturdayTextBlock}" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="1"/>
+    <TextBlock x:Name="sundayTextBlock" HorizontalAlignment="Left" Margin="569,521,0,0" Text="{DynamicResource sundayTextBlock}" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="1"/>
     <TextBlock x:Name="MondayTextBlock"  HorizontalAlignment="Left" Margin="135,249,0,0" Text="" TextWrapping="WrapWithOverflow" VerticalAlignment="Top"/>
     <TextBlock x:Name="TuesdayTextBlock" HorizontalAlignment="Left" Margin="212,212,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="1"/>
     <TextBlock x:Name="WednesdayTextBlock" HorizontalAlignment="Left" Margin="537,241,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="1"/>
@@ -61,7 +61,7 @@
     <TextBlock x:Name="ThuersdayTextBlock" HorizontalAlignment="Left" Margin="213,432,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="1"/>
     <TextBlock x:Name="SaturdayTextBlock" HorizontalAlignment="Left" Margin="188,670,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="1"/>
     <TextBlock x:Name="SundayTextBlock" HorizontalAlignment="Left" Margin="537,542,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="1"/>
-    <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="52,0,0,719" Text="Sedmični plan ishrane" TextWrapping="Wrap" VerticalAlignment="Bottom" FontSize="36"  Width="446" Height="67"/>
+    <TextBlock x:Name="weeklyDietPlanTextBlock" Grid.Column="1" HorizontalAlignment="Left" Margin="52,0,0,719"  Text="{DynamicResource weeklyDietPlanTextBlock}" TextWrapping="Wrap" VerticalAlignment="Bottom" FontSize="36"  Width="446" Height="67"/>
     <Button Margin="65,10,17,684" Click="Previous_Window_Click" Background="#FFF0ED89" BorderBrush="#FFF0ED89"  >
       <Image  Source="/images/left-arrow2.png" Stretch="Uniform" Height="71" Width="84" RenderTransformOrigin="0.539,1.916">
       </Image>

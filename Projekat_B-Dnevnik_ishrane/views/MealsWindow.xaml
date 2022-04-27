@@ -18,25 +18,25 @@
     <ScrollBar HorizontalAlignment="Left" Height="387" Margin="917,102,0,0" VerticalAlignment="Top" Width="271" RenderTransformOrigin="3.593,0.632" Background="#FFFCC4C3" Grid.ColumnSpan="3"/>
     <ScrollBar HorizontalAlignment="Left" Height="387" Margin="624,102,0,0" VerticalAlignment="Top" Width="271" ValueChanged="ScrollBar_ValueChanged_1" Background="#FFFCC4C3"/>
     <ScrollBar HorizontalAlignment="Left" Height="387" Margin="324,102,0,0" VerticalAlignment="Top" Width="271" ValueChanged="ScrollBar_ValueChanged" Background="#FFFCC4C3"/>
-    <Label FontSize="20px" Content="Doručak" HorizontalAlignment="Left" Height="44" Margin="92,146,0,0" VerticalAlignment="Top" Width="114"/>
-    <Label FontSize="20px" Content="Ručak" HorizontalAlignment="Left" Height="44" Margin="404,146,0,0" VerticalAlignment="Top" Width="116"/>
-    <Label FontSize="20px" Content="Večera" HorizontalAlignment="Left" Height="43" Margin="708,146,0,0" VerticalAlignment="Top" Width="116"/>
-    <Label FontSize="20px" Content="Užina" HorizontalAlignment="Left" Height="44" Margin="1037,146,0,0" VerticalAlignment="Top" Width="114" Grid.ColumnSpan="3"/>
+    <Label x:Name="breakfastTextBlock" FontSize="20px" Content="{DynamicResource breakfastTextBlock}" HorizontalAlignment="Left" Height="44" Margin="92,146,0,0" VerticalAlignment="Top" Width="114"/>
+    <Label x:Name="lunchTextBlock" FontSize="20px" Content="{DynamicResource lunchTextBlock}" HorizontalAlignment="Left" Height="44" Margin="404,146,0,0" VerticalAlignment="Top" Width="116"/>
+    <Label x:Name="dinnerTextBlock" FontSize="20px" Content="{DynamicResource dinnerTextBlock}" HorizontalAlignment="Left" Height="43" Margin="708,146,0,0" VerticalAlignment="Top" Width="116"/>
+    <Label x:Name="snackTextBlock" FontSize="20px" Content="{DynamicResource snackTextBlock}" HorizontalAlignment="Left" Height="44" Margin="1037,146,0,0" VerticalAlignment="Top" Width="114" Grid.ColumnSpan="3"/>
     <DataGrid x:Name="dataGridBreakfast" Margin="32,195,771,175.4" AutoGenerateColumns="False" SelectionChanged="dataGridViewExercisePlan_SelectionChanged">
       <DataGrid.Columns>
-        <DataGridTextColumn Header="Namirnica" Binding="{Binding Path='Namirnica'}" IsReadOnly="True" Width="Auto" />
+        <DataGridTextColumn x:Name="foodstuffTextBlock" Header="{DynamicResource foodstuffTextBlock}" Binding="{Binding Path='Namirnica'}" IsReadOnly="True" Width="Auto" />
         <DataGridTextColumn Header="kcal" Binding="{Binding Path='kcal'}" IsReadOnly="True" Width="Auto" />
-        <DataGridTemplateColumn Header="Ažuriraj">
+        <DataGridTemplateColumn  Header="{DynamicResource updateButton}">
           <DataGridTemplateColumn.CellTemplate>
             <DataTemplate>
-              <Button Name="btnUpdate" Content="Update" Click="btnUpdateBreakfast_Click" Width="Auto" />
+              <Button Name="btnUpdate"  Content="{DynamicResource updateButton}" Click="btnUpdateBreakfast_Click" Width="Auto" />
             </DataTemplate>
           </DataGridTemplateColumn.CellTemplate>
         </DataGridTemplateColumn>
-        <DataGridTemplateColumn Header="Izbriši">
+        <DataGridTemplateColumn Header="{DynamicResource updateButton}">
           <DataGridTemplateColumn.CellTemplate>
             <DataTemplate>
-              <Button Name="btnDelete" Content="Delete" Click="btnDeleteBreakfast_Click" Width="Auto" />
+              <Button Name="btnDelete" Content="{DynamicResource deleteButton}" Click="btnDeleteBreakfast_Click" Width="Auto" />
             </DataTemplate>
           </DataGridTemplateColumn.CellTemplate>
         </DataGridTemplateColumn>
@@ -44,19 +44,19 @@
     </DataGrid>
     <DataGrid x:Name="dataGridLunch" Margin="341,195,467,175.4" AutoGenerateColumns="False" SelectionChanged="dataGridViewExercisePlan_SelectionChanged">
       <DataGrid.Columns>
-        <DataGridTextColumn Header="Namirnica" Binding="{Binding Path='Namirnica'}" IsReadOnly="True" Width="Auto"/>
-        <DataGridTextColumn Header="kcal" Binding="{Binding Path='kcal'}" IsReadOnly="True" Width="Auto"/>
-        <DataGridTemplateColumn Header="Ažuriraj">
+        <DataGridTextColumn  Header="{DynamicResource foodstuffTextBlock}" Binding="{Binding Path='Namirnica'}" IsReadOnly="True" Width="Auto" />
+        <DataGridTextColumn Header="kcal" Binding="{Binding Path='kcal'}" IsReadOnly="True" Width="Auto" />
+        <DataGridTemplateColumn  Header="{DynamicResource updateButton}">
           <DataGridTemplateColumn.CellTemplate>
             <DataTemplate>
-              <Button Name="btnUpdate" Content="Update" Click="btnUpdateLunch_Click"  Width="Auto"/>
+              <Button Name="btnUpdate"  Content="{DynamicResource updateButton}" Click="btnUpdateBreakfast_Click" Width="Auto" />
             </DataTemplate>
           </DataGridTemplateColumn.CellTemplate>
         </DataGridTemplateColumn>
-        <DataGridTemplateColumn Header="Izbriši">
+        <DataGridTemplateColumn Header="{DynamicResource updateButton}">
           <DataGridTemplateColumn.CellTemplate>
             <DataTemplate>
-              <Button Name="btnDelete" Content="Delete" Click="btnDeleteLunch_Click"  Width="Auto" />
+              <Button Name="btnDelete" Content="{DynamicResource deleteButton}" Click="btnDeleteBreakfast_Click" Width="Auto" />
             </DataTemplate>
           </DataGridTemplateColumn.CellTemplate>
         </DataGridTemplateColumn>
@@ -64,19 +64,19 @@
     </DataGrid>
     <DataGrid x:Name="dataGridDinner" Margin="646,195,177,175.4" AutoGenerateColumns="False" SelectionChanged="dataGridViewExercisePlan_SelectionChanged">
       <DataGrid.Columns>
-        <DataGridTextColumn Header="Namirnica" Binding="{Binding Path='Namirnica'}" IsReadOnly="True" Width="Auto"/>
+        <DataGridTextColumn  Header="{DynamicResource foodstuffTextBlock}" Binding="{Binding Path='Namirnica'}" IsReadOnly="True" Width="Auto" />
         <DataGridTextColumn Header="kcal" Binding="{Binding Path='kcal'}" IsReadOnly="True" Width="Auto" />
-        <DataGridTemplateColumn Header="Ažuriraj">
+        <DataGridTemplateColumn  Header="{DynamicResource updateButton}">
           <DataGridTemplateColumn.CellTemplate>
             <DataTemplate>
-              <Button Name="btnUpdate" Content="Update" Click="btnUpdateDinner_Click" Width="Auto"/>
+              <Button Name="btnUpdate"  Content="{DynamicResource updateButton}" Click="btnUpdateBreakfast_Click" Width="Auto" />
             </DataTemplate>
           </DataGridTemplateColumn.CellTemplate>
         </DataGridTemplateColumn>
-        <DataGridTemplateColumn Header="Izbriši">
+        <DataGridTemplateColumn Header="{DynamicResource updateButton}">
           <DataGridTemplateColumn.CellTemplate>
             <DataTemplate>
-              <Button Name="btnDelete" Content="Delete" Click="btnDeleteDinner_Click"  Width="Auto" />
+              <Button Name="btnDelete" Content="{DynamicResource deleteButton}" Click="btnDeleteBreakfast_Click" Width="Auto" />
             </DataTemplate>
           </DataGridTemplateColumn.CellTemplate>
         </DataGridTemplateColumn>
@@ -84,19 +84,19 @@
     </DataGrid>
     <DataGrid x:Name="dataGridSnack" Margin="942,195,46.6,175.4" AutoGenerateColumns="False" SelectionChanged="dataGridViewExercisePlan_SelectionChanged" Grid.ColumnSpan="3">
       <DataGrid.Columns>
-        <DataGridTextColumn Header="Namirnica" Binding="{Binding Path='Namirnica'}" IsReadOnly="True" />
-        <DataGridTextColumn Header="kcal" Binding="{Binding Path='kcal'}" IsReadOnly="True" />
-        <DataGridTemplateColumn Header="Ažuriraj">
+        <DataGridTextColumn  Header="{DynamicResource foodstuffTextBlock}" Binding="{Binding Path='Namirnica'}" IsReadOnly="True" Width="Auto" />
+        <DataGridTextColumn Header="kcal" Binding="{Binding Path='kcal'}" IsReadOnly="True" Width="Auto" />
+        <DataGridTemplateColumn  Header="{DynamicResource updateButton}">
           <DataGridTemplateColumn.CellTemplate>
             <DataTemplate>
-              <Button Name="btnUpdate" Content="Update" Click="btnUpdateSnack_Click" Width="Auto" />
+              <Button Name="btnUpdate"  Content="{DynamicResource updateButton}" Click="btnUpdateBreakfast_Click" Width="Auto" />
             </DataTemplate>
           </DataGridTemplateColumn.CellTemplate>
         </DataGridTemplateColumn>
-        <DataGridTemplateColumn Header="Izbriši">
+        <DataGridTemplateColumn Header="{DynamicResource updateButton}">
           <DataGridTemplateColumn.CellTemplate>
             <DataTemplate>
-              <Button Name="btnDelete" Content="Delete" Click="btnDeleteSnack_Click" Width="Auto"/>
+              <Button Name="btnDelete" Content="{DynamicResource deleteButton}" Click="btnDeleteBreakfast_Click" Width="Auto" />
             </DataTemplate>
           </DataGridTemplateColumn.CellTemplate>
         </DataGridTemplateColumn>
@@ -122,7 +122,7 @@
         <ImageBrush ImageSource="plus.png"/>
       </Canvas.Background>
     </Canvas>
-    <TextBlock Height="65" Margin="757,10,76,0" TextWrapping="Wrap" Text="Dnevni unos(kcal)" VerticalAlignment="Top" FontSize="24"/>
+    <TextBlock x:Name="dailyIntakeTextBlock" Height="65" Margin="757,10,76,0" TextWrapping="Wrap" Text="{DynamicResource dailyIntakeTextBlock}" VerticalAlignment="Top" FontSize="24"/>
     <TextBlock x:Name="totalyKcals" FontSize="24px"  HorizontalAlignment="Left"  Margin="973,10,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="125" RenderTransformOrigin="0.426,0.942" FontWeight="Bold" Grid.ColumnSpan="2"/>
   </Grid>
 </Window>

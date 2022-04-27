@@ -29,6 +29,7 @@ namespace Projekat_B_Dnevnik_ishrane.views
       this.dnevnikIshraneEntities = dnevnikIshraneEntities;
       this.coachId = coachId;
       Properties.Settings.Default.ColorMode = MainWindow.theme;
+      this.Resources.MergedDictionaries.Add(MainWindow.resourceDictionary);
       InitializeComponent();
     }
 

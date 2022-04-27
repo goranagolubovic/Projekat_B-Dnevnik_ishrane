@@ -115,3 +115,5 @@ C:\Users\goran\Desktop\Projekat_B-Dnevnik_ishrane\Projekat_B-Dnevnik_ishrane\obj
 C:\Users\goran\Desktop\Projekat_B-Dnevnik_ishrane\Projekat_B-Dnevnik_ishrane\obj\Debug\views\ViewUserWindow.g.cs
 C:\Users\goran\Desktop\Projekat_B-Dnevnik_ishrane\Projekat_B-Dnevnik_ishrane\obj\Debug\views\ViewUserWindow.baml
 C:\Users\goran\Desktop\Projekat_B-Dnevnik_ishrane\Projekat_B-Dnevnik_ishrane\obj\Debug\App.baml
+C:\Users\goran\Desktop\Projekat_B-Dnevnik_ishrane\Projekat_B-Dnevnik_ishrane\obj\Debug\StringResources.en.baml
+C:\Users\goran\Desktop\Projekat_B-Dnevnik_ishrane\Projekat_B-Dnevnik_ishrane\obj\Debug\StringResources.sr.baml

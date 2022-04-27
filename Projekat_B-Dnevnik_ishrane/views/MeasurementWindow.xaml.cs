@@ -28,6 +28,7 @@ namespace Projekat_B_Dnevnik_ishrane.views
     public MeasurementWindow(int userId)
     {
       Properties.Settings.Default.ColorMode = MainWindow.theme;
+      this.Resources.MergedDictionaries.Add(MainWindow.resourceDictionary);
       InitializeComponent();
       this.userId = userId;
       initializeDataGrid();

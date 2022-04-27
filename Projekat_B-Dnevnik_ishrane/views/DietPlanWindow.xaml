@@ -13,32 +13,32 @@
       <ColumnDefinition Width="35*"/>
       <ColumnDefinition Width="344*"/>
     </Grid.ColumnDefinitions>
-    <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Height="52" Margin="122,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="357" FontSize="48" Foreground="#FF408090" Grid.ColumnSpan="3" ><Run Text=" Plan ishrane"/><LineBreak/><Run/><LineBreak/><Run Text="  "/><LineBreak/><Run Text=" "/><LineBreak/><Run Text="ISHRANE"/></TextBlock>
+    <TextBlock x:Name="dietPlanTextBlock" HorizontalAlignment="Left" Height="52" Margin="122,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="357" FontSize="48" Foreground="#FF408090" Grid.ColumnSpan="3"   Text="{DynamicResource dietPlanTextBlock}"></TextBlock>
     <DataGrid x:Name="dataGridViewDietPlan" HorizontalAlignment="Left" Height="290" Margin="0,160,0,0" VerticalAlignment="Top" Width="611" AutoGenerateColumns="False" Grid.ColumnSpan="3" Background="#FFCDE5C9" SelectionChanged="dataGridViewDietPlan_SelectionChanged">
       <DataGrid.Columns>
-        <DataGridTextColumn Header="Ime trenera" Binding="{Binding Path='ImeTrenera'}" IsReadOnly="True" />
-        <DataGridTextColumn Header="Prezime trenera" Binding="{Binding Path='PrezimeTrenera'}" IsReadOnly="True" />
-        <DataGridTextColumn Header="Datum i vrijeme" Binding="{Binding Path='DatumVrijeme'}" IsReadOnly="True" />
-        <DataGridTextColumn Header="Ime kandidata" Binding="{Binding Path='ImeKandidata'}" IsReadOnly="True" />
-        <DataGridTextColumn Header="Prezime kandidata" Binding="{Binding Path='PrezimeKandidata'}" IsReadOnly="True" />
-        <DataGridTemplateColumn Header="Pregledaj">
+        <DataGridTextColumn x:Name="coachNameTextBlock" Header="{DynamicResource coachNameTextBlock}" Binding="{Binding Path='ImeTrenera'}" IsReadOnly="True" />
+        <DataGridTextColumn x:Name="coachSurnameTextBlock" Header="{DynamicResource coachSurnameTextBlock}" Binding="{Binding Path='PrezimeTrenera'}" IsReadOnly="True" />
+        <DataGridTextColumn x:Name="dateAndTime" Header="{DynamicResource dateAndTime}" Binding="{Binding Path='DatumVrijeme'}" IsReadOnly="True" />
+        <DataGridTextColumn x:Name="candidateNameTextBlock" Header="{DynamicResource candidateNameTextBlock}" Binding="{Binding Path='ImeKandidata'}" IsReadOnly="True" />
+        <DataGridTextColumn x:Name="candidateSurnameTextBlock" Header="{DynamicResource candidateSurnameTextBlock}" Binding="{Binding Path='PrezimeKandidata'}" IsReadOnly="True" />
+        <DataGridTemplateColumn x:Name="viewButton" Header="{DynamicResource viewButton}">
           <DataGridTemplateColumn.CellTemplate>
             <DataTemplate>
-              <Button Name="btnView" Content="Pregledaj" Click="btnView_Click" />
+              <Button Name="btnView" Content="{DynamicResource viewButton}" Click="btnView_Click" />
             </DataTemplate>
           </DataGridTemplateColumn.CellTemplate>
         </DataGridTemplateColumn>
-        <DataGridTemplateColumn Header="Ažuriraj">
+        <DataGridTemplateColumn x:Name="updateButton" Header="{DynamicResource updateButton}">
           <DataGridTemplateColumn.CellTemplate>
             <DataTemplate>
-              <Button Name="btnUpdate" Content="Ažuriraj" Click="btnUpdate_Click" />
+              <Button Name="btnUpdate" Content="{DynamicResource updateButton}" Click="btnUpdate_Click" />
             </DataTemplate>
           </DataGridTemplateColumn.CellTemplate>
         </DataGridTemplateColumn>
-        <DataGridTemplateColumn Header="Izbriši">
+        <DataGridTemplateColumn x:Name="deleteButton" Header="{DynamicResource deleteButton}">
           <DataGridTemplateColumn.CellTemplate>
             <DataTemplate>
-              <Button Name="btnDelete" Content="Izbriši" Click="btnDelete_Click" />
+              <Button Name="btnDelete" Content="{DynamicResource deleteButton}" Click="btnDelete_Click" />
             </DataTemplate>
           </DataGridTemplateColumn.CellTemplate>
         </DataGridTemplateColumn>

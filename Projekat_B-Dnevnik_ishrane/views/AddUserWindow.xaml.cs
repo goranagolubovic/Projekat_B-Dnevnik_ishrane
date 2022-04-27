@@ -35,11 +35,14 @@ namespace Projekat_B_Dnevnik_ishrane.views
       this.previousWindow = previousWindow;
       this.action = action;
       Properties.Settings.Default.ColorMode = MainWindow.theme;
+      this.Resources.MergedDictionaries.Add(MainWindow.resourceDictionary);
       InitializeComponent();
     }
 
     public AddUserWindow(int coachId, string action, dynamic ime, dynamic prezime, dynamic godiste, UsersWindow usersWindow)
     {
+      Properties.Settings.Default.ColorMode = MainWindow.theme;
+      this.Resources.MergedDictionaries.Add(MainWindow.resourceDictionary);
       InitializeComponent();
       this.action = action;
       this.ime = ime;

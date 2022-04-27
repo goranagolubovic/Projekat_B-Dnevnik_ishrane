@@ -36,6 +36,7 @@ namespace Projekat_B_Dnevnik_ishrane.views
       this.action = action;
       this.selectedDateTime = dateTime;
       Properties.Settings.Default.ColorMode = MainWindow.theme;
+      this.Resources.MergedDictionaries.Add(MainWindow.resourceDictionary);
       InitializeComponent();
     }
 
@@ -45,6 +46,7 @@ namespace Projekat_B_Dnevnik_ishrane.views
       this.measurementWindow = measurementWindow;
       this.action = action;
       Properties.Settings.Default.ColorMode = MainWindow.theme;
+      this.Resources.MergedDictionaries.Add(MainWindow.resourceDictionary);
       InitializeComponent();
     }
 

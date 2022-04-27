@@ -245,6 +245,14 @@
     <Compile Include="views\WeightWindow.xaml.cs">
       <DependentUpon>WeightWindow.xaml</DependentUpon>
     </Compile>
+    <Page Include="StringResources.en.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="StringResources.sr.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="views\AddUserWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

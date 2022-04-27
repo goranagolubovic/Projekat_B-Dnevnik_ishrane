@@ -26,10 +26,15 @@ namespace Projekat_B_Dnevnik_ishrane
     private static List<kandidat> listOfCandidates = new List<kandidat>();
     private int matchedUserId = -1;
     public static string theme = "candy";
+    public static ResourceDictionary resourceDictionary;
     public MainWindow()
         {
+            
             InitializeComponent();
-        }
+      resourceDictionary = new ResourceDictionary();
+      resourceDictionary.Source = new Uri("./StringResources.sr.xaml", UriKind.Relative);
+      this.Resources.MergedDictionaries.Add(resourceDictionary);
+    }
     private void Button_Click(object sender, RoutedEventArgs e)
     {
       user = dnevnikIshraneEntities.korisniks.Where(elem =>
@@ -89,6 +94,20 @@ namespace Projekat_B_Dnevnik_ishrane
       Properties.Settings.Default.ColorMode = "candy";
       theme = "candy";
       Properties.Settings.Default.Save();
+    }
+
+    private void chooseSerbian(object sender, RoutedEventArgs e)
+    {
+       resourceDictionary = new ResourceDictionary();
+      resourceDictionary.Source = new Uri("./StringResources.sr.xaml",UriKind.Relative);
+      this.Resources.MergedDictionaries.Add(resourceDictionary);
+    }
+
+    private void chooseEnglish(object sender, RoutedEventArgs e)
+    {
+      resourceDictionary = new ResourceDictionary();
+      resourceDictionary.Source = new Uri("./StringResources.en.xaml", UriKind.Relative);
+      this.Resources.MergedDictionaries.Add(resourceDictionary);
     }
   }
 }

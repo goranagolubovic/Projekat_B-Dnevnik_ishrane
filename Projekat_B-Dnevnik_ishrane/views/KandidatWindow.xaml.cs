@@ -31,6 +31,7 @@ namespace Projekat_B_Dnevnik_ishrane
       this.dnevnikIshraneEntities = dnevnikIshraneEntities;
       this.candidateId = candidateId;
       Properties.Settings.Default.ColorMode = MainWindow.theme;
+      this.Resources.MergedDictionaries.Add(MainWindow.resourceDictionary);
       InitializeComponent();
     }
 

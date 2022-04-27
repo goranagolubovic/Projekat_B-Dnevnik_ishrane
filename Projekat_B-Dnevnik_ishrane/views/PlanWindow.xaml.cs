@@ -38,6 +38,7 @@ namespace Dnevnik_ishrane.views
       this.userId = userId;
       this.whatIsAdding = whatIsAdding;
       Projekat_B_Dnevnik_ishrane.Properties.Settings.Default.ColorMode = MainWindow.theme;
+      this.Resources.MergedDictionaries.Add(MainWindow.resourceDictionary);
       InitializeComponent();
     }
     public PlanWindow(int userId,string whatIsUpdating,DateTime selectedDateTime,string selectedName,string selectedSurname)
@@ -48,6 +49,7 @@ namespace Dnevnik_ishrane.views
       this.selectedSurnameOfCandidate = selectedSurname;
       this.selectedDateTime = selectedDateTime;
       Projekat_B_Dnevnik_ishrane.Properties.Settings.Default.ColorMode = MainWindow.theme;
+      this.Resources.MergedDictionaries.Add(MainWindow.resourceDictionary);
       InitializeComponent();
       initializeTextFields(whatIsUpdating);
       nameTextBox.Visibility = Visibility.Hidden;

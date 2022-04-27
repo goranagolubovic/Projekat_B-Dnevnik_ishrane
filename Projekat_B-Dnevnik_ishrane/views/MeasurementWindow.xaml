@@ -10,25 +10,25 @@
   <Grid >
     <DataGrid x:Name="dataGridViewMeasurementPlan" HorizontalAlignment="Left" Height="290" Margin="102,144,0,0" VerticalAlignment="Top" Width="635" AutoGenerateColumns="False" Background="#FFDFE6F4" SelectionChanged="dataGridViewDietPlan_SelectionChanged">
       <DataGrid.Columns>
-        <DataGridTextColumn Header="Ime trenera" Binding="{Binding Path='ImeTrenera'}" IsReadOnly="True" />
-        <DataGridTextColumn Header="Prezime trenera" Binding="{Binding Path='PrezimeTrenera'}" IsReadOnly="True" />
-        <DataGridTextColumn Header="Datum i vrijeme" Binding="{Binding Path='DatumVrijeme'}" IsReadOnly="True" />
-        <DataGridTextColumn Header="Tezina" Binding="{Binding Path='Tezina'}" IsReadOnly="True" />
-        <DataGridTextColumn Header="Ime kandidata" Binding="{Binding Path='ImeKandidata'}" IsReadOnly="True" />
-        <DataGridTextColumn Header="Prezime kandidata" Binding="{Binding Path='PrezimeKandidata'}" IsReadOnly="True" />
-        <DataGridTextColumn Header="Godište" Binding="{Binding Path='Godiste'}" IsReadOnly="True" />
-        
-        <DataGridTemplateColumn Header="Ažuriraj">
+        <DataGridTextColumn Header="{DynamicResource coachNameTextBlock}" Binding="{Binding Path='ImeTrenera'}" IsReadOnly="True" />
+        <DataGridTextColumn Header="{DynamicResource coachSurnTextBlock}" Binding="{Binding Path='PrezimeTrenera'}" IsReadOnly="True" />
+        <DataGridTextColumn Header="{DynamicResource dateAndTime}" Binding="{Binding Path='DatumVrijeme'}" IsReadOnly="True" />
+        <DataGridTextColumn Header="{DynamicResource weightTextBlock}" Binding="{Binding Path='Tezina'}" IsReadOnly="True" />
+        <DataGridTextColumn Header="{DynamicResource candidateNameTextBlock}" Binding="{Binding Path='ImeKandidata'}" IsReadOnly="True" />
+        <DataGridTextColumn Header="{DynamicResource candidateSurnameTextBlock}" Binding="{Binding Path='PrezimeKandidata'}" IsReadOnly="True" />
+        <DataGridTextColumn Header="{DynamicResource yearOfBirthTextBlock}" Binding="{Binding Path='Godiste'}" IsReadOnly="True" />
+
+        <DataGridTemplateColumn Header="{DynamicResource updateButton}">
           <DataGridTemplateColumn.CellTemplate>
             <DataTemplate>
-              <Button Name="btnUpdate" Content="Ažuriraj" Click="btnUpdate_Click" />
+              <Button Name="btnUpdate" Content="{DynamicResource updateButton}" Click="btnUpdate_Click" />
             </DataTemplate>
           </DataGridTemplateColumn.CellTemplate>
         </DataGridTemplateColumn>
-        <DataGridTemplateColumn Header="Izbriši">
+        <DataGridTemplateColumn Header="{DynamicResource deleteButton}">
           <DataGridTemplateColumn.CellTemplate>
             <DataTemplate>
-              <Button Name="btnDelete" Content="Izbriši" Click="btnDelete_Click" />
+              <Button Name="btnDelete" Content="{DynamicResource deleteButton}" Click="btnDelete_Click" />
             </DataTemplate>
           </DataGridTemplateColumn.CellTemplate>
         </DataGridTemplateColumn>

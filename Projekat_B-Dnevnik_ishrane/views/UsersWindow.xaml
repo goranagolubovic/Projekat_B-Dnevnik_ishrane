@@ -16,27 +16,27 @@
 
     <DataGrid x:Name="dataGridViewUser" Margin="90,158,90,228" AutoGenerateColumns="False" SelectionChanged="dataGridViewUsers_SelectionChanged">
       <DataGrid.Columns>
-        <DataGridTextColumn Header="Ime" Binding="{Binding Path='Ime'}" IsReadOnly="True" />
-        <DataGridTextColumn Header="Prezime" Binding="{Binding Path='Prezime'}" IsReadOnly="True" />
-        <DataGridTextColumn Header="Godište" Binding="{Binding Path='Godiste'}" IsReadOnly="True" />
-        <DataGridTemplateColumn Header="Pregledaj">
+        <DataGridTextColumn Header="{DynamicResource candidateNameTextBlock}" Binding="{Binding Path='Ime'}" IsReadOnly="True" />
+        <DataGridTextColumn Header="{DynamicResource candidateSurnameTextBlock}" Binding="{Binding Path='Prezime'}" IsReadOnly="True" />
+        <DataGridTextColumn Header="{DynamicResource yearOfBirthTextBlock}" Binding="{Binding Path='Godiste'}" IsReadOnly="True" />
+        <DataGridTemplateColumn Header="{DynamicResource viewButton}">
           <DataGridTemplateColumn.CellTemplate>
             <DataTemplate>
-              <Button Name="btnView" Content="View" Click="btnView_Click" />
+              <Button Name="btnView" Content="{DynamicResource viewButton}" Click="btnView_Click" />
             </DataTemplate>
           </DataGridTemplateColumn.CellTemplate>
         </DataGridTemplateColumn>
-        <DataGridTemplateColumn Header="Ažuriraj">
+        <DataGridTemplateColumn Header="{DynamicResource updateButton}">
           <DataGridTemplateColumn.CellTemplate>
             <DataTemplate>
-              <Button Name="btnUpdate" Content="Update" Click="btnUpdate_Click" />
+              <Button Name="btnUpdate" Content="{DynamicResource updateButton}" Click="btnUpdate_Click" />
             </DataTemplate>
           </DataGridTemplateColumn.CellTemplate>
         </DataGridTemplateColumn>
-        <DataGridTemplateColumn Header="Izbriši">
+        <DataGridTemplateColumn Header="{DynamicResource deleteButton}">
           <DataGridTemplateColumn.CellTemplate>
             <DataTemplate>
-              <Button Name="btnDelete" Content="Delete" Click="btnDelete_Click" />
+              <Button Name="btnDelete" Content="{DynamicResource deleteButton}" Click="btnDelete_Click" />
             </DataTemplate>
           </DataGridTemplateColumn.CellTemplate>
         </DataGridTemplateColumn>

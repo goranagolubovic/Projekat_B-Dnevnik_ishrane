@@ -28,6 +28,7 @@ namespace Projekat_B_Dnevnik_ishrane.views
     public FoodStuffWindow(int candidateId,string typeOfMeal)
     {
       Properties.Settings.Default.ColorMode = MainWindow.theme;
+      this.Resources.MergedDictionaries.Add(MainWindow.resourceDictionary);
       InitializeComponent();
       this.candidateId = candidateId;
       this.typeOfMeal = typeOfMeal;

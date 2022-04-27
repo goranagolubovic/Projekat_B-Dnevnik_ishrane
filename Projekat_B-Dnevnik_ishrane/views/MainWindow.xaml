@@ -9,12 +9,18 @@
         Style="{StaticResource WindowStyle}"
         ResizeMode="NoResize">
   <Grid>
-    <Button BorderThickness="4" Content="Prijavi se" HorizontalAlignment="Left" Margin="450,447,0,0" VerticalAlignment="Top" Height="64" Width="178" Click="Button_Click" FontSize="20"  RenderTransformOrigin="-0.095,0.54"/>
+    <Menu Margin="0,0,679.6,642.4">
+      <MenuItem x:Name="menuTextBlock" Header="{DynamicResource menuTextBlock}">
+        <MenuItem x:Name="serbianTextBlock" Header="{DynamicResource serbianTextBlock}" Click="chooseSerbian"></MenuItem>
+        <MenuItem x:Name="englishTextBlock" Header="{DynamicResource englishTextBlock}" Click="chooseEnglish"></MenuItem>
+      </MenuItem>
+    </Menu>
+    <Button x:Name="loginButton" BorderThickness="4" Content="{DynamicResource loginButton}" HorizontalAlignment="Left" Margin="450,447,0,0" VerticalAlignment="Top" Height="64" Width="178" Click="Button_Click" FontSize="20"  RenderTransformOrigin="-0.095,0.54"/>
     <TextBox BorderThickness="2" x:Name="UserNameField" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="428,238,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="229" Height="76" Cursor="" RenderTransformOrigin="0.531,1.55"  FontSize="24"/>
     <PasswordBox BorderThickness="2" x:Name="PasswordField" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="428,342,0,0" VerticalAlignment="Top" Width="229" Height="80"  FontSize="24"/>
-    <TextBlock HorizontalAlignment="Center" Height="102" Margin="331,76,122.6,0" Text="  Dnevnik ishrane" TextWrapping="Wrap" VerticalAlignment="Top" Width="440"  FontSize="36"/>
-    <TextBlock HorizontalAlignment="Left" Height="58" Margin="260,256,0,0" Text="Korisničko ime" TextWrapping="Wrap" VerticalAlignment="Top" Width="168"  FontSize="24" RenderTransformOrigin="0.524,0.801"/>
-    <TextBlock HorizontalAlignment="Left" Height="58" Margin="301,364,0,0" Text="Lozinka" TextWrapping="Wrap" VerticalAlignment="Top" Width="122" FontSize="24" />
+    <TextBlock x:Name="titleTextBlock" HorizontalAlignment="Center" Height="102" Margin="331,76,122.6,0" Text="{DynamicResource titleTextBlock}" TextWrapping="Wrap" VerticalAlignment="Top" Width="440"  FontSize="36"/>
+    <TextBlock x:Name="usernameTextBlock" HorizontalAlignment="Left" Height="58" Margin="260,256,0,0" Text="{DynamicResource usernameTextBlock}" TextWrapping="Wrap" VerticalAlignment="Top" Width="168"  FontSize="24" RenderTransformOrigin="0.524,0.801"/>
+    <TextBlock x:Name="passwordTextBlock" HorizontalAlignment="Left" Height="58" Margin="301,364,0,0" Text="{DynamicResource passwordTextBlock}" TextWrapping="Wrap" VerticalAlignment="Top" Width="122" FontSize="24" />
     <RadioButton GroupName="modesSelection" IsChecked="True" Content="Candy" HorizontalAlignment="Left" Height="19" Margin="776,28,0,0" VerticalAlignment="Top" Width="94" Checked="CandyMode_Checked"/>
     <RadioButton GroupName="modesSelection" Content="Light" HorizontalAlignment="Left" Margin="776,52,0,0" VerticalAlignment="Top" Checked="LightMode_Checked"/>
     <RadioButton GroupName="modesSelection" Content="Dark" HorizontalAlignment="Left" Margin="776,76,0,0" VerticalAlignment="Top" Checked="DarkMode_Checked"/>

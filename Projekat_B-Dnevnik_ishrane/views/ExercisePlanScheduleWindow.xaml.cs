@@ -33,6 +33,7 @@ namespace Projekat_B_Dnevnik_ishrane
       this.userId = userId;
       this.previousWindow = previousWindow;
       Properties.Settings.Default.ColorMode = MainWindow.theme;
+      this.Resources.MergedDictionaries.Add(MainWindow.resourceDictionary);
       InitializeComponent();
       InitializeFields();
 
