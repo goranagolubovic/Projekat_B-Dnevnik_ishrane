@@ -6,6 +6,9 @@
         xmlns:local="clr-namespace:Projekat_B_Dnevnik_ishrane"
         mc:Ignorable="d"
         Style="{StaticResource WindowStyle}"
+        WindowStartupLocation="Manual"
+        Top="0"
+        Left="300" ResizeMode="NoResize"
         Title="DietPlanWindow" Height="750" Width="618">
     <Grid>
         <Grid.ColumnDefinitions>

@@ -42,9 +42,14 @@ namespace Projekat_B_Dnevnik_ishrane
     private void InitializeFields()
     {
       DateTime date1 = selectedDateTime.Date.AddHours(selectedDateTime.Hour).AddMinutes(selectedDateTime.Minute);
-      List<plan_vjezbanja>listExercisePlan = dnevnikIshraneEntities.plan_vjezbanja
-        .Where(el => el.KANDIDAT_KORISNIK_idKORISNIK == userId || el.TRENER_KORISNIK_idKORISNIK == userId).ToList();
-      List<plan_vjezbanja>selectedExercisePlan = listExercisePlan.Where(el => el.DatumVrijeme.Date.AddHours(el.DatumVrijeme.Hour).AddMinutes(el.DatumVrijeme.Minute).Equals(date1)).ToList();
+
+      List<plan_vjezbanja> listExercisePlan = dnevnikIshraneEntities.plan_vjezbanja.AsNoTracking()
+      .Where(el => el.KANDIDAT_KORISNIK_idKORISNIK == userId || el.TRENER_KORISNIK_idKORISNIK == userId).ToList();
+      selectedExercisePlan = listExercisePlan.Select(el => {
+        bool one = el.DatumVrijeme.Date.AddHours(el.DatumVrijeme.Hour).AddMinutes(el.DatumVrijeme.Minute).Equals(date1);
+        bool two = el.DatumVrijeme.Date.AddHours(el.DatumVrijeme.Hour).AddMinutes(el.DatumVrijeme.Minute + 1).Equals(date1);
+        return el;
+      }).Where(el => el.DatumVrijeme.Date.AddHours(el.DatumVrijeme.Hour).AddMinutes(el.DatumVrijeme.Minute).Equals(date1) || el.DatumVrijeme.Date.AddHours(el.DatumVrijeme.Hour).AddMinutes(el.DatumVrijeme.Minute + 1).Equals(date1)).ToList();
       plan_vjezbanja mondayExercisePlan = selectedExercisePlan.Where(elem => elem.Dan.Equals("ponedjeljak")).First();
       if (mondayExercisePlan.Opis.Contains(","))
       {

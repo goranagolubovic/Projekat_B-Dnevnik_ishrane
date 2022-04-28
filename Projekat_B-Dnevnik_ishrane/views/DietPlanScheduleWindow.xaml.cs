@@ -22,7 +22,6 @@ namespace Projekat_B_Dnevnik_ishrane
   public partial class DietPlanScheduleWindow : Window
   {
     private static dbModel dnevnikIshraneEntities = new dbModel();
-    private List<plan_ishrane> listDietPlan = new List<plan_ishrane>();
     private List<plan_ishrane> selectedDietPlan = new List<plan_ishrane>();
     private DateTime selectedDateTime;
     private Window previousWindow;
@@ -43,10 +42,14 @@ namespace Projekat_B_Dnevnik_ishrane
     private void InitializeFields()
     {
       DateTime date1 = selectedDateTime.Date.AddHours(selectedDateTime.Hour).AddMinutes(selectedDateTime.Minute);
-      listDietPlan = dnevnikIshraneEntities.plan_ishrane
+
+      List<plan_ishrane> listDietPlan = dnevnikIshraneEntities.plan_ishrane.AsNoTracking()
         .Where(el=> el.KANDIDAT_KORISNIK_idKORISNIK==userId || el.TRENER_KORISNIK_idKORISNIK == userId).ToList();
-      selectedDietPlan = listDietPlan.Where(el => el.DatumVrijeme.Date.AddHours(el.DatumVrijeme.Hour).AddMinutes(el.DatumVrijeme.Minute).Equals(date1)).ToList();
-      MessageBox.Show(selectedDateTime.ToString());
+      selectedDietPlan = listDietPlan.Select(el => {
+      bool one = el.DatumVrijeme.Date.AddHours(el.DatumVrijeme.Hour).AddMinutes(el.DatumVrijeme.Minute).Equals(date1);
+      bool two = el.DatumVrijeme.Date.AddHours(el.DatumVrijeme.Hour).AddMinutes(el.DatumVrijeme.Minute + 1).Equals(date1);
+        return el;
+      }).Where(el => el.DatumVrijeme.Date.AddHours(el.DatumVrijeme.Hour).AddMinutes(el.DatumVrijeme.Minute).Equals(date1) ||  el.DatumVrijeme.Date.AddHours(el.DatumVrijeme.Hour).AddMinutes(el.DatumVrijeme.Minute+1).Equals(date1)).ToList();
       plan_ishrane mondayDietPlan = selectedDietPlan.Where(elem => elem.Dan.Equals("ponedjeljak")).First();
       if (mondayDietPlan.Opis.Contains(","))
       {

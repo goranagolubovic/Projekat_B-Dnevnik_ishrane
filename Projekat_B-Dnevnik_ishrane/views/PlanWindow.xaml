@@ -7,6 +7,9 @@
         xmlns:local="clr-namespace:Dnevnik_ishrane.views"
         mc:Ignorable="d"
          Style="{StaticResource WindowStyle}"
+        WindowStartupLocation="Manual"
+        Top="0"
+        Left="300" ResizeMode="NoResize"
         Title="PlanWindow" Height="757" Width="1050">
   <Grid >
     <Grid.ColumnDefinitions>

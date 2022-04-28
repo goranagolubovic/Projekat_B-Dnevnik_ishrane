@@ -10,7 +10,7 @@
       <Style.Triggers>
         <DataTrigger Binding="{Binding Source={x:Static properties:Settings.Default},Path=ColorMode}" Value="dark">
           <Setter Property="Background" Value="LightGray"></Setter>
-          <Setter Property="Foreground" Value="White"></Setter>
+          <Setter Property="Foreground" Value="Black"></Setter>
           <Setter Property="FontFamily" Value="Segoe UI"></Setter>
         </DataTrigger>
 

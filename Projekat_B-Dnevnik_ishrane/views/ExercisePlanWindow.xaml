@@ -6,6 +6,9 @@
         xmlns:local="clr-namespace:Projekat_B_Dnevnik_ishrane"
         mc:Ignorable="d"
          Style="{StaticResource WindowStyle}"
+        WindowStartupLocation="Manual"
+        Top="0"
+        Left="300" ResizeMode="NoResize"
         Title="ExercisePlanWindow" Height="700" Width="678.4">
     <Grid Margin="0,0,-6,0.4">
 

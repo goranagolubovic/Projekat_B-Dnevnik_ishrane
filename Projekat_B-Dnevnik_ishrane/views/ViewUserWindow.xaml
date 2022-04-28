@@ -6,6 +6,9 @@
         xmlns:local="clr-namespace:Projekat_B_Dnevnik_ishrane.views"
         mc:Ignorable="d"
         Style="{StaticResource WindowStyle}"
+        WindowStartupLocation="Manual"
+        Top="0"
+        Left="300" ResizeMode="NoResize"
         Title="ViewUserWindow" Height="619.898" Width="721.939">
   <Grid  Margin="0,0,-0.4,-19">
     <Grid  HorizontalAlignment="Left" Height="356" Margin="121,127,0,0" VerticalAlignment="Top" Width="551">

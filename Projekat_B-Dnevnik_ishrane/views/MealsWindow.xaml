@@ -6,6 +6,9 @@
         xmlns:local="clr-namespace:Projekat_B_Dnevnik_ishrane.views"
         mc:Ignorable="d"
          Style="{StaticResource WindowStyle}"
+        WindowStartupLocation="Manual"
+        Top="0"
+        Left="300" ResizeMode="NoResize"
         Title="MealsWindow" Height="612.582" Width="1212.4">
     <Grid Margin="0,0,-6.2,-0.2">
         <Grid.ColumnDefinitions>
