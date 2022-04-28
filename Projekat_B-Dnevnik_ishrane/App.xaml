@@ -15,7 +15,7 @@
         </DataTrigger>
 
         <DataTrigger Binding="{Binding Source={x:Static properties:Settings.Default},Path=ColorMode}" Value="candy">
-          <Setter Property="Background" Value="#FFFFF9D0"></Setter>
+          <Setter Property="Background" Value="#f7d0c6"></Setter>
           <Setter Property="Foreground" Value="Black"></Setter>
           <Setter Property="FontFamily" Value="Segoe UI"></Setter>
         </DataTrigger>

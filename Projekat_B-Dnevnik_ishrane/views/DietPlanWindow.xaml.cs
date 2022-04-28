@@ -40,7 +40,7 @@ namespace Projekat_B_Dnevnik_ishrane
       initializeDataGrid();
     }
 
-    private void initializeDataGrid()
+    public  void initializeDataGrid()
     {
       if (MainWindow.checkIfUserIsCandidate(userId))
       {
@@ -52,13 +52,14 @@ namespace Projekat_B_Dnevnik_ishrane
          IdCandidate = pi.KANDIDAT_KORISNIK_idKORISNIK,
          SurnameOfTrener = k.Prezime,
          NameOfTrener = k.Ime,
-         IdPlan = pi.idPLAN_ISHRANE
+         IdPlan = pi.idPLAN_ISHRANE,
+         CandidateActive=k.Aktivan
        })
-         .Where(elem => elem.IdCandidate == userId).ToList();
+         .Where(elem => elem.IdCandidate == userId && elem.CandidateActive==1).ToList();
 
         var list = new List<dynamic>();
         for (int i=0;i<listOfDietPlans.Count;i++)
-        {// i%7 da ne prikazuje za svaki dan posebno jedan te isti plan
+        {
           if ((listOfDietPlans[i].IdPlan % 7)==0)
           {
             list.Add(new
@@ -89,9 +90,10 @@ namespace Projekat_B_Dnevnik_ishrane
       IdCoach = pi.TRENER_KORISNIK_idKORISNIK,
       SurnameOfCandidate = k.Prezime,
       NameOfCandidate = k.Ime,
-      IdPlan = pi.idPLAN_ISHRANE
+      IdPlan = pi.idPLAN_ISHRANE,
+      CandidateActive=k.Aktivan
     })
-      .Where(elem => elem.IdCoach == userId).ToList();
+      .Where(elem => elem.IdCoach == userId && elem.CandidateActive==1).ToList();
 
         var list = new List<dynamic>();
         for (int i = 0; i < listOfDietPlans.Count; i++)
@@ -129,9 +131,10 @@ namespace Projekat_B_Dnevnik_ishrane
       IdCandidate=k.idKORISNIK,
       NameOfCandidate = k.Ime,
       SurnameOfCandidate = k.Prezime,
-      IdPlan=pi.idPLAN_ISHRANE
+      IdPlan=pi.idPLAN_ISHRANE,
+      CandidateActive=k.Aktivan
     })
-      .Where(elem => elem.IdCoach == userId && elem.NameOfCandidate.Equals(nameOfCandidate) && elem.SurnameOfCandidate.Equals(surnameOfCandidate)).ToList();
+      .Where(elem => elem.IdCoach == userId && elem.NameOfCandidate.Equals(nameOfCandidate) && elem.SurnameOfCandidate.Equals(surnameOfCandidate) && elem.CandidateActive==1).ToList();
       DateTime date = dateTime.Date.AddHours(dateTime.Hour).AddMinutes(dateTime.Minute);
       List<PlanView> planForSelectedDateTime = listOfPlanViews.Where(elem => elem.DateAndTime.Date.AddHours(elem.DateAndTime.Hour).AddMinutes(elem.DateAndTime.Minute).Equals(date)).ToList();
       foreach(var elem in planForSelectedDateTime) {
@@ -178,25 +181,7 @@ namespace Projekat_B_Dnevnik_ishrane
     }
 
 
-    private void Previous_Window_Click(object sender, RoutedEventArgs e)
-    {
-        this.Hide();
-        if (MainWindow.checkIfUserIsCandidate(userId))
-        {
-          KandidatWindow kandidatWindow = new KandidatWindow(userId,dnevnikIshraneEntities);
-          kandidatWindow.Show();
-        }
-        else
-        {
-        TrenerWindow trenerWindow = new TrenerWindow(userId, dnevnikIshraneEntities);
-          trenerWindow.Show();
-        }
-    }
-
-    private void Exit_Click(object sender, RoutedEventArgs e)
-    {
-      Application.Current.Shutdown();
-    }
+  
 
     private void addDietPlan(object sender, MouseButtonEventArgs e)
     {
@@ -204,85 +189,27 @@ namespace Projekat_B_Dnevnik_ishrane
       Window window = new PlanWindow(userId, "dietPlan");
       window.Show();
     }
-    /*private void btnDelete_Click(object sender, RoutedEventArgs e)
-{
-dynamic dataRowView = ((Button)e.Source).DataContext;
-try
-{
-string vrijeme = dataRowView.Vrijeme;
-string DELETE_QUERY = "DELETE from plan_ishrane where KANDIDAT_KORISNIK_idKorisnika='" + getCandidateId(dataRowView.Ime, dataRowView.Prezime) + "' and Datum='" + dataRowView.Datum + "' and Vrijeme='" + vrijeme + "'";
-MySqlCommand find = new MySqlCommand(DELETE_QUERY, DatabaseConnection.Instance.mySqlConnection);
-find.Prepare();
-find.ExecuteNonQuery();
-this.Hide();
-DietPlanWindow dw = new DietPlanWindow();
-dw.Show();
-}
-catch (Exception ex)
-{
-MessageBox.Show(ex.Message.ToString());
-}
-}
 
-public static string getCandidateId(String name, String surname)
-{
-int candidateId = 0;
-string FINDID_QUERY = "SELECT KORISNIK_idKorisnika FROM osnovni_podaci Where Ime='" + name + "'and Prezime='" + surname + "'";
-MySqlCommand find = new MySqlCommand(FINDID_QUERY, DatabaseConnection.Instance.mySqlConnection);
-MySqlDataReader readUsers = find.ExecuteReader();
-while (readUsers.Read())
-{
-candidateId = readUsers.GetInt32(0);
-}
-readUsers.Close();
-return candidateId.ToString();
-}
+    private void Exit_Click(object sender, MouseButtonEventArgs e)
+    {
+      Application.Current.Shutdown();
+    }
 
-private void btnUpdate_Click(object sender, RoutedEventArgs e)
-{
-try
-{
-dynamic dataRowView = ((Button)e.Source).DataContext;
-string name = dataRowView.Ime;
-string surname = dataRowView.Prezime;
-string date = dataRowView.Datum;
-string time = dataRowView.Vrijeme;
-selectedName = name;
-selectedSurname = surname;
-selectedDate = date;
-selectedTime = time;
-this.Hide();
-Window updateDietPlanWindow = new UpdateWindow("dietPlan");
-updateDietPlanWindow.Show();
+    private void Previous_Window_Click(object sender, MouseButtonEventArgs e)
+    {
 
-
-}
-catch (Exception ex)
-{
-MessageBox.Show(ex.Message.ToString());
-}
-}
-
-
-private void Previous_Window_Click(object sender, RoutedEventArgs e)
-{
-this.Hide();
-if (MainWindow.checkIfUserIsCandidate(MainWindow.idLoginUser))
-{
-KandidatWindow kandidatWindow = new KandidatWindow();
-kandidatWindow.Show();
-}
-else
-{
-TrenerWindow trenerWindow = new TrenerWindow();
-trenerWindow.Show();
-}
-}
-
-private void Exit_Click(object sender, RoutedEventArgs e)
-{
-Application.Current.Shutdown();
-}*/
+      this.Hide();
+      if (MainWindow.checkIfUserIsCandidate(userId))
+      {
+        KandidatWindow kandidatWindow = new KandidatWindow(userId, dnevnikIshraneEntities);
+        kandidatWindow.Show();
+      }
+      else
+      {
+        TrenerWindow trenerWindow = new TrenerWindow(userId, dnevnikIshraneEntities);
+        trenerWindow.Show();
+      }
+    }
   }
 }
 

@@ -63,7 +63,10 @@ namespace Projekat_B_Dnevnik_ishrane.views
       {
         if (String.IsNullOrEmpty(texts[j].Text))
         {
+          if(MainWindow.language.Equals("Serbian"))
           errorTextBlock.Text = "Popunite sva tekstualna polja.";
+          else
+          errorTextBlock.Text = "Fill in all text fields.";
           return;
         }
       }
@@ -75,7 +78,8 @@ namespace Projekat_B_Dnevnik_ishrane.views
         Tezina = Decimal.Parse(weightTextBox.Text),
         DatumVrijeme = DateTime.UtcNow
       };
-      if (measurement.KANDIDAT_KORISNIK_idKORISNIK != 0)
+      korisnik user = dnevnikIshraneEntites.korisniks.Where(elem => elem.idKORISNIK == measurement.KANDIDAT_KORISNIK_idKORISNIK).FirstOrDefault();
+      if (measurement.KANDIDAT_KORISNIK_idKORISNIK!=0 && user.Aktivan != 0)
       {
         if (action.Equals("update"))
         {
@@ -88,11 +92,17 @@ namespace Projekat_B_Dnevnik_ishrane.views
         }
         dnevnikIshraneEntites.mjerenjes.Add(measurement);
         dnevnikIshraneEntites.SaveChanges();
+        if(MainWindow.language.Equals("Serbian"))
         errorTextBlock.Text = "Uspješno sačuvano.";
+        else
+          errorTextBlock.Text = "Saved successfully.";
       }
       else
       {
-        errorTextBlock.Text = "Nije pronadjen nijedan kandidat sa navedenim imenom,prezimenom i godištem.";
+        if (MainWindow.language.Equals("Serbian"))
+          errorTextBlock.Text = "Nije pronadjen nijedan kandidat sa navedenim imenom,prezimenom i godištem.";
+        else
+          errorTextBlock.Text = "There is no candidate with specified name,surname and year of birth.";
       }
     }
 
@@ -109,7 +119,7 @@ namespace Projekat_B_Dnevnik_ishrane.views
     private void cancel(object sender, MouseButtonEventArgs e)
     {
       this.Hide();
-      new MeasurementWindow(userId).Show();
+      new MeasurementWindow(userId,previousWindow).Show();
     }
   }
 }

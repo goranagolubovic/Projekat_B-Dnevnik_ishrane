@@ -20,10 +20,15 @@
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
-    <TextBox x:Name="searchTextBox"  Text="{DynamicResource searchTextBox}" VerticalAlignment="Top" Width="218" Background="#FFFAF0B3" Margin="303,41,272.6,0" Height="48"/>
-        <Canvas PreviewMouseDown="search" HorizontalAlignment="Left" Height="48" Margin="471,41,0,0" VerticalAlignment="Top" Width="50">
+        <TextBox x:Name="searchTextBox"  Text="{DynamicResource searchTextBox}" VerticalAlignment="Top" Background="#FFFEEBBB" Margin="275,41,249.6,0" Height="48"/>
+        <Canvas PreviewMouseDown="search" HorizontalAlignment="Left" Height="48" Margin="477,41,0,0" VerticalAlignment="Top" Width="47">
             <Canvas.Background>
                 <ImageBrush ImageSource="search.png"/>
+            </Canvas.Background>
+        </Canvas>
+        <Canvas PreviewMouseDown="goBack" HorizontalAlignment="Left" Height="48" Margin="47,41,0,0" VerticalAlignment="Top" Width="55" RenderTransformOrigin="0.548,1.204">
+            <Canvas.Background>
+                <ImageBrush ImageSource="left-arrow3.png"/>
             </Canvas.Background>
         </Canvas>
     </Grid>

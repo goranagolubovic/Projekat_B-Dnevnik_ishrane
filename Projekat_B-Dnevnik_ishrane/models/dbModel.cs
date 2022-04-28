@@ -8,7 +8,7 @@ namespace Projekat_B_Dnevnik_ishrane.models
   public partial class dbModel : DbContext
   {
     public dbModel()
-        : base("name=dbModelEntities")
+        : base("name=dbModel")
     {
     }
 
@@ -64,12 +64,9 @@ namespace Projekat_B_Dnevnik_ishrane.models
           .IsUnicode(false);
 
       modelBuilder.Entity<korisnik>()
-          .Property(e => e.Tema)
-          .IsUnicode(false);
-
-      modelBuilder.Entity<korisnik>()
           .HasOptional(e => e.kandidat)
-          .WithRequired(e => e.korisnik);
+          .WithRequired(e => e.korisnik)
+          .WillCascadeOnDelete();
 
       modelBuilder.Entity<korisnik>()
           .HasOptional(e => e.trener)

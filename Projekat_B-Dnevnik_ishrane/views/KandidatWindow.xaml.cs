@@ -57,14 +57,14 @@ namespace Projekat_B_Dnevnik_ishrane
 
     private void Meals_Click(object sender, RoutedEventArgs e)
     {
-      Window window = new MealsWindow(candidateId,"add");
+      Window window = new MealsWindow(candidateId,"add",this);
       this.Hide();
       window.Show();
     }
 
     private void Measurement_Click(object sender, RoutedEventArgs e)
     {
-      Window window = new MeasurementWindow(candidateId);
+      Window window = new MeasurementWindow(candidateId,this);
       this.Hide();
       window.Show();
     }

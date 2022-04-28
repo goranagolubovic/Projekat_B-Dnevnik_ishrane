@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("views/left-arrow.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("views/arrow-left1.png")]
 
 

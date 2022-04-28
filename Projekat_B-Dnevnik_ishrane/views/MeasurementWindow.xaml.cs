@@ -24,13 +24,15 @@ namespace Projekat_B_Dnevnik_ishrane.views
     private int userId;
     private List<MeasurementView> listOfMeasurements = new List<MeasurementView>();
     private dbModel dnevnikIshraneEntities = new dbModel();
+    private Window previousWindow;
 
-    public MeasurementWindow(int userId)
+    public MeasurementWindow(int userId,Window previousWindow)
     {
       Properties.Settings.Default.ColorMode = MainWindow.theme;
       this.Resources.MergedDictionaries.Add(MainWindow.resourceDictionary);
       InitializeComponent();
       this.userId = userId;
+      this.previousWindow = previousWindow;
       initializeDataGrid();
       
     }
@@ -69,9 +71,10 @@ new MeasurementView
   SurnameOfCandidate = k.Prezime,
   NameOfCandidate = k.Ime,
   YearOfBirth=k.Godiste,
-  Weight = m.Tezina
+  Weight = m.Tezina,
+  CandidateActive=k.Aktivan
 })
-  .Where(elem => elem.Id == userId).ToList();
+  .Where(elem => elem.Id == userId && elem.CandidateActive==1).ToList();
       }
       var list = new List<dynamic>();
       foreach (var elem in listOfMeasurements)
@@ -114,10 +117,21 @@ new MeasurementView
       string surnameOfCandidate = dataRowView.PrezimeKandidata;
       decimal weight = System.Convert.ToDecimal(dataRowView.Tezina);
       DateTime dateTime = dataRowView.DatumVrijeme;
-      mjerenje measurement = dnevnikIshraneEntities.mjerenjes.Where(elem => elem.DatumVrijeme.Equals(dateTime) && elem.TRENER_KORISNIK_idKORISNIK==userId).First();
+      int idCandidate = findIdCandidate(nameOfCandidate, surnameOfCandidate);
+      DateTime date = dateTime.Date.AddHours(dateTime.Hour).AddMinutes(dateTime.Minute);
+      mjerenje measurement = dnevnikIshraneEntities.mjerenjes.Where(elem => elem.DatumVrijeme.Equals(dateTime) && elem.TRENER_KORISNIK_idKORISNIK==userId && elem.KANDIDAT_KORISNIK_idKORISNIK==idCandidate).First();
       dnevnikIshraneEntities.mjerenjes.Remove(measurement);
       dnevnikIshraneEntities.SaveChanges();
       initializeDataGrid();
+    }
+
+    private int findIdCandidate(string nameOfCandidate, string surnameOfCandidate)
+    {
+      int active = 1;
+      korisnik k = dnevnikIshraneEntities.korisniks.Where(elem => elem.Ime.Equals(nameOfCandidate) && elem.Prezime.Equals(surnameOfCandidate) && elem.Aktivan==active).FirstOrDefault();
+      if (k != null)
+        return k.idKORISNIK;
+      return 0;
     }
 
     private void dataGridViewDietPlan_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -130,6 +144,21 @@ new MeasurementView
       Window window = new WeightWindow(userId,this,"add");
       this.Hide();
       window.Show();
+    }
+
+    private void goBack(object sender, MouseButtonEventArgs e)
+    {
+      this.Hide();
+      if (MainWindow.checkIfUserIsCandidate(userId))
+      {
+        KandidatWindow window = new KandidatWindow(userId,dnevnikIshraneEntities);
+        window.Show();
+      }
+      else
+      {
+        TrenerWindow window = new TrenerWindow(userId, dnevnikIshraneEntities);
+        window.Show();
+      }
     }
   }
 }

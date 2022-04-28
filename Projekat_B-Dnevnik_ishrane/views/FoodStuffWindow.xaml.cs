@@ -25,13 +25,16 @@ namespace Projekat_B_Dnevnik_ishrane.views
     private string nameOfSelectedFoodStuff;
     private int candidateId;
     private string typeOfMeal;
-    public FoodStuffWindow(int candidateId,string typeOfMeal)
+    private Window previousWindow;
+
+    public FoodStuffWindow(int candidateId,string typeOfMeal,Window previousWindow)
     {
       Properties.Settings.Default.ColorMode = MainWindow.theme;
       this.Resources.MergedDictionaries.Add(MainWindow.resourceDictionary);
       InitializeComponent();
       this.candidateId = candidateId;
       this.typeOfMeal = typeOfMeal;
+      this.previousWindow = previousWindow;
       listOfFoodStuffs = dnevnikIshraneEntities.namirnicas.Select(e => e.Naziv).ToList();
       var list = new List<dynamic>();
       foreach (var elem in listOfFoodStuffs)
@@ -49,7 +52,7 @@ namespace Projekat_B_Dnevnik_ishrane.views
     {
       dynamic dataRowView = ((Button)e.Source).DataContext;
       string name = dataRowView.Namirnica;
-      Window window = new FoodStuffDetailsWindow(name,candidateId,typeOfMeal,"add");
+      Window window = new FoodStuffDetailsWindow(name,candidateId,typeOfMeal,"add",previousWindow);
       this.Hide();
       window.Show();
     }
@@ -72,6 +75,12 @@ namespace Projekat_B_Dnevnik_ishrane.views
 
       }
       dataGridFoodStuff.ItemsSource = list;
+    }
+
+    private void goBack(object sender, MouseButtonEventArgs e)
+    {
+      this.Hide();
+      previousWindow.Show();
     }
   }
 }

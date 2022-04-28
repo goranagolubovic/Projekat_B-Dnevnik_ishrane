@@ -16,11 +16,12 @@ namespace Projekat_B_Dnevnik_ishrane.db_views
     private string surnameOfCandidate;
     private int idPlan;
     private int idCoach;
+    private int candidateActive;
     public PlanView()
     {
 
     }
-    public PlanView(DateTime dateAndTime, int idCandidate,int idCoach, string surnameOfTrener, string nameOfTrener,string nameOfCandidate,string surnameOfCandidate,int idPlan)
+    public PlanView(DateTime dateAndTime, int idCandidate,int idCoach, string surnameOfTrener, string nameOfTrener,string nameOfCandidate,string surnameOfCandidate,int idPlan,int candidateActive)
     {
       this.dateAndTime = dateAndTime;
       this.idCandidate = idCandidate;
@@ -30,7 +31,7 @@ namespace Projekat_B_Dnevnik_ishrane.db_views
       this.nameOfCandidate = nameOfCandidate;
       this.surnameOfCandidate = surnameOfCandidate;
       this.idPlan = idPlan;
-
+      this.candidateActive = candidateActive;
     }
 
     public DateTime DateAndTime { get => dateAndTime; set => dateAndTime = value; }
@@ -41,6 +42,7 @@ namespace Projekat_B_Dnevnik_ishrane.db_views
     public string SurnameOfCandidate { get => surnameOfCandidate; set => surnameOfCandidate = value; }
     public int IdCoach { get => idCoach; set => idCoach = value; }
     public int IdPlan { get => idPlan; set => idPlan = value; }
+    public int CandidateActive { get => candidateActive; set => candidateActive = value; }
 
   }
   }

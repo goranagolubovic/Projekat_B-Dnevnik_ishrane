@@ -6,7 +6,9 @@
         xmlns:local="clr-namespace:Projekat_B_Dnevnik_ishrane"
         mc:Ignorable="d"
          Style="{StaticResource WindowStyle}"
-        Title="KandidatWindow" Height="600" Width="603.994">
+        Title="KandidatWindow" Height="600" Width="603.994" WindowStartupLocation="Manual"
+        Top="0"
+        Left="300" ResizeMode="NoResize">
   <Grid>
     <Rectangle HorizontalAlignment="Left" Height="66" Margin="133,26,0,0" Stroke="#FFD9D560" VerticalAlignment="Top" Width="333">
       <Rectangle.Fill>
@@ -25,7 +27,7 @@
     </Rectangle>
     <Rectangle HorizontalAlignment="Left" Height="66" Margin="133,321,0,0" Stroke="#FFE8C8E0" VerticalAlignment="Top" Width="333">
       <Rectangle.Fill>
-        <ImageBrush ImageSource="button_box3.jpg"/>
+        <ImageBrush ImageSource="button_box4jpg.jpg"/>
       </Rectangle.Fill>
     </Rectangle>
     <Ellipse HorizontalAlignment="Left" Height="66" Margin="133,26,0,0" Stroke="#FFF4EEC4" VerticalAlignment="Top" Width="68" RenderTransformOrigin="0.483,-0.177">
@@ -40,7 +42,7 @@
     </Ellipse>
     <Ellipse HorizontalAlignment="Left" Height="62" Margin="133,321,0,0" Stroke="#FFEBB4B4" VerticalAlignment="Top" Width="68" RenderTransformOrigin="0.786,2.102">
       <Ellipse.Fill>
-        <ImageBrush ImageSource="weight-management.png"/>
+        <ImageBrush ImageSource="weight-management1.png"/>
       </Ellipse.Fill>
     </Ellipse>
     <Ellipse HorizontalAlignment="Left" Height="62" Margin="132,223,0,0" Stroke="#FFEBB4B4" VerticalAlignment="Top" Width="68" RenderTransformOrigin="0.786,2.102">

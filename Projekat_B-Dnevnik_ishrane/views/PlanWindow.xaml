@@ -51,8 +51,8 @@
     <TextBox  x:Name="MondayTextBox" HorizontalAlignment="Left" Height="370" Margin="41,215,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="137" BorderBrush="White" TextChanged="TextBox_TextChanged" Background="#FFE7C4C4" Grid.ColumnSpan="2"/>
     <TextBlock Grid.Column="2" HorizontalAlignment="Center" Height="23" Margin="0,144,0,0" Text="{DynamicResource tuesdayTextBlock}" TextWrapping="Wrap" VerticalAlignment="Top" Width="62" RenderTransformOrigin="0.5,0.5">
     </TextBlock>
-    <TextBox x:Name="nameTextBox" TextAlignment="Center" FontSize="24px" Grid.ColumnSpan="3" Grid.Column="3" HorizontalAlignment="Left" Height="50" Margin="90.4,10,0,0" TextWrapping="Wrap" Text="{DynamicResource candidateNameTextBlock}" VerticalAlignment="Top" Width="227"/>
-    <TextBox x:Name="surnameTextBox" TextAlignment="Center" FontSize="24px" Grid.ColumnSpan="3" Grid.Column="3" HorizontalAlignment="Left" Height="63" Margin="90.4,65,0,0" TextWrapping="Wrap" Text="{DynamicResource candidateSurnameTextBlock}" VerticalAlignment="Top" Width="227" TextChanged="TextBox_TextChanged_1"/>
+    <TextBox x:Name="nameTextBox" TextAlignment="Center" FontSize="18px" Grid.ColumnSpan="3" Grid.Column="3" HorizontalAlignment="Left" Height="50" Margin="90.4,10,0,0" TextWrapping="Wrap" Text="{DynamicResource candidateNameTextBlock}" VerticalAlignment="Top" Width="227" Background="#FFB5E7D0"/>
+    <TextBox x:Name="surnameTextBox" TextAlignment="Center" FontSize="18px" Grid.ColumnSpan="3" Grid.Column="3" HorizontalAlignment="Left" Height="50" Margin="90.4,65,0,0" TextWrapping="Wrap" Text="{DynamicResource candidateSurnameTextBlock}" VerticalAlignment="Top" Width="227" TextChanged="TextBox_TextChanged_1" Background="#FFB5E7D0"/>
     <TextBlock x:Name="actionStatusTextBlock" FontSize="14 px" Grid.ColumnSpan="3" Grid.Column="3" HorizontalAlignment="Left" Height="35" Margin="45.4,590,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="313"/>
   </Grid>
 </Window>

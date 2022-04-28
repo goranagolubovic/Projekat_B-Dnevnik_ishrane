@@ -58,10 +58,11 @@
     <TextBlock x:Name="SaturdayTextBlock" HorizontalAlignment="Left" Margin="450,601,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top"/>
     <TextBlock x:Name="sundayTextBlock" HorizontalAlignment="Left" Margin="811,509,0,0" Text="{DynamicResource sundayTextBlock}" TextWrapping="Wrap" VerticalAlignment="Top"/>
     <TextBlock x:Name="SundayTextBlock" HorizontalAlignment="Left" Margin="769,540,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top"/>
-    <Button Margin="65,10,813,656" Click="Previous_Window_Click" Background="#FFDEE9ED" BorderBrush="#FFDEE9ED"  >
-      <Image  Source="/images/left-arrow3.png" Stretch="Uniform" Height="71" Width="84" RenderTransformOrigin="0.539,1.916">
-      </Image>
+    <Canvas PreviewMouseDown="Previous_Window_Click" HorizontalAlignment="Left" Height="73" Margin="81,36,0,0" VerticalAlignment="Top" Width="92">
+      <Canvas.Background>
+        <ImageBrush ImageSource="left-arrow3.png"/>
+      </Canvas.Background>
+    </Canvas>
 
-    </Button>
   </Grid>
 </Window>

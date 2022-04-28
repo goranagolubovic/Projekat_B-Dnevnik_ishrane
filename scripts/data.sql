@@ -1,15 +1,15 @@
-INSERT INTO korisnik (idKORISNIK,Ime,Prezime,KorisnickoIme,Lozinka,Godiste,Tema)
-VALUES (1,'Marko','Markovic',"marko_markovic","marko123",1997,"candy");
-INSERT INTO korisnik (idKORISNIK,Ime,Prezime,KorisnickoIme,Lozinka,Godiste,Tema)
-VALUES (2,'Pero','Peric',"pero*peric","pero1234",1983,"candy");
-INSERT INTO korisnik (idKORISNIK,Ime,Prezime,KorisnickoIme,Lozinka,Godiste,Tema)
-VALUES (3,'Mirko','Mirkovic',"mirkomirkovic","mirko**",1999,"candy");
-INSERT INTO korisnik (idKORISNIK,Ime,Prezime,KorisnickoIme,Lozinka,Godiste,Tema)
-VALUES (4,'Petra','Petrovic',"petrovicpetra","123petra",1991,"candy");
-INSERT INTO korisnik (idKORISNIK,Ime,Prezime,KorisnickoIme,Lozinka,Godiste,Tema)
-VALUES (5,'Marija','Maric',"marija_m","1234marija",1996,"candy");
-INSERT INTO korisnik (idKORISNIK,Ime,Prezime,KorisnickoIme,Lozinka,Godiste,Tema)
-VALUES (6,'Mia','Mijic',"miaaa","**mia**",1992,"candy");
+INSERT INTO korisnik (idKORISNIK,Ime,Prezime,KorisnickoIme,Lozinka,Godiste,Aktivan)
+VALUES (1,'Marko','Markovic',"marko_markovic","marko123",1997,true);
+INSERT INTO korisnik (idKORISNIK,Ime,Prezime,KorisnickoIme,Lozinka,Godiste,Aktivan)
+VALUES (2,'Pero','Peric',"pero*peric","pero1234",1983,true);
+INSERT INTO korisnik (idKORISNIK,Ime,Prezime,KorisnickoIme,Lozinka,Godiste,Aktivan)
+VALUES (3,'Mirko','Mirkovic',"mirkomirkovic","mirko**",1999,true);
+INSERT INTO korisnik (idKORISNIK,Ime,Prezime,KorisnickoIme,Lozinka,Godiste,Aktivan)
+VALUES (4,'Petra','Petrovic',"petrovicpetra","123petra",1991,true);
+INSERT INTO korisnik (idKORISNIK,Ime,Prezime,KorisnickoIme,Lozinka,Godiste,Aktivan)
+VALUES (5,'Marija','Maric',"marija_m","1234marija",1996,true);
+INSERT INTO korisnik (idKORISNIK,Ime,Prezime,KorisnickoIme,Lozinka,Godiste,Aktivan)
+VALUES (6,'Mia','Mijic',"miaaa","**mia**",1992,true);
 
 insert into trener values (1);
 insert into trener values(3);

@@ -26,7 +26,7 @@
     <TextBlock x:Name="FatsTextBlock" HorizontalAlignment="Left" Margin="142,9.8,0,0" Grid.Row="4" TextWrapping="Wrap"  Text="{DynamicResource FatsTextBlock}" FontSize="18px" RenderTransformOrigin="1.809,0.45" Height="24" VerticalAlignment="Top"/>
     <TextBlock x:Name="CarbsTextBlock" HorizontalAlignment="Left" Margin="79,10.2,0,0" Grid.Row="5" TextWrapping="Wrap" Text="{DynamicResource CarbsTextBlock}" VerticalAlignment="Top" FontSize="18px"/>
 
-        <TextBlock FontSize="20px" x:Name="nameOfFoodStuff" HorizontalAlignment="Left" Margin="212,10,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="28" Width="146" FontWeight="Bold"/>
+        <TextBlock FontSize="20px" x:Name="nameOfFoodStuff" HorizontalAlignment="Left" Margin="236,15,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="28" Width="146" FontWeight="Bold"/>
         <TextBlock x:Name="kcalTextBlock" FontSize="18px" HorizontalAlignment="Left" Margin="257,9.8,0,0" Grid.Row="2" Grid.RowSpan="2" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="40" RenderTransformOrigin="0.223,0.49"/>
         <TextBlock x:Name="proteiniTextBlock" FontSize="18px" HorizontalAlignment="Left" Margin="257,9.8,0,0" Grid.Row="3" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="31" Width="74"/>
         <TextBlock x:Name="fatsTextBlock" FontSize="18px" HorizontalAlignment="Left" Margin="257,9.2,0,0" Grid.Row="4" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="37"/>

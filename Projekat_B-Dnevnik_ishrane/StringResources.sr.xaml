@@ -48,4 +48,13 @@
   <system:String x:Key="foodstuffTextBlock">Namirnica</system:String>
   <system:String x:Key="dailyIntakeTextBlock">Dnevni unos(kcal)</system:String>
   <system:String x:Key="weightTextBlock">Težina(kg)</system:String>
+  <system:String x:Key="themeTextBlock">Tema</system:String>
+  <system:String x:Key="languageTextBlock">Jezik</system:String>
+  <system:String x:Key="light">Svijetla</system:String>
+  <system:String x:Key="pink">Roza</system:String>
+  <system:String x:Key="dark">Tamna</system:String>
+  <system:String x:Key="dinnerTextBlock">Večera</system:String>
+  <system:String x:Key="lunchTextBlock">Ručak</system:String>
+  <system:String x:Key="breakfastTextBlock">Doručak</system:String>
+  <system:String x:Key="snackTextBlock">Užina</system:String>
 </ResourceDictionary>

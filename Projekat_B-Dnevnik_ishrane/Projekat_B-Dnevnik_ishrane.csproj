@@ -428,6 +428,24 @@
     <Resource Include="views\button_box1.jpg" />
     <Resource Include="views\notebook.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="views\button_box5.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="views\weight-management1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="views\left-arrow2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="views\power-off1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="views\arrow-left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="views\arrow-left1.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

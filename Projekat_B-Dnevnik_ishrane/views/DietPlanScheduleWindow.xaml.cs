@@ -46,6 +46,7 @@ namespace Projekat_B_Dnevnik_ishrane
       listDietPlan = dnevnikIshraneEntities.plan_ishrane
         .Where(el=> el.KANDIDAT_KORISNIK_idKORISNIK==userId || el.TRENER_KORISNIK_idKORISNIK == userId).ToList();
       selectedDietPlan = listDietPlan.Where(el => el.DatumVrijeme.Date.AddHours(el.DatumVrijeme.Hour).AddMinutes(el.DatumVrijeme.Minute).Equals(date1)).ToList();
+      MessageBox.Show(selectedDateTime.ToString());
       plan_ishrane mondayDietPlan = selectedDietPlan.Where(elem => elem.Dan.Equals("ponedjeljak")).First();
       if (mondayDietPlan.Opis.Contains(","))
       {

@@ -158,16 +158,12 @@ namespace Dnevnik_ishrane.views
         else if ("dietPlan".Equals(whatIsUpdating))
         {
         updateDietPlanForConcretDay();
-         Window dw = new DietPlanWindow(userId);
-        this.Hide();
-        dw.Show();
+       
         }
         else
         {
         updateExercisePlanForConcretDay();
-          Window ew = new ExercisePlanWindow(userId);
-        this.Hide();
-        ew.Show();
+       
         }
     }
 
@@ -187,7 +183,10 @@ namespace Dnevnik_ishrane.views
       {
         if (String.IsNullOrEmpty(texts[j].Text))
         {
+          if(MainWindow.language.Equals("Serbian"))
           actionStatusTextBlock.Text = "Popunite sva tekstualna polja i pokušajte ponovo.";
+          else
+          actionStatusTextBlock.Text = "Fill in all text fields and try again.";
           return;
         }
       }
@@ -203,9 +202,13 @@ namespace Dnevnik_ishrane.views
           Opis = texts[j].Text.Replace(Environment.NewLine, ","),
           DatumVrijeme = datetime
         };
-        if (planVjezbanja.KANDIDAT_KORISNIK_idKORISNIK == 0)
+        korisnik user = dnevnikIshraneEntities.korisniks.Where(elem => elem.idKORISNIK == planVjezbanja.KANDIDAT_KORISNIK_idKORISNIK).FirstOrDefault();
+        if (planVjezbanja.KANDIDAT_KORISNIK_idKORISNIK == 0 || user.Aktivan==0)
         {
+          if(MainWindow.language.Equals("Serbian"))
           actionStatusTextBlock.Text = "Nije pronadjen nijedan kandidat sa navedenim imenom i prezimenom.";
+          else
+            actionStatusTextBlock.Text = "There is no candidate with specified name and surname.";
           return;
         }
         else
@@ -214,7 +217,6 @@ namespace Dnevnik_ishrane.views
           db.SaveChanges();
         }
       }
-      actionStatusTextBlock.Text = "Uspješno sačuvano.";
       this.Hide();
       Window window = new ExercisePlanWindow(userId);
       window.Show();
@@ -236,7 +238,10 @@ namespace Dnevnik_ishrane.views
       {
         if (String.IsNullOrEmpty(texts[j].Text))
         {
+          if(MainWindow.language.Equals("Serbian"))
           actionStatusTextBlock.Text = "Popunite sva tekstualna polja i pokušajte ponovo.";
+          else
+          actionStatusTextBlock.Text = "Fill in all text fields and try again.";
           return;
         }
       }
@@ -252,9 +257,13 @@ namespace Dnevnik_ishrane.views
           Opis = texts[j].Text.Replace(Environment.NewLine, ","),
           DatumVrijeme = datetime
         };
-        if (planIshrane.KANDIDAT_KORISNIK_idKORISNIK == 0)
+        korisnik user = dnevnikIshraneEntities.korisniks.Where(elem => elem.idKORISNIK == planIshrane.KANDIDAT_KORISNIK_idKORISNIK).FirstOrDefault();
+        if (planIshrane.KANDIDAT_KORISNIK_idKORISNIK == 0 || user.Aktivan == 0)
         {
-          actionStatusTextBlock.Text = "Nije pronadjen nijedan kandidat sa navedenim imenom i prezimenom.";
+          if (MainWindow.language.Equals("Serbian"))
+            actionStatusTextBlock.Text = "Nije pronadjen nijedan kandidat sa navedenim imenom i prezimenom.";
+          else
+            actionStatusTextBlock.Text = "There is no candidate with specidfied name and surname.";
           return;
         }
         else
@@ -263,7 +272,7 @@ namespace Dnevnik_ishrane.views
             db.SaveChanges();
         }
       }
-      actionStatusTextBlock.Text = "Uspješno sačuvano.";
+      
       Window window = new DietPlanWindow(userId);
       this.Hide();
       window.Show();
@@ -285,7 +294,11 @@ namespace Dnevnik_ishrane.views
       {
         if (String.IsNullOrEmpty(texts[j].Text))
         {
-          throw new NotAllTextFieldsFilledException();
+          if (MainWindow.language.Equals("Serbian"))
+            actionStatusTextBlock.Text = "Popunite sva tekstualna polja i pokušajte ponovo.";
+          else
+            actionStatusTextBlock.Text = "Fill in all text fields and try again.";
+          return;
         }
       }
       DateTime datetime = DateTime.UtcNow;
@@ -304,7 +317,11 @@ namespace Dnevnik_ishrane.views
         db.plan_ishrane.Add(planIshrane);
         db.Entry(planIshrane).State = System.Data.Entity.EntityState.Modified;
         db.SaveChanges();
+
       }
+      this.Hide();
+      Window dw = new DietPlanWindow(userId);
+      dw.Show();
     }
     private void updateExercisePlanForConcretDay()
     {
@@ -322,7 +339,11 @@ namespace Dnevnik_ishrane.views
       {
         if (String.IsNullOrEmpty(texts[j].Text))
         {
-          throw new NotAllTextFieldsFilledException();
+          if (MainWindow.language.Equals("Serbian"))
+            actionStatusTextBlock.Text = "Popunite sva tekstualna polja i pokušajte ponovo.";
+          else
+            actionStatusTextBlock.Text = "Fill in all text fields and try again.";
+          return;
         }
       }
       DateTime datetime = DateTime.UtcNow;
@@ -342,6 +363,9 @@ namespace Dnevnik_ishrane.views
         db.Entry(planVjezbanja).State = System.Data.Entity.EntityState.Modified;
         db.SaveChanges();
       }
+      this.Hide();
+      Window ew = new ExercisePlanWindow(userId);
+      ew.Show();
     }
     private int getId(string name,string surname)
     {

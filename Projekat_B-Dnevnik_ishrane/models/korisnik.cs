@@ -30,9 +30,7 @@ namespace Projekat_B_Dnevnik_ishrane.models
 
         public int Godiste { get; set; }
 
-        [Required]
-        [StringLength(45)]
-        public string Tema { get; set; }
+        public sbyte Aktivan { get; set; }
 
         public virtual kandidat kandidat { get; set; }
 

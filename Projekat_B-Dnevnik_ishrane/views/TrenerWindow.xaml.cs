@@ -21,7 +21,7 @@ namespace Projekat_B_Dnevnik_ishrane.views
   public partial class TrenerWindow : Window
   {
 
-    private int coachId = -1;
+    private int coachId = 0;
     private dbModel dnevnikIshraneEntities;
     private List<PlanView> listOfDietPlans = new List<PlanView>();
     public TrenerWindow(int coachId, dbModel dnevnikIshraneEntities)
@@ -52,17 +52,9 @@ namespace Projekat_B_Dnevnik_ishrane.views
       this.Hide();
       window.Show();
     }
-
-    /*private void Canidate_Click(object sender, RoutedEventArgs e)
-    {
-      Window window = new MealsWindow(candidateId, "add");
-      this.Hide();
-      window.Show();
-    }*/
-
     private void Measurement_Click(object sender, RoutedEventArgs e)
     {
-      Window window = new MeasurementWindow(coachId);
+      Window window = new MeasurementWindow(coachId,this);
       this.Hide();
       window.Show();
     }

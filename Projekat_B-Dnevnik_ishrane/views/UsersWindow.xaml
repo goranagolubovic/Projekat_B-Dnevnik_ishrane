@@ -7,51 +7,51 @@
         mc:Ignorable="d"
          Style="{StaticResource WindowStyle}"
         Title="UsersWindow" Height="700" Width="600">
-  <Grid>
-    <Canvas x:Name="addingCandidate" PreviewMouseDown="addCandidate" HorizontalAlignment="Left" Height="71" Margin="433,34,0,0" VerticalAlignment="Top" Width="71">
-      <Canvas.Background>
-        <ImageBrush ImageSource="add.png"/>
-      </Canvas.Background>
-    </Canvas>
+    <Grid>
+        <Canvas x:Name="addingCandidate" PreviewMouseDown="addCandidate" HorizontalAlignment="Left" Height="71" Margin="433,34,0,0" VerticalAlignment="Top" Width="71">
+            <Canvas.Background>
+                <ImageBrush ImageSource="add.png"/>
+            </Canvas.Background>
+        </Canvas>
 
-    <DataGrid x:Name="dataGridViewUser" Margin="90,158,90,228" AutoGenerateColumns="False" SelectionChanged="dataGridViewUsers_SelectionChanged">
-      <DataGrid.Columns>
-        <DataGridTextColumn Header="{DynamicResource candidateNameTextBlock}" Binding="{Binding Path='Ime'}" IsReadOnly="True" />
-        <DataGridTextColumn Header="{DynamicResource candidateSurnameTextBlock}" Binding="{Binding Path='Prezime'}" IsReadOnly="True" />
-        <DataGridTextColumn Header="{DynamicResource yearOfBirthTextBlock}" Binding="{Binding Path='Godiste'}" IsReadOnly="True" />
-        <DataGridTemplateColumn Header="{DynamicResource viewButton}">
-          <DataGridTemplateColumn.CellTemplate>
-            <DataTemplate>
-              <Button Name="btnView" Content="{DynamicResource viewButton}" Click="btnView_Click" />
-            </DataTemplate>
-          </DataGridTemplateColumn.CellTemplate>
-        </DataGridTemplateColumn>
-        <DataGridTemplateColumn Header="{DynamicResource updateButton}">
-          <DataGridTemplateColumn.CellTemplate>
-            <DataTemplate>
-              <Button Name="btnUpdate" Content="{DynamicResource updateButton}" Click="btnUpdate_Click" />
-            </DataTemplate>
-          </DataGridTemplateColumn.CellTemplate>
-        </DataGridTemplateColumn>
-        <DataGridTemplateColumn Header="{DynamicResource deleteButton}">
-          <DataGridTemplateColumn.CellTemplate>
-            <DataTemplate>
-              <Button Name="btnDelete" Content="{DynamicResource deleteButton}" Click="btnDelete_Click" />
-            </DataTemplate>
-          </DataGridTemplateColumn.CellTemplate>
-        </DataGridTemplateColumn>
-      </DataGrid.Columns>
-    </DataGrid>
-    <Button Margin="90,461,415,132" Click="Previous_Window_Click" BorderBrush="#FFDEE9ED" Background="{x:Null}"  >
-      <Image  Source="/images/back.png" Stretch="Uniform" Height="46" Width="57" RenderTransformOrigin="0.539,1.916">
-      </Image>
-
-    </Button>
-    <Button Margin="402,461,90,132" Click="Exit_Click" Background="#FFDEE9ED" BorderBrush="#FFDEE9ED"  >
-      <Image  Source="/images/power-off2.png" Stretch="Uniform" Height="46" Width="68" RenderTransformOrigin="0.539,1.916">
-      </Image>
-
-    </Button>
-  </Grid>
+        <DataGrid x:Name="dataGridViewUser" Margin="90,158,90,228" AutoGenerateColumns="False" SelectionChanged="dataGridViewUsers_SelectionChanged">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="{DynamicResource candidateNameTextBlock}" Binding="{Binding Path='Ime'}" IsReadOnly="True" />
+                <DataGridTextColumn Header="{DynamicResource candidateSurnameTextBlock}" Binding="{Binding Path='Prezime'}" IsReadOnly="True" />
+                <DataGridTextColumn Header="{DynamicResource yearOfBirthTextBlock}" Binding="{Binding Path='Godiste'}" IsReadOnly="True" />
+                <DataGridTemplateColumn Header="{DynamicResource viewButton}">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Name="btnView" Content="{DynamicResource viewButton}" Click="btnView_Click" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="{DynamicResource updateButton}">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Name="btnUpdate" Content="{DynamicResource updateButton}" Click="btnUpdate_Click" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="{DynamicResource deleteButton}">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Name="btnDelete" Content="{DynamicResource deleteButton}" Click="btnDelete_Click" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Canvas PreviewMouseDown="goBack" HorizontalAlignment="Left" Height="65" Margin="90,492,0,0" VerticalAlignment="Top" Width="76">
+            <Canvas.Background>
+                <ImageBrush ImageSource="arrow-left.png"/>
+            </Canvas.Background>
+        </Canvas>
+        <Canvas PreviewMouseDown="Exit" HorizontalAlignment="Left" Height="65" Margin="433,492,0,0" VerticalAlignment="Top" Width="71">
+            <Canvas.Background>
+                <ImageBrush ImageSource="power-off1.png"/>
+            </Canvas.Background>
+        </Canvas>
+    </Grid>
 </Window>
 

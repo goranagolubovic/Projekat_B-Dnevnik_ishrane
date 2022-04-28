@@ -7,65 +7,67 @@
         mc:Ignorable="d"
          Style="{StaticResource WindowStyle}"
         Title="DietPlanScheduleWindow" Height="850" Width="1000">
-  <Grid Opacity="0.8" >
-    <Grid.ColumnDefinitions>
-      <ColumnDefinition Width="107*"/>
-      <ColumnDefinition Width="343*"/>
-    </Grid.ColumnDefinitions>
-    <Rectangle HorizontalAlignment="Left" Height="172" Margin="95,185,0,0" Stroke="#FFF3E417" VerticalAlignment="Top" Width="212" Grid.ColumnSpan="2" TextBlock.FontSize="36">
-      <Rectangle.Fill>
-        <ImageBrush ImageSource="/images/117769354_218200186298519_1317197086646310134_n (1).jpg"/>
-      </Rectangle.Fill>
-    </Rectangle>
-    <Rectangle x:Name="___No_Name_" HorizontalAlignment="Right" Height="172" Margin="0,131,381,0" Stroke="#FFA8D756" VerticalAlignment="Top" Width="212" Grid.Column="1">
-      <Rectangle.Fill>
-        <ImageBrush ImageSource="/images/202282539_320587956376945_4447081260204074175_n.jpg"/>
-      </Rectangle.Fill>
-    </Rectangle>
-    <Rectangle HorizontalAlignment="Left" Height="172" Margin="485,185,0,0" Stroke="#FFDCC8C6" VerticalAlignment="Top" Width="212" Grid.Column="1">
-      <Rectangle.Fill>
-        <ImageBrush ImageSource="/images/202550483_1196935140749128_4467873835573874177_n.jpg"/>
-      </Rectangle.Fill>
-    </Rectangle>
-    <Rectangle HorizontalAlignment="Left" Height="172" Margin="95,488,0,0" Stroke="#FF836A78" VerticalAlignment="Top" Width="212" Grid.ColumnSpan="2">
-      <Rectangle.Fill>
-        <ImageBrush ImageSource="/images/120143440_274674753885692_8676275557978193204_n.jpg"/>
-      </Rectangle.Fill>
-    </Rectangle>
-    <Rectangle HorizontalAlignment="Left" Height="172" Margin="169,600,0,0" Stroke="#FFA7DFC2" VerticalAlignment="Top" Width="212" Grid.Column="1" RenderTransformOrigin="0.594,0.471">
-      <Rectangle.Fill>
-        <ImageBrush ImageSource="/images/132177738_186430126532161_6371867683254135793_n.jpg"/>
-      </Rectangle.Fill>
-    </Rectangle>
-    <Rectangle HorizontalAlignment="Left" Height="172" Margin="169,362,0,0" Stroke="#FFE572DD" VerticalAlignment="Top" Width="212" Grid.Column="1">
-      <Rectangle.Fill>
-        <ImageBrush ImageSource="/images/105484953_558682524822568_3726723150727204096_n.jpg"/>
-      </Rectangle.Fill>
-    </Rectangle>
-    <Rectangle HorizontalAlignment="Left" Height="172" Margin="485,480,0,0" Stroke="#FFACD386" VerticalAlignment="Top" Width="212" Grid.Column="1">
-      <Rectangle.Fill>
-        <ImageBrush ImageSource="/images/130745233_409884723537196_3312283219354345567_n.jpg"/>
-      </Rectangle.Fill>
-    </Rectangle>
-    <TextBlock HorizontalAlignment="Left" Margin="244,185,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="1"  Name="tuesdayTextBlock" Text="{DynamicResource tuesdayTextBlock}"/>
-    <TextBlock x:Name="wednesdayTextBlock" HorizontalAlignment="Left" Margin="569,209,0,0" Text="{DynamicResource wednesdayTextBlock}" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="1"/>
-    <TextBlock HorizontalAlignment="Left" Margin="160,217,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.502,0.997" Name="mondayTextBlock" Text="{DynamicResource mondayTextBlock}" ></TextBlock>
-    <TextBlock x:Name="thuersdayTextBlock" HorizontalAlignment="Left" Margin="244,401,0,0" Text="{DynamicResource thuersdayTextBlock}" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="1"/>
-    <TextBlock x:Name="fridayTextBlock"  HorizontalAlignment="Left" Margin="176,521,0,0" Text="{DynamicResource fridayTextBlock}" TextWrapping="Wrap" VerticalAlignment="Top"/>
-    <TextBlock x:Name="saturdayTextBlock" HorizontalAlignment="Left" Margin="213,647,0,0" Text="{DynamicResource saturdayTextBlock}" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="1"/>
-    <TextBlock x:Name="sundayTextBlock" HorizontalAlignment="Left" Margin="569,521,0,0" Text="{DynamicResource sundayTextBlock}" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="1"/>
-    <TextBlock x:Name="MondayTextBlock"  HorizontalAlignment="Left" Margin="135,249,0,0" Text="" TextWrapping="WrapWithOverflow" VerticalAlignment="Top"/>
-    <TextBlock x:Name="TuesdayTextBlock" HorizontalAlignment="Left" Margin="212,212,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="1"/>
-    <TextBlock x:Name="WednesdayTextBlock" HorizontalAlignment="Left" Margin="537,241,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="1"/>
-    <TextBlock x:Name="FridayTextBlock" HorizontalAlignment="Left" Margin="141,542,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top"/>
-    <TextBlock x:Name="ThuersdayTextBlock" HorizontalAlignment="Left" Margin="213,432,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="1"/>
-    <TextBlock x:Name="SaturdayTextBlock" HorizontalAlignment="Left" Margin="188,670,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="1"/>
-    <TextBlock x:Name="SundayTextBlock" HorizontalAlignment="Left" Margin="537,542,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="1"/>
-    <TextBlock x:Name="weeklyDietPlanTextBlock" Grid.Column="1" HorizontalAlignment="Left" Margin="52,0,0,719"  Text="{DynamicResource weeklyDietPlanTextBlock}" TextWrapping="Wrap" VerticalAlignment="Bottom" FontSize="36"  Width="446" Height="67"/>
-    <Button Margin="65,10,17,684" Click="Previous_Window_Click" Background="#FFF0ED89" BorderBrush="#FFF0ED89"  >
-      <Image  Source="/images/left-arrow2.png" Stretch="Uniform" Height="71" Width="84" RenderTransformOrigin="0.539,1.916">
-      </Image>
-
-    </Button>
-  </Grid>
+    <Grid Opacity="0.8" >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="107*"/>
+            <ColumnDefinition Width="343*"/>
+        </Grid.ColumnDefinitions>
+        <Rectangle HorizontalAlignment="Left" Height="172" Margin="95,185,0,0" Stroke="#FFF3E417" VerticalAlignment="Top" Width="212" Grid.ColumnSpan="2" TextBlock.FontSize="36">
+            <Rectangle.Fill>
+                <ImageBrush ImageSource="/images/117769354_218200186298519_1317197086646310134_n (1).jpg"/>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Rectangle x:Name="___No_Name_" HorizontalAlignment="Right" Height="172" Margin="0,131,381,0" Stroke="#FFA8D756" VerticalAlignment="Top" Width="212" Grid.Column="1">
+            <Rectangle.Fill>
+                <ImageBrush ImageSource="/images/202282539_320587956376945_4447081260204074175_n.jpg"/>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Rectangle HorizontalAlignment="Left" Height="172" Margin="485,185,0,0" Stroke="#FFDCC8C6" VerticalAlignment="Top" Width="212" Grid.Column="1">
+            <Rectangle.Fill>
+                <ImageBrush ImageSource="/images/202550483_1196935140749128_4467873835573874177_n.jpg"/>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Rectangle HorizontalAlignment="Left" Height="172" Margin="95,488,0,0" Stroke="#FF836A78" VerticalAlignment="Top" Width="212" Grid.ColumnSpan="2">
+            <Rectangle.Fill>
+                <ImageBrush ImageSource="/images/120143440_274674753885692_8676275557978193204_n.jpg"/>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Rectangle HorizontalAlignment="Left" Height="172" Margin="169,600,0,0" Stroke="#FFA7DFC2" VerticalAlignment="Top" Width="212" Grid.Column="1" RenderTransformOrigin="0.594,0.471">
+            <Rectangle.Fill>
+                <ImageBrush ImageSource="/images/132177738_186430126532161_6371867683254135793_n.jpg"/>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Rectangle HorizontalAlignment="Left" Height="172" Margin="169,362,0,0" Stroke="#FFE572DD" VerticalAlignment="Top" Width="212" Grid.Column="1">
+            <Rectangle.Fill>
+                <ImageBrush ImageSource="/images/105484953_558682524822568_3726723150727204096_n.jpg"/>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Rectangle HorizontalAlignment="Left" Height="172" Margin="485,480,0,0" Stroke="#FFACD386" VerticalAlignment="Top" Width="212" Grid.Column="1">
+            <Rectangle.Fill>
+                <ImageBrush ImageSource="/images/130745233_409884723537196_3312283219354345567_n.jpg"/>
+            </Rectangle.Fill>
+        </Rectangle>
+        <TextBlock HorizontalAlignment="Left" Margin="244,185,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="1"  Name="tuesdayTextBlock" Text="{DynamicResource tuesdayTextBlock}"/>
+        <TextBlock x:Name="wednesdayTextBlock" HorizontalAlignment="Left" Margin="569,209,0,0" Text="{DynamicResource wednesdayTextBlock}" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="1"/>
+        <TextBlock HorizontalAlignment="Left" Margin="160,217,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.502,0.997" Name="mondayTextBlock" Text="{DynamicResource mondayTextBlock}" ></TextBlock>
+        <TextBlock x:Name="thuersdayTextBlock" HorizontalAlignment="Left" Margin="244,401,0,0" Text="{DynamicResource thuersdayTextBlock}" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="1"/>
+        <TextBlock x:Name="fridayTextBlock"  HorizontalAlignment="Left" Margin="176,521,0,0" Text="{DynamicResource fridayTextBlock}" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBlock x:Name="saturdayTextBlock" HorizontalAlignment="Left" Margin="193,647,0,0" Text="{DynamicResource saturdayTextBlock}" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="1" Height="39" Width="78"/>
+        <TextBlock x:Name="sundayTextBlock" HorizontalAlignment="Left" Margin="542,521,0,0" Text="{DynamicResource sundayTextBlock}" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="1" Height="28" RenderTransformOrigin="0.5,0.5" Width="95">
+            
+        </TextBlock>
+        <TextBlock x:Name="MondayTextBlock"  HorizontalAlignment="Left" Margin="135,249,0,0" Text="" TextWrapping="WrapWithOverflow" VerticalAlignment="Top"/>
+        <TextBlock x:Name="TuesdayTextBlock" HorizontalAlignment="Left" Margin="212,212,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="1"/>
+        <TextBlock x:Name="WednesdayTextBlock" HorizontalAlignment="Left" Margin="537,241,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="1"/>
+        <TextBlock x:Name="FridayTextBlock" HorizontalAlignment="Left" Margin="141,542,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBlock x:Name="ThuersdayTextBlock" HorizontalAlignment="Left" Margin="213,432,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="1"/>
+        <TextBlock x:Name="SaturdayTextBlock" HorizontalAlignment="Left" Margin="188,670,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="1"/>
+        <TextBlock x:Name="SundayTextBlock" HorizontalAlignment="Left" Margin="537,542,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="1"/>
+    <TextBlock x:Name="weeklyDietPlanTextBlock" Grid.Column="1" HorizontalAlignment="Left" Margin="123,0,0,719"  Text="{DynamicResource weeklyDietPlanTextBlock}" TextWrapping="Wrap" VerticalAlignment="Bottom" FontSize="36"  Width="446" Height="67"/>
+        <Canvas PreviewMouseDown="Previous_Window_Click" HorizontalAlignment="Left" Height="94" Margin="95,34,0,0" VerticalAlignment="Top" Width="108">
+            <Canvas.Background>
+                <ImageBrush ImageSource="left-arrow2.png"/>
+            </Canvas.Background>
+        </Canvas>
+    </Grid>
 </Window>

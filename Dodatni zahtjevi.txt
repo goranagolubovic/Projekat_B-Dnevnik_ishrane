@@ -1,0 +1,20 @@
+U sklopu aplikacije, implementirani su sljedeći dodatni zahtjevi:
+
+	1)Podrška za različite tipove korisnika
+		Podrška za dva tipa korisnika - trenera i kanidata.
+		Kanididat evidentira dnevne obroke i prati dnevni unos kalorija,
+		te pristupa dodijeljenim planovima ishrane i vježbanja, dok trener
+		vodi evidenciju o nalozima kandidata, planovima ishrane i vježbanja,
+		kao i o napretku kandidata.
+
+	2)Internacionalizacija
+		U sklopu aplikacije podržani su engleski i srpski jezik. Promjena jezika je dostupna na stranici za prijavu
+		na sistem pri čemu se izbor pamti i propagira na ostale stranice. Inicijalno, postavljen je srpski
+		jezik.
+
+	3)Odabir teme
+		Aplikacija podržava tri različite teme. Promjena teme je dostupna na stranici za prijavu
+		na sistem pri čemu se izbor pamti i propagira na ostale stranice. Inicijalno, postavljena je roza tema.	
+	
+	4)Korisničko uputstvo
+		Dostavljeno u .pdf formatu.

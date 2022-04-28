@@ -153,7 +153,8 @@ namespace Projekat_B_Dnevnik_ishrane
       }
     }
 
-    private void Previous_Window_Click(object sender, RoutedEventArgs e)
+
+    private void Previous_Window_Click(object sender, MouseButtonEventArgs e)
     {
       this.Hide();
       previousWindow.Show();

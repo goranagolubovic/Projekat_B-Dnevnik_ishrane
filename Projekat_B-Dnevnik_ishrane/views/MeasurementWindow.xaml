@@ -39,5 +39,10 @@
         <ImageBrush ImageSource="gain-weight.png"/>
       </Canvas.Background>
     </Canvas>
+    <Canvas PreviewMouseDown="goBack" HorizontalAlignment="Left" Height="73" Margin="102,10,0,0" VerticalAlignment="Top" Width="77" RenderTransformOrigin="-0.038,0.564">
+      <Canvas.Background>
+        <ImageBrush ImageSource="arrow-left1.png"/>
+      </Canvas.Background>
+    </Canvas>
   </Grid>
 </Window>

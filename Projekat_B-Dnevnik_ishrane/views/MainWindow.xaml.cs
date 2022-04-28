@@ -26,6 +26,7 @@ namespace Projekat_B_Dnevnik_ishrane
     private static List<kandidat> listOfCandidates = new List<kandidat>();
     private int matchedUserId = -1;
     public static string theme = "candy";
+    public static string language = "Serbian";
     public static ResourceDictionary resourceDictionary;
     public MainWindow()
         {
@@ -39,7 +40,7 @@ namespace Projekat_B_Dnevnik_ishrane
     {
       user = dnevnikIshraneEntities.korisniks.Where(elem =>
       elem.KorisnickoIme.Equals(UserNameField.Text.Trim())
-      && elem.Lozinka.Equals(PasswordField.Password.ToString().Trim())).FirstOrDefault();
+      && elem.Lozinka.Equals(PasswordField.Password.ToString().Trim()) && elem.Aktivan==1).FirstOrDefault();
       if (user != null)
       {
         matchedUserId = user.idKORISNIK;
@@ -58,7 +59,10 @@ namespace Projekat_B_Dnevnik_ishrane
       }
       else
       {
-        MessageBox.Show("Korisnicko ime ili lozinka nisu ispravno uneseni.");
+        if(language.Equals("Serbian"))
+       errorTextBlock.Text="Korisničko ime ili lozinka nisu ispravni.";
+        else
+          errorTextBlock.Text = "The username or password is incorrect.";
       }
     }
     public static bool checkIfUserIsCandidate(int matchedUserId)
@@ -98,6 +102,7 @@ namespace Projekat_B_Dnevnik_ishrane
 
     private void chooseSerbian(object sender, RoutedEventArgs e)
     {
+      language = "Serbian";
        resourceDictionary = new ResourceDictionary();
       resourceDictionary.Source = new Uri("./StringResources.sr.xaml",UriKind.Relative);
       this.Resources.MergedDictionaries.Add(resourceDictionary);
@@ -105,6 +110,7 @@ namespace Projekat_B_Dnevnik_ishrane
 
     private void chooseEnglish(object sender, RoutedEventArgs e)
     {
+      language = "English";
       resourceDictionary = new ResourceDictionary();
       resourceDictionary.Source = new Uri("./StringResources.en.xaml", UriKind.Relative);
       this.Resources.MergedDictionaries.Add(resourceDictionary);

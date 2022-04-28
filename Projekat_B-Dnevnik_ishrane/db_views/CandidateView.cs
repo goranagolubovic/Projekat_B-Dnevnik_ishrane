@@ -14,12 +14,13 @@ namespace Projekat_B_Dnevnik_ishrane.db_views
     private int yearOfBirth;
     private string username;
     private string password;
+    private int active;
 
     public CandidateView()
     {
 
     }
-    public CandidateView(int coachId,string surnameOfCandidate, string nameOfCandidate, int yearOfBirth, string username,string password)
+    public CandidateView(int coachId,string surnameOfCandidate, string nameOfCandidate, int yearOfBirth, string username,string password,int active)
     {
       this.coachId = coachId;
       this.nameOfCandidate = nameOfCandidate;
@@ -27,7 +28,7 @@ namespace Projekat_B_Dnevnik_ishrane.db_views
       this.yearOfBirth = yearOfBirth;
       this.username = username;
       this.password = password;
-
+      this.active = active;
     }
 
     public int CoachId { get => coachId; set => coachId = value; }
@@ -36,5 +37,6 @@ namespace Projekat_B_Dnevnik_ishrane.db_views
     public int YearOfBirth { get => yearOfBirth; set => yearOfBirth = value; }
     public string Username { get => username; set => username = value; }
     public string Password { get => password; set => password = value; }
+    public int Active { get => active; set => active = value; }
   }
 }

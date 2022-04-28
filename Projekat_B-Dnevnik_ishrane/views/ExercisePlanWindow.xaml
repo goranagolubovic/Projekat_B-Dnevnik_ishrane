@@ -9,50 +9,51 @@
         Title="ExercisePlanWindow" Height="700" Width="678.4">
     <Grid Margin="0,0,-6,0.4">
 
-    <TextBlock x:Name="exercisePlanTextBlock" HorizontalAlignment="Left" Height="86" Margin="90,34,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="406" FontSize="48" Foreground="#FF408090" Text="{DynamicResource exercisePlanTextBlock}"></TextBlock>
+        <TextBlock x:Name="exercisePlanTextBlock" HorizontalAlignment="Left" Height="119" Margin="90,34,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="406" FontSize="48" Foreground="#FF408090" Text="{DynamicResource exercisePlanTextBlock}"></TextBlock>
         <DataGrid x:Name="dataGridViewExercisePlan" Margin="0,158,-0.4,228.4" AutoGenerateColumns="False" SelectionChanged="dataGridViewExercisePlan_SelectionChanged">
             <DataGrid.Columns>
-        <DataGridTextColumn x:Name="coachNameTextBlock" Header="{DynamicResource coachNameTextBlock}" Binding="{Binding Path='ImeTrenera'}" IsReadOnly="True" />
-        <DataGridTextColumn x:Name="coachSurnameTextBlock" Header="{DynamicResource coachSurnameTextBlock}" Binding="{Binding Path='PrezimeTrenera'}" IsReadOnly="True" />
-        <DataGridTextColumn x:Name="dateAndTime" Header="{DynamicResource dateAndTime}" Binding="{Binding Path='DatumVrijeme'}" IsReadOnly="True" />
-        <DataGridTextColumn x:Name="candidateNameTextBlock" Header="{DynamicResource candidateNameTextBlock}" Binding="{Binding Path='ImeKandidata'}" IsReadOnly="True" />
-        <DataGridTextColumn x:Name="candidateSurnameTextBlock" Header="{DynamicResource candidateSurnameTextBlock}" Binding="{Binding Path='PrezimeKandidata'}" IsReadOnly="True" />
-        <DataGridTemplateColumn x:Name="viewButton" Header="{DynamicResource viewButton}">
-          <DataGridTemplateColumn.CellTemplate>
-            <DataTemplate>
-              <Button Name="btnView" Content="{DynamicResource viewButton}" Click="btnView_Click" />
-            </DataTemplate>
-          </DataGridTemplateColumn.CellTemplate>
-        </DataGridTemplateColumn>
-        <DataGridTemplateColumn x:Name="updateButton" Header="{DynamicResource updateButton}">
-          <DataGridTemplateColumn.CellTemplate>
-            <DataTemplate>
-              <Button Name="btnUpdate" Content="{DynamicResource updateButton}" Click="btnUpdate_Click" />
-            </DataTemplate>
-          </DataGridTemplateColumn.CellTemplate>
-        </DataGridTemplateColumn>
-        <DataGridTemplateColumn x:Name="deleteButton" Header="{DynamicResource deleteButton}">
-          <DataGridTemplateColumn.CellTemplate>
-            <DataTemplate>
-              <Button Name="btnDelete" Content="{DynamicResource deleteButton}" Click="btnDelete_Click" />
-            </DataTemplate>
-          </DataGridTemplateColumn.CellTemplate>
-        </DataGridTemplateColumn>
-      </DataGrid.Columns>
-    </DataGrid>
-    <Button Margin="90,461,415,132" Click="Previous_Window_Click" BorderBrush="#FFDEE9ED" Background="{x:Null}"  >
-            <Image  Source="/images/back.png" Stretch="Uniform" Height="46" Width="57" RenderTransformOrigin="0.539,1.916">
-            </Image>
-
-        </Button>
-        <Button Margin="402,461,90,132" Click="Exit_Click" Background="#FFDEE9ED" BorderBrush="#FFDEE9ED"  >
-            <Image  Source="/images/power-off2.png" Stretch="Uniform" Height="46" Width="68" RenderTransformOrigin="0.539,1.916">
-            </Image>
-
-        </Button>
+                <DataGridTextColumn x:Name="coachNameTextBlock" Header="{DynamicResource coachNameTextBlock}" Binding="{Binding Path='ImeTrenera'}" IsReadOnly="True" />
+                <DataGridTextColumn x:Name="coachSurnameTextBlock" Header="{DynamicResource coachSurnameTextBlock}" Binding="{Binding Path='PrezimeTrenera'}" IsReadOnly="True" />
+                <DataGridTextColumn x:Name="dateAndTime" Header="{DynamicResource dateAndTime}" Binding="{Binding Path='DatumVrijeme'}" IsReadOnly="True" />
+                <DataGridTextColumn x:Name="candidateNameTextBlock" Header="{DynamicResource candidateNameTextBlock}" Binding="{Binding Path='ImeKandidata'}" IsReadOnly="True" />
+                <DataGridTextColumn x:Name="candidateSurnameTextBlock" Header="{DynamicResource candidateSurnameTextBlock}" Binding="{Binding Path='PrezimeKandidata'}" IsReadOnly="True" />
+                <DataGridTemplateColumn x:Name="viewButton" Header="{DynamicResource viewButton}">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Name="btnView" Content="{DynamicResource viewButton}" Click="btnView_Click" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn x:Name="updateButton" Header="{DynamicResource updateButton}">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Name="btnUpdate" Content="{DynamicResource updateButton}" Click="btnUpdate_Click" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn x:Name="deleteButton" Header="{DynamicResource deleteButton}">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Name="btnDelete" Content="{DynamicResource deleteButton}" Click="btnDelete_Click" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
         <Canvas x:Name="addingExercise" PreviewMouseDown="addExercisePlan" HorizontalAlignment="Left" Height="71" Margin="501,34,0,0" VerticalAlignment="Top" Width="71">
             <Canvas.Background>
                 <ImageBrush ImageSource="add.png"/>
+            </Canvas.Background>
+        </Canvas>
+        <Canvas PreviewMouseDown="Previous_Window_Click" HorizontalAlignment="Left" Height="68" Margin="63,492,0,0" VerticalAlignment="Top" Width="68" RenderTransformOrigin="-0.752,0.535">
+            <Canvas.Background>
+                <ImageBrush ImageSource="arrow-left.png"/>
+            </Canvas.Background>
+        </Canvas>
+        <Canvas HorizontalAlignment="Left" Height="60" Margin="480,600,0,0" VerticalAlignment="Top" Width="92"/>
+        <Canvas PreviewMouseDown="Exit_Click" HorizontalAlignment="Left" Height="68" Margin="501,492,0,0" VerticalAlignment="Top" Width="71">
+            <Canvas.Background>
+                <ImageBrush ImageSource="power-off1.png"/>
             </Canvas.Background>
         </Canvas>
 

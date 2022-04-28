@@ -16,12 +16,12 @@ namespace Projekat_B_Dnevnik_ishrane.db_views
     private int id;
     private int yearOfBirth;
     private decimal weight;
-
+    private int candidateActive;
     public MeasurementView()
     {
 
     }
-    public MeasurementView(DateTime dateAndTime, int id, string surnameOfTrener, string nameOfTrener, string surnameOfCandidate, string nameOfCandidate,int yearOfBirth,decimal weight)
+    public MeasurementView(DateTime dateAndTime, int id, string surnameOfTrener, string nameOfTrener, string surnameOfCandidate, string nameOfCandidate,int yearOfBirth,decimal weight,int candidateActive)
     {
       this.dateAndTime = dateAndTime;
       this.id = id;
@@ -31,7 +31,7 @@ namespace Projekat_B_Dnevnik_ishrane.db_views
       this.surnameOfTrener = surnameOfTrener;
       this.nameOfTrener = nameOfTrener;
       this.weight = weight;
-
+      this.candidateActive = candidateActive;
     }
 
     public DateTime DateAndTime { get => dateAndTime; set => dateAndTime = value; }
@@ -42,6 +42,7 @@ namespace Projekat_B_Dnevnik_ishrane.db_views
     public string SurnameOfCandidate { get => surnameOfCandidate; set => surnameOfCandidate = value; }
     public int YearOfBirth { get => yearOfBirth; set => yearOfBirth = value; }
     public decimal Weight { get => weight; set => weight = value; }
+    public int CandidateActive { get => candidateActive; set => candidateActive = value; }
 
   }
   }

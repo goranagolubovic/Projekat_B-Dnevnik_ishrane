@@ -32,12 +32,14 @@ namespace Projekat_B_Dnevnik_ishrane.views
     private double gcarbsvalue;
 
     private string action;
-    public FoodStuffDetailsWindow(string name, int candidateId, string typeOfMeal,string action)
+    private Window previousWindow;
+    public FoodStuffDetailsWindow(string name, int candidateId, string typeOfMeal,string action,Window previousWindow)
     {
       this.name = name;
       this.candidateId = candidateId;
       this.typeOfMeal = typeOfMeal;
       this.action = action;
+      this.previousWindow = previousWindow;
       Properties.Settings.Default.ColorMode = MainWindow.theme;
       this.Resources.MergedDictionaries.Add(MainWindow.resourceDictionary);
       InitializeComponent();
@@ -48,6 +50,7 @@ namespace Projekat_B_Dnevnik_ishrane.views
       fatsTextBlock.Text = stuff.Masti.ToString();
       carbsTextBlock.Text = stuff.UgljikoHidrati.ToString();
       previousAmount = Double.Parse(textBox.Text);
+
 
       gkcalValue = Convert.ToDouble(kcalTextBlock.Text) / Convert.ToDouble(textBox.Text);
       gproteinsValue = Convert.ToDouble(proteiniTextBlock.Text) / Convert.ToDouble(textBox.Text);
@@ -78,7 +81,6 @@ namespace Projekat_B_Dnevnik_ishrane.views
         Datum=DateTime.UtcNow.Date
       };
         dnevnikIshraneEntities.obroks.Add(meal);
-       dnevnikIshraneEntities.obroks.Add(meal);
       if (action.Equals("update"))
       {
         MealsWindow.sumOfKcals -= previousAmount;
@@ -87,7 +89,7 @@ namespace Projekat_B_Dnevnik_ishrane.views
       }
       dnevnikIshraneEntities.SaveChanges();
 
-      Window window = new MealsWindow(candidateId,action);
+      Window window = new MealsWindow(candidateId,action,previousWindow);
       this.Hide();
       window.Show();
       

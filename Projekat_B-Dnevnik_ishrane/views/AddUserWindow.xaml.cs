@@ -43,6 +43,7 @@ namespace Projekat_B_Dnevnik_ishrane.views
     {
       Properties.Settings.Default.ColorMode = MainWindow.theme;
       this.Resources.MergedDictionaries.Add(MainWindow.resourceDictionary);
+      this.coachId = coachId;
       InitializeComponent();
       this.action = action;
       this.ime = ime;
@@ -66,12 +67,13 @@ namespace Projekat_B_Dnevnik_ishrane.views
       }
       catch (NotAllTextFieldsFilledException ex)
       {
+        if(MainWindow.language.Equals("Serbian"))
         errorTextBlock.Text = "Popunite sva tekstualna polja i pokušajte ponovo.";
+        else
+        errorTextBlock.Text = "Fill in all text fields and try again.";
       }
 
-      this.Hide();
-      previousWindow.initializeDataGrid();
-      previousWindow.Show();
+      
 
     }
 
@@ -97,35 +99,41 @@ namespace Projekat_B_Dnevnik_ishrane.views
       }
       if (areCredentialsInUsage(UsernameTextBox.Text, PasswordTextBox.Password))
       {
+        if(MainWindow.language.Equals("Serbian"))
         errorTextBlock.Text = "Kombinacija korisničkog imena i lozinke je zauzeta.";
+        else
+        errorTextBlock.Text = "The combination of username and password is already in usage.";
         return;
       }
+      int id = findId(ime, prezime, godiste);
+      korisnik oldUser=dnevnikIshraneEntities.korisniks.Where(elem => elem.idKORISNIK == id).FirstOrDefault();
+      oldUser.Aktivan = 0;
+      dnevnikIshraneEntities.korisniks.Add(oldUser);
+      dnevnikIshraneEntities.Entry(oldUser).State = System.Data.Entity.EntityState.Modified;
+      dnevnikIshraneEntities.SaveChanges();
       var korisnik = new korisnik()
       {
-        idKORISNIK=findId(ime,prezime,godiste),
+        
         Ime = NameTextBox.Text,
         Prezime = SurnameTextBox.Text,
         Godiste = Convert.ToInt32(YearOfBirthTextBox.Text),
         KorisnickoIme = UsernameTextBox.Text,
         Lozinka = PasswordTextBox.Password.ToString(),
-        Tema = "candy"
+        Aktivan = 1
       };
-      MessageBox.Show(korisnik.idKORISNIK.ToString());
-      kandidat kandidat = dnevnikIshraneEntities.kandidats.Where(elem => elem.KORISNIK_idKORISNIK == korisnik.idKORISNIK).FirstOrDefault();
-      dnevnikIshraneEntities.kandidats.Remove(kandidat);
-      int id = findId(ime, prezime, godiste);
-      var user = dnevnikIshraneEntities.korisniks.Single(k => k.idKORISNIK == id);
-      dnevnikIshraneEntities.korisniks.Remove(user);
-      dnevnikIshraneEntities.SaveChanges();
       dnevnikIshraneEntities.korisniks.Add(korisnik);
-      MessageBox.Show(korisnik.idKORISNIK.ToString());
-      var new_candidate = new kandidat()
+      dnevnikIshraneEntities.SaveChanges();
+      var kandidat = new kandidat()
       {
         KORISNIK_idKORISNIK = korisnik.idKORISNIK,
         TRENER_KORISNIK_idKORISNIK = coachId
       };
-      dnevnikIshraneEntities.kandidats.Add(new_candidate);
+      dnevnikIshraneEntities.kandidats.Add(kandidat);
       dnevnikIshraneEntities.SaveChanges();
+
+      this.Hide();
+      previousWindow.initializeDataGrid();
+      previousWindow.Show();
     }
 
     private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
@@ -145,16 +153,27 @@ namespace Projekat_B_Dnevnik_ishrane.views
       {
         if (String.IsNullOrEmpty(texts[j].Text))
         {
-          throw new NotAllTextFieldsFilledException();
+          if(MainWindow.language.Equals("Serbian"))
+          errorTextBlock.Text = "Popunite sva tekstualna polja.";
+          else
+          errorTextBlock.Text = "Fill in all text fields.";
+          return;
         }
       }
       if (PasswordTextBox.Password == "")
       {
-        throw new NotAllTextFieldsFilledException();
+        if (MainWindow.language.Equals("Serbian"))
+          errorTextBlock.Text = "Popunite sva tekstualna polja.";
+        else
+          errorTextBlock.Text = "Fill in all text fields.";
+        return;
       }
       if (areCredentialsInUsage(UsernameTextBox.Text, PasswordTextBox.Password))
       {
-        errorTextBlock.Text = "Kombinacija korisničkog imena i lozinke je zauzeta.";
+        if (MainWindow.language.Equals("Serbian"))
+          errorTextBlock.Text = "Kombinacija korisničkog imena i lozinke je zauzeta.";
+        else
+          errorTextBlock.Text = "The combination of username and password is already in usage.";
         return;
       }
     
@@ -165,7 +184,7 @@ namespace Projekat_B_Dnevnik_ishrane.views
         Godiste = Convert.ToInt32(YearOfBirthTextBox.Text),
         KorisnickoIme = UsernameTextBox.Text,
         Lozinka = PasswordTextBox.Password.ToString(),
-        Tema = "candy"
+        Aktivan = 1
       };
       dnevnikIshraneEntities.korisniks.Add(korisnik);
       dnevnikIshraneEntities.SaveChanges();
@@ -176,23 +195,20 @@ namespace Projekat_B_Dnevnik_ishrane.views
       };
         dnevnikIshraneEntities.kandidats.Add(kandidat);
       dnevnikIshraneEntities.SaveChanges();
+
+      this.Hide();
+      previousWindow.initializeDataGrid();
+      previousWindow.Show();
     }
 
     private int findId(string name, string surname, int year)
     {
-      korisnik k = dnevnikIshraneEntities.korisniks.Where(elem => elem.Ime.Equals(name) && elem.Prezime.Equals(surname) && elem.Godiste.Equals(year)).FirstOrDefault();
+      korisnik k = dnevnikIshraneEntities.korisniks.Where(elem => elem.Ime.Equals(name) && elem.Prezime.Equals(surname) && elem.Godiste.Equals(year) && elem.Aktivan==1).FirstOrDefault();
       if (k != null)
         return k.idKORISNIK;
       return 0;
     }
 
-    private int findNextId()
-    {
-      korisnik k = dnevnikIshraneEntities.korisniks.ToList().LastOrDefault();
-      if (k != null)
-        return k.idKORISNIK+1;
-      return 0;
-    }
 
       private bool areCredentialsInUsage(string text, string password)
       {

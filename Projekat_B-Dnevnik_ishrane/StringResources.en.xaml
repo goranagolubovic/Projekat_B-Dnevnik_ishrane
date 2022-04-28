@@ -21,7 +21,7 @@
   <system:String x:Key="mondayTextBlock">Monday</system:String>
   <system:String x:Key="tuesdayTextBlock">Tuesday</system:String>
   <system:String x:Key="wednesdayTextBlock">Wednesday</system:String>
-  <system:String x:Key="thuersdayTextBlock">Thersday</system:String>
+  <system:String x:Key="thuersdayTextBlock">Thuersday</system:String>
   <system:String x:Key="fridayTextBlock">Friday</system:String>
   <system:String x:Key="saturdayTextBlock">Saturday</system:String>
   <system:String x:Key="sundayTextBlock">Sunday</system:String>
@@ -47,4 +47,13 @@
   <system:String x:Key="foodstuffTextBlock">Foodstuff</system:String>
   <system:String x:Key="dailyIntakeTextBlock">Daily intake(kcal)</system:String>
   <system:String x:Key="weightTextBlock">Weight(kg)</system:String>
+  <system:String x:Key="themeTextBlock">Theme</system:String>
+  <system:String x:Key="languageTextBlock">Language</system:String>
+  <system:String x:Key="light">Light</system:String>
+  <system:String x:Key="pink">Pink</system:String>
+  <system:String x:Key="dark">Dark</system:String>
+  <system:String x:Key="dinnerTextBlock">Dinner</system:String>
+  <system:String x:Key="lunchTextBlock">Lunch</system:String>
+  <system:String x:Key="breakfastTextBlock">Breakfast</system:String>
+  <system:String x:Key="snackTextBlock">Snack</system:String>
 </ResourceDictionary>

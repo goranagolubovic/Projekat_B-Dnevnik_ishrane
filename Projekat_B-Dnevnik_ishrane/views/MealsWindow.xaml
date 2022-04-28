@@ -7,122 +7,127 @@
         mc:Ignorable="d"
          Style="{StaticResource WindowStyle}"
         Title="MealsWindow" Height="612.582" Width="1212.4">
-  <Grid Margin="0,0,-6.2,-0.2">
-    <Grid.ColumnDefinitions>
-      <ColumnDefinition Width="1013*"/>
-      <ColumnDefinition Width="62*"/>
-      <ColumnDefinition Width="87*"/>
-      <ColumnDefinition Width="15*"/>
-    </Grid.ColumnDefinitions>
-    <ScrollBar HorizontalAlignment="Left" Height="387" Margin="20,102,0,0" VerticalAlignment="Top" Width="271" Background="#FFFCC4C3"/>
-    <ScrollBar HorizontalAlignment="Left" Height="387" Margin="917,102,0,0" VerticalAlignment="Top" Width="271" RenderTransformOrigin="3.593,0.632" Background="#FFFCC4C3" Grid.ColumnSpan="3"/>
-    <ScrollBar HorizontalAlignment="Left" Height="387" Margin="624,102,0,0" VerticalAlignment="Top" Width="271" ValueChanged="ScrollBar_ValueChanged_1" Background="#FFFCC4C3"/>
-    <ScrollBar HorizontalAlignment="Left" Height="387" Margin="324,102,0,0" VerticalAlignment="Top" Width="271" ValueChanged="ScrollBar_ValueChanged" Background="#FFFCC4C3"/>
-    <Label x:Name="breakfastTextBlock" FontSize="20px" Content="{DynamicResource breakfastTextBlock}" HorizontalAlignment="Left" Height="44" Margin="92,146,0,0" VerticalAlignment="Top" Width="114"/>
-    <Label x:Name="lunchTextBlock" FontSize="20px" Content="{DynamicResource lunchTextBlock}" HorizontalAlignment="Left" Height="44" Margin="404,146,0,0" VerticalAlignment="Top" Width="116"/>
-    <Label x:Name="dinnerTextBlock" FontSize="20px" Content="{DynamicResource dinnerTextBlock}" HorizontalAlignment="Left" Height="43" Margin="708,146,0,0" VerticalAlignment="Top" Width="116"/>
-    <Label x:Name="snackTextBlock" FontSize="20px" Content="{DynamicResource snackTextBlock}" HorizontalAlignment="Left" Height="44" Margin="1037,146,0,0" VerticalAlignment="Top" Width="114" Grid.ColumnSpan="3"/>
-    <DataGrid x:Name="dataGridBreakfast" Margin="32,195,771,175.4" AutoGenerateColumns="False" SelectionChanged="dataGridViewExercisePlan_SelectionChanged">
-      <DataGrid.Columns>
-        <DataGridTextColumn x:Name="foodstuffTextBlock" Header="{DynamicResource foodstuffTextBlock}" Binding="{Binding Path='Namirnica'}" IsReadOnly="True" Width="Auto" />
-        <DataGridTextColumn Header="kcal" Binding="{Binding Path='kcal'}" IsReadOnly="True" Width="Auto" />
-        <DataGridTemplateColumn  Header="{DynamicResource updateButton}">
-          <DataGridTemplateColumn.CellTemplate>
-            <DataTemplate>
-              <Button Name="btnUpdate"  Content="{DynamicResource updateButton}" Click="btnUpdateBreakfast_Click" Width="Auto" />
-            </DataTemplate>
-          </DataGridTemplateColumn.CellTemplate>
-        </DataGridTemplateColumn>
-        <DataGridTemplateColumn Header="{DynamicResource updateButton}">
-          <DataGridTemplateColumn.CellTemplate>
-            <DataTemplate>
-              <Button Name="btnDelete" Content="{DynamicResource deleteButton}" Click="btnDeleteBreakfast_Click" Width="Auto" />
-            </DataTemplate>
-          </DataGridTemplateColumn.CellTemplate>
-        </DataGridTemplateColumn>
-      </DataGrid.Columns>
-    </DataGrid>
-    <DataGrid x:Name="dataGridLunch" Margin="341,195,467,175.4" AutoGenerateColumns="False" SelectionChanged="dataGridViewExercisePlan_SelectionChanged">
-      <DataGrid.Columns>
-        <DataGridTextColumn  Header="{DynamicResource foodstuffTextBlock}" Binding="{Binding Path='Namirnica'}" IsReadOnly="True" Width="Auto" />
-        <DataGridTextColumn Header="kcal" Binding="{Binding Path='kcal'}" IsReadOnly="True" Width="Auto" />
-        <DataGridTemplateColumn  Header="{DynamicResource updateButton}">
-          <DataGridTemplateColumn.CellTemplate>
-            <DataTemplate>
-              <Button Name="btnUpdate"  Content="{DynamicResource updateButton}" Click="btnUpdateBreakfast_Click" Width="Auto" />
-            </DataTemplate>
-          </DataGridTemplateColumn.CellTemplate>
-        </DataGridTemplateColumn>
-        <DataGridTemplateColumn Header="{DynamicResource updateButton}">
-          <DataGridTemplateColumn.CellTemplate>
-            <DataTemplate>
-              <Button Name="btnDelete" Content="{DynamicResource deleteButton}" Click="btnDeleteBreakfast_Click" Width="Auto" />
-            </DataTemplate>
-          </DataGridTemplateColumn.CellTemplate>
-        </DataGridTemplateColumn>
-      </DataGrid.Columns>
-    </DataGrid>
-    <DataGrid x:Name="dataGridDinner" Margin="646,195,177,175.4" AutoGenerateColumns="False" SelectionChanged="dataGridViewExercisePlan_SelectionChanged">
-      <DataGrid.Columns>
-        <DataGridTextColumn  Header="{DynamicResource foodstuffTextBlock}" Binding="{Binding Path='Namirnica'}" IsReadOnly="True" Width="Auto" />
-        <DataGridTextColumn Header="kcal" Binding="{Binding Path='kcal'}" IsReadOnly="True" Width="Auto" />
-        <DataGridTemplateColumn  Header="{DynamicResource updateButton}">
-          <DataGridTemplateColumn.CellTemplate>
-            <DataTemplate>
-              <Button Name="btnUpdate"  Content="{DynamicResource updateButton}" Click="btnUpdateBreakfast_Click" Width="Auto" />
-            </DataTemplate>
-          </DataGridTemplateColumn.CellTemplate>
-        </DataGridTemplateColumn>
-        <DataGridTemplateColumn Header="{DynamicResource updateButton}">
-          <DataGridTemplateColumn.CellTemplate>
-            <DataTemplate>
-              <Button Name="btnDelete" Content="{DynamicResource deleteButton}" Click="btnDeleteBreakfast_Click" Width="Auto" />
-            </DataTemplate>
-          </DataGridTemplateColumn.CellTemplate>
-        </DataGridTemplateColumn>
-      </DataGrid.Columns>
-    </DataGrid>
-    <DataGrid x:Name="dataGridSnack" Margin="942,195,46.6,175.4" AutoGenerateColumns="False" SelectionChanged="dataGridViewExercisePlan_SelectionChanged" Grid.ColumnSpan="3">
-      <DataGrid.Columns>
-        <DataGridTextColumn  Header="{DynamicResource foodstuffTextBlock}" Binding="{Binding Path='Namirnica'}" IsReadOnly="True" Width="Auto" />
-        <DataGridTextColumn Header="kcal" Binding="{Binding Path='kcal'}" IsReadOnly="True" Width="Auto" />
-        <DataGridTemplateColumn  Header="{DynamicResource updateButton}">
-          <DataGridTemplateColumn.CellTemplate>
-            <DataTemplate>
-              <Button Name="btnUpdate"  Content="{DynamicResource updateButton}" Click="btnUpdateBreakfast_Click" Width="Auto" />
-            </DataTemplate>
-          </DataGridTemplateColumn.CellTemplate>
-        </DataGridTemplateColumn>
-        <DataGridTemplateColumn Header="{DynamicResource updateButton}">
-          <DataGridTemplateColumn.CellTemplate>
-            <DataTemplate>
-              <Button Name="btnDelete" Content="{DynamicResource deleteButton}" Click="btnDeleteBreakfast_Click" Width="Auto" />
-            </DataTemplate>
-          </DataGridTemplateColumn.CellTemplate>
-        </DataGridTemplateColumn>
-      </DataGrid.Columns>
-    </DataGrid>
-    <Canvas PreviewMouseDown="addBreakfast" HorizontalAlignment="Left" Height="58" Margin="128,413,0,0" VerticalAlignment="Top" Width="55" RenderTransformOrigin="0.136,0.4">
-      <Canvas.Background>
-        <ImageBrush ImageSource="plus.png"/>
-      </Canvas.Background>
-    </Canvas>
-    <Canvas PreviewMouseDown="addSnack" HorizontalAlignment="Left" Height="58" Margin="1020,413,0,0" VerticalAlignment="Top" Width="55" RenderTransformOrigin="0.136,0.4" Grid.ColumnSpan="2">
-      <Canvas.Background>
-        <ImageBrush ImageSource="plus.png"/>
-      </Canvas.Background>
-    </Canvas>
-    <Canvas PreviewMouseDown="addDinner" HorizontalAlignment="Left" Height="58" Margin="726,413,0,0" VerticalAlignment="Top" Width="55" RenderTransformOrigin="0.136,0.4">
-      <Canvas.Background>
-        <ImageBrush ImageSource="plus.png"/>
-      </Canvas.Background>
-    </Canvas>
-    <Canvas PreviewMouseDown="addLunch" HorizontalAlignment="Left" Height="58" Margin="437,413,0,0" VerticalAlignment="Top" Width="55" RenderTransformOrigin="0.136,0.4">
-      <Canvas.Background>
-        <ImageBrush ImageSource="plus.png"/>
-      </Canvas.Background>
-    </Canvas>
-    <TextBlock x:Name="dailyIntakeTextBlock" Height="65" Margin="757,10,76,0" TextWrapping="Wrap" Text="{DynamicResource dailyIntakeTextBlock}" VerticalAlignment="Top" FontSize="24"/>
-    <TextBlock x:Name="totalyKcals" FontSize="24px"  HorizontalAlignment="Left"  Margin="973,10,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="125" RenderTransformOrigin="0.426,0.942" FontWeight="Bold" Grid.ColumnSpan="2"/>
-  </Grid>
+    <Grid Margin="0,0,-6.2,-0.2">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1013*"/>
+            <ColumnDefinition Width="62*"/>
+            <ColumnDefinition Width="87*"/>
+            <ColumnDefinition Width="15*"/>
+        </Grid.ColumnDefinitions>
+        <ScrollBar HorizontalAlignment="Left" Height="387" Margin="20,102,0,0" VerticalAlignment="Top" Width="271" Background="#FFFEEAC1"/>
+        <ScrollBar HorizontalAlignment="Left" Height="387" Margin="917,102,0,0" VerticalAlignment="Top" Width="271" RenderTransformOrigin="3.593,0.632" Background="#FFFEEAC1" Grid.ColumnSpan="3"/>
+        <ScrollBar HorizontalAlignment="Left" Height="387" Margin="624,102,0,0" VerticalAlignment="Top" Width="271" ValueChanged="ScrollBar_ValueChanged_1" Background="#FFFEEAC1"/>
+        <ScrollBar HorizontalAlignment="Left" Height="387" Margin="324,102,0,0" VerticalAlignment="Top" Width="271" ValueChanged="ScrollBar_ValueChanged" Background="#FFFEEAC1"/>
+        <Label x:Name="breakfastTextBlock" FontSize="20px" Content="{DynamicResource breakfastTextBlock}" HorizontalAlignment="Left" Height="44" Margin="92,146,0,0" VerticalAlignment="Top" Width="114"/>
+        <Label x:Name="lunchTextBlock" FontSize="20px" Content="{DynamicResource lunchTextBlock}" HorizontalAlignment="Left" Height="44" Margin="404,146,0,0" VerticalAlignment="Top" Width="116"/>
+        <Label x:Name="dinnerTextBlock" FontSize="20px" Content="{DynamicResource dinnerTextBlock}" HorizontalAlignment="Left" Height="43" Margin="708,146,0,0" VerticalAlignment="Top" Width="116"/>
+        <Label x:Name="snackTextBlock" FontSize="20px" Content="{DynamicResource snackTextBlock}" HorizontalAlignment="Left" Height="44" Margin="1005,145,0,0" VerticalAlignment="Top" Width="114" Grid.ColumnSpan="3"/>
+        <DataGrid x:Name="dataGridBreakfast" Margin="32,195,771,175.4" AutoGenerateColumns="False" SelectionChanged="dataGridViewExercisePlan_SelectionChanged">
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="foodstuffTextBlock" Header="{DynamicResource foodstuffTextBlock}" Binding="{Binding Path='Namirnica'}" IsReadOnly="True" Width="Auto" />
+                <DataGridTextColumn Header="" Binding="{Binding Path='kcal'}" IsReadOnly="True" Width="Auto" />
+                <DataGridTemplateColumn  Header="{DynamicResource updateButton}">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Name="btnUpdate"  Content="{DynamicResource updateButton}" Click="btnUpdateBreakfast_Click" Width="Auto" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="{DynamicResource updateButton}">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Name="btnDelete" Content="{DynamicResource deleteButton}" Click="btnDeleteBreakfast_Click" Width="Auto" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <DataGrid x:Name="dataGridLunch" Margin="341,195,467,175.4" AutoGenerateColumns="False" SelectionChanged="dataGridViewExercisePlan_SelectionChanged">
+            <DataGrid.Columns>
+                <DataGridTextColumn  Header="{DynamicResource foodstuffTextBlock}" Binding="{Binding Path='Namirnica'}" IsReadOnly="True" Width="Auto" />
+                <DataGridTextColumn Header="" Binding="{Binding Path='kcal'}" IsReadOnly="True" Width="Auto" />
+                <DataGridTemplateColumn  Header="{DynamicResource updateButton}">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Name="btnUpdate"  Content="{DynamicResource updateButton}" Click="btnUpdateLunch_Click" Width="Auto" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="{DynamicResource updateButton}">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Name="btnDelete" Content="{DynamicResource deleteButton}" Click="btnDeleteLunch_Click" Width="Auto" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <DataGrid x:Name="dataGridDinner" Margin="646,195,177,175.4" AutoGenerateColumns="False" SelectionChanged="dataGridViewExercisePlan_SelectionChanged">
+            <DataGrid.Columns>
+                <DataGridTextColumn  Header="{DynamicResource foodstuffTextBlock}" Binding="{Binding Path='Namirnica'}" IsReadOnly="True" Width="Auto" />
+                <DataGridTextColumn Header="" Binding="{Binding Path='kcal'}" IsReadOnly="True" Width="Auto" />
+                <DataGridTemplateColumn  Header="{DynamicResource updateButton}">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Name="btnUpdate"  Content="{DynamicResource updateButton}" Click="btnUpdateDinner_Click" Width="Auto" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="{DynamicResource updateButton}">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Name="btnDelete" Content="{DynamicResource deleteButton}" Click="btnDeleteDinner_Click" Width="Auto" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <DataGrid x:Name="dataGridSnack" Margin="942,195,46.6,175.4" AutoGenerateColumns="False" SelectionChanged="dataGridViewExercisePlan_SelectionChanged" Grid.ColumnSpan="3">
+            <DataGrid.Columns>
+                <DataGridTextColumn  Header="{DynamicResource foodstuffTextBlock}" Binding="{Binding Path='Namirnica'}" IsReadOnly="True" Width="Auto" />
+                <DataGridTextColumn Header="" Binding="{Binding Path='kcal'}" IsReadOnly="True" Width="Auto" />
+                <DataGridTemplateColumn  Header="{DynamicResource updateButton}">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Name="btnUpdate"  Content="{DynamicResource updateButton}" Click="btnUpdateSnack_Click" Width="Auto" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="{DynamicResource updateButton}">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Name="btnDelete" Content="{DynamicResource deleteButton}" Click="btnDeleteSnack_Click" Width="Auto" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Canvas PreviewMouseDown="addBreakfast" HorizontalAlignment="Left" Height="58" Margin="128,413,0,0" VerticalAlignment="Top" Width="55" RenderTransformOrigin="0.136,0.4">
+            <Canvas.Background>
+                <ImageBrush ImageSource="plus.png"/>
+            </Canvas.Background>
+        </Canvas>
+        <Canvas PreviewMouseDown="addSnack" HorizontalAlignment="Left" Height="58" Margin="1026,413,0,0" VerticalAlignment="Top" Width="55" RenderTransformOrigin="0.136,0.4" Grid.ColumnSpan="2">
+            <Canvas.Background>
+                <ImageBrush ImageSource="plus.png"/>
+            </Canvas.Background>
+        </Canvas>
+        <Canvas PreviewMouseDown="addDinner" Height="58" Margin="732,413,253,0" VerticalAlignment="Top" RenderTransformOrigin="0.136,0.4">
+            <Canvas.Background>
+                <ImageBrush ImageSource="plus.png"/>
+            </Canvas.Background>
+        </Canvas>
+        <Canvas PreviewMouseDown="addLunch" HorizontalAlignment="Left" Height="58" Margin="433,413,0,0" VerticalAlignment="Top" Width="55" RenderTransformOrigin="0.136,0.4">
+            <Canvas.Background>
+                <ImageBrush ImageSource="plus.png"/>
+            </Canvas.Background>
+        </Canvas>
+        <TextBlock x:Name="dailyIntakeTextBlock" Height="65" Margin="757,10,76,0" TextWrapping="Wrap" Text="{DynamicResource dailyIntakeTextBlock}" VerticalAlignment="Top" FontSize="24"/>
+        <TextBlock x:Name="totalyKcals" FontSize="24px"  HorizontalAlignment="Left"  Margin="973,10,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="125" RenderTransformOrigin="0.426,0.942" FontWeight="Bold" Grid.ColumnSpan="2"/>
+        <Canvas PreviewMouseDown="goBack" HorizontalAlignment="Left" Height="40" Margin="20,23,0,0" VerticalAlignment="Top" Width="44" RenderTransformOrigin="-0.045,0.54">
+            <Canvas.Background>
+                <ImageBrush ImageSource="left-arrow3.png"/>
+            </Canvas.Background>
+        </Canvas>
+    </Grid>
 </Window>

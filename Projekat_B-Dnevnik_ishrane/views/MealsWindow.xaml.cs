@@ -29,8 +29,10 @@ namespace Projekat_B_Dnevnik_ishrane.views
     private List<ObrokView> lunchOfCandidate = new List<ObrokView>();
     private List<ObrokView> dinnerOfCanidate = new List<ObrokView>();
     private List<ObrokView> snackOfCanidate = new List<ObrokView>();
-    public MealsWindow(int candidateId,string action)
+    private Window previousWindow;
+    public MealsWindow(int candidateId,string action,Window previousWindow)
     {
+      this.previousWindow = previousWindow;
       sumOfKcals = 0.0;
       this.candidateId = candidateId;
       Properties.Settings.Default.ColorMode = MainWindow.theme;
@@ -174,7 +176,7 @@ new ObrokView
 
     private void addBreakfast(object sender, RoutedEventArgs e)
     {
-      Window window = new FoodStuffWindow(candidateId,"doručak");
+      Window window = new FoodStuffWindow(candidateId,"doručak",previousWindow);
       this.Hide();
       window.Show();
     }
@@ -183,7 +185,7 @@ new ObrokView
     {
       dynamic dataRowView = ((Button)e.Source).DataContext;
       string name = dataRowView.Namirnica;
-      Window window = new FoodStuffDetailsWindow(name,candidateId,"doručak","update");
+      Window window = new FoodStuffDetailsWindow(name,candidateId,"doručak","update",previousWindow);
       this.Hide();
       window.Show();
     }
@@ -205,21 +207,21 @@ new ObrokView
 
     private void addLunch(object sender, RoutedEventArgs e)
     {
-      Window window = new FoodStuffWindow(candidateId, "ručak");
+      Window window = new FoodStuffWindow(candidateId, "ručak",previousWindow);
       this.Hide();
       window.Show();
     }
 
     private void addDinner(object sender, RoutedEventArgs e)
     {
-      Window window = new FoodStuffWindow(candidateId, "večera");
+      Window window = new FoodStuffWindow(candidateId, "večera",previousWindow);
       this.Hide();
       window.Show();
     }
 
     private void addSnack(object sender, RoutedEventArgs e)
     {
-      Window window = new FoodStuffWindow(candidateId, "užina");
+      Window window = new FoodStuffWindow(candidateId, "užina",previousWindow);
       this.Hide();
       window.Show();
     }
@@ -237,6 +239,7 @@ new ObrokView
     {
       dynamic dataRowView = ((Button)e.Source).DataContext;
       string name = dataRowView.Namirnica;
+      DateTime currentDate = DateTime.Now.Date;
       ObrokView obrokView = dnevnikIshraneEntities.obroks.Join(
     dnevnikIshraneEntities.namirnicas, o => o.NAMIRNICA_idNAMIRNICA, n => n.idNAMIRNICA, (o, n) =>
     new ObrokView
@@ -248,9 +251,9 @@ new ObrokView
       KcalFoodStuff = (double)(n.KalorijskaVrijednost / 100 * o.Kolicina),
       IdFoodStuff = n.idNAMIRNICA
     })
-      .Where(elem => elem.NameOfFoodStuff == name).First();
-
-      obrok meal = dnevnikIshraneEntities.obroks.Where(elem => elem.NAMIRNICA_idNAMIRNICA == obrokView.IdFoodStuff && elem.TipObroka.Equals(typeOfMeal)).First();
+      .Where(elem => elem.NameOfFoodStuff == name && elem.TypeOfMeal.Equals(typeOfMeal) && elem.Date.Equals(currentDate) && elem.IdCandidate.Equals(candidateId)).FirstOrDefault();
+      
+      obrok meal = dnevnikIshraneEntities.obroks.Where(elem => elem.NAMIRNICA_idNAMIRNICA == obrokView.IdFoodStuff && elem.TipObroka.Equals(typeOfMeal) && elem.Datum.Equals(currentDate) && elem.KANDIDAT_KORISNIK_idKORISNIK.Equals(candidateId)).FirstOrDefault();
       dnevnikIshraneEntities.obroks.Remove(meal);
       dnevnikIshraneEntities.SaveChanges();
     }
@@ -259,7 +262,7 @@ new ObrokView
     {
       dynamic dataRowView = ((Button)e.Source).DataContext;
       string name = dataRowView.Namirnica;
-      Window window = new FoodStuffDetailsWindow(name, candidateId, "užina", "update");
+      Window window = new FoodStuffDetailsWindow(name, candidateId, "užina", "update",previousWindow);
       this.Hide();
       window.Show();
     }
@@ -278,7 +281,7 @@ new ObrokView
     {
       dynamic dataRowView = ((Button)e.Source).DataContext;
       string name = dataRowView.Namirnica;
-      Window window = new FoodStuffDetailsWindow(name, candidateId, "večera", "update");
+      Window window = new FoodStuffDetailsWindow(name, candidateId, "večera", "update",previousWindow);
       this.Hide();
       window.Show();
     }
@@ -297,9 +300,15 @@ new ObrokView
     {
       dynamic dataRowView = ((Button)e.Source).DataContext;
       string name = dataRowView.Namirnica;
-      Window window = new FoodStuffDetailsWindow(name, candidateId, "ručak", "update");
+      Window window = new FoodStuffDetailsWindow(name, candidateId, "ručak", "update",previousWindow);
       this.Hide();
       window.Show();
+    }
+
+    private void goBack(object sender, MouseButtonEventArgs e)
+    {
+      this.Hide();
+      previousWindow.Show();
     }
   }
 }
