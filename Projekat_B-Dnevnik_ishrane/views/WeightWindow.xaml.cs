@@ -63,48 +63,57 @@ namespace Projekat_B_Dnevnik_ishrane.views
       {
         if (String.IsNullOrEmpty(texts[j].Text))
         {
-          if(MainWindow.language.Equals("Serbian"))
-          errorTextBlock.Text = "Popunite sva tekstualna polja.";
+          if (MainWindow.language.Equals("Serbian"))
+            errorTextBlock.Text = "Popunite sva tekstualna polja.";
           else
-          errorTextBlock.Text = "Fill in all text fields.";
+            errorTextBlock.Text = "Fill in all text fields.";
           return;
         }
       }
-
-      var measurement = new mjerenje()
-      {
-        TRENER_KORISNIK_idKORISNIK = userId,
-        KANDIDAT_KORISNIK_idKORISNIK = findCandidateId(nameTextBox.Text, surnameTextBox.Text, yearOfBirthTextBox.Text),
-        Tezina = Decimal.Parse(weightTextBox.Text),
-        DatumVrijeme = DateTime.UtcNow
-      };
-      korisnik user = dnevnikIshraneEntites.korisniks.Where(elem => elem.idKORISNIK == measurement.KANDIDAT_KORISNIK_idKORISNIK).FirstOrDefault();
-      if (measurement.KANDIDAT_KORISNIK_idKORISNIK!=0 && user.Aktivan != 0)
-      {
-        if (action.Equals("update"))
+      try {
+        var measurement = new mjerenje()
         {
-          var old_measurement = dnevnikIshraneEntites.mjerenjes.
-            Where(elem => elem.KANDIDAT_KORISNIK_idKORISNIK == measurement.KANDIDAT_KORISNIK_idKORISNIK && elem.TRENER_KORISNIK_idKORISNIK == measurement.TRENER_KORISNIK_idKORISNIK && elem.DatumVrijeme.Equals(selectedDateTime)).FirstOrDefault();
-          if (old_measurement != null)
+          TRENER_KORISNIK_idKORISNIK = userId,
+          KANDIDAT_KORISNIK_idKORISNIK = findCandidateId(nameTextBox.Text, surnameTextBox.Text, yearOfBirthTextBox.Text),
+          Tezina = Decimal.Parse(weightTextBox.Text),
+          DatumVrijeme = DateTime.UtcNow
+        };
+        korisnik user = dnevnikIshraneEntites.korisniks.Where(elem => elem.idKORISNIK == measurement.KANDIDAT_KORISNIK_idKORISNIK).FirstOrDefault();
+        if (measurement.KANDIDAT_KORISNIK_idKORISNIK != 0 && user.Aktivan != 0)
+        {
+          if (action.Equals("update"))
           {
-            dnevnikIshraneEntites.mjerenjes.Remove(old_measurement);
+            var old_measurement = dnevnikIshraneEntites.mjerenjes.
+              Where(elem => elem.KANDIDAT_KORISNIK_idKORISNIK == measurement.KANDIDAT_KORISNIK_idKORISNIK && elem.TRENER_KORISNIK_idKORISNIK == measurement.TRENER_KORISNIK_idKORISNIK && elem.DatumVrijeme.Equals(selectedDateTime)).FirstOrDefault();
+            if (old_measurement != null)
+            {
+              dnevnikIshraneEntites.mjerenjes.Remove(old_measurement);
+            }
           }
+          dnevnikIshraneEntites.mjerenjes.Add(measurement);
+          dnevnikIshraneEntites.SaveChanges();
+          if (MainWindow.language.Equals("Serbian"))
+            errorTextBlock.Text = "Uspješno sačuvano.";
+          else
+            errorTextBlock.Text = "Saved successfully.";
         }
-        dnevnikIshraneEntites.mjerenjes.Add(measurement);
-        dnevnikIshraneEntites.SaveChanges();
-        if(MainWindow.language.Equals("Serbian"))
-        errorTextBlock.Text = "Uspješno sačuvano.";
         else
-          errorTextBlock.Text = "Saved successfully.";
+        {
+          if (MainWindow.language.Equals("Serbian"))
+            errorTextBlock.Text = "Nije pronadjen nijedan kandidat sa navedenim imenom,prezimenom i godištem.";
+          else
+            errorTextBlock.Text = "There is no candidate with specified name,surname and year of birth.";
+        }
       }
-      else
+      catch(Exception ex)
       {
         if (MainWindow.language.Equals("Serbian"))
-          errorTextBlock.Text = "Nije pronadjen nijedan kandidat sa navedenim imenom,prezimenom i godištem.";
+          errorTextBlock.Text = "U polje godište unesite brojnu vrijednost i pokušajte ponovo.";
         else
-          errorTextBlock.Text = "There is no candidate with specified name,surname and year of birth.";
+          errorTextBlock.Text = "Enter a numeric value in the field year of birth and try again.";
+        return;
       }
-    }
+      }
 
     private int findCandidateId(string text1, string text2, string text3)
     {

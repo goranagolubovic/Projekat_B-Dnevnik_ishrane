@@ -11,52 +11,54 @@
         Top="0"
         Left="300" ResizeMode="NoResize"
         Title="PlanWindow" Height="757" Width="1050">
-  <Grid >
-    <Grid.ColumnDefinitions>
-      <ColumnDefinition Width="50*"/>
-      <ColumnDefinition Width="150*"/>
-      <ColumnDefinition Width="150*"/>
-      <ColumnDefinition Width="150*"/>
-      <ColumnDefinition Width="150*"/>
-      <ColumnDefinition Width="150*"/>
-      <ColumnDefinition Width="150*"/>
-      <ColumnDefinition Width="150*"/>
-      <ColumnDefinition Width="50*"/>
-    </Grid.ColumnDefinitions>
-    <Border BorderThickness="2"  BorderBrush="#FFE7C4C4" HorizontalAlignment="Center" Height="46" Margin="0,133,0,0" VerticalAlignment="Top" Width="137" Grid.Column="1" RenderTransformOrigin="0.5,0.5" Background="#FFE7C4C4"/>
-    <Border BorderThickness="2"  BorderBrush="#FFBCDCB3" HorizontalAlignment="Center" Height="46" Margin="0,133,0,0" VerticalAlignment="Top" Width="137" Grid.Column="2" RenderTransformOrigin="0.5,0.5" Background="#FFBCDCB3"/>
-    <Border BorderThickness="2"  BorderBrush="#FFBDEED1" HorizontalAlignment="Center" Height="46" Margin="0,133,0,0" VerticalAlignment="Top" Width="137" Grid.Column="3" RenderTransformOrigin="0.5,0.5" Background="#FFBDEED1"/>
-    <TextBlock Grid.Column="3" HorizontalAlignment="Center" Margin="0,144,0,0" Text="{DynamicResource wednesdayTextBlock}" TextWrapping="Wrap" VerticalAlignment="Top" Height="22" RenderTransformOrigin="0.614,0.94"/>
-    <Border BorderThickness="2"  BorderBrush="#FFE0DE9B" HorizontalAlignment="Center" Height="46" Margin="0,133,0,0" VerticalAlignment="Top" Width="137" Grid.Column="4" RenderTransformOrigin="0.5,0.5" Background="#FFE0DE9B"/>
-    <TextBlock Grid.Column="4" Margin="39,144,39,0" Text="{DynamicResource thuersdayTextBlock}" TextWrapping="Wrap" VerticalAlignment="Top"  Height="22"/>
-    <TextBlock Grid.Column="1" HorizontalAlignment="Center" Margin="0,144,0,0" Text="{DynamicResource mondayTextBlock}" TextWrapping="Wrap" VerticalAlignment="Top"  Height="24" RenderTransformOrigin="0.53,-0.905"/>
-    <Border BorderThickness="2"  BorderBrush="#FFBCD1E5" HorizontalAlignment="Center" Height="46" Margin="0,133,0,0" VerticalAlignment="Top" Width="137" Grid.Column="5" RenderTransformOrigin="0.5,0.5" Background="#FFBCD1E5"/>
-    <TextBlock Grid.Column="5" HorizontalAlignment="Center" Margin="0,144,0,0" TextWrapping="Wrap" VerticalAlignment="Top"  Height="23" RenderTransformOrigin="0.443,0.785"><Run Text="{DynamicResource fridayTextBlock}"/></TextBlock>
-    <Border BorderThickness="2"  BorderBrush="#FFCDBDDF" HorizontalAlignment="Center" Height="46" Margin="0,133,0,0" VerticalAlignment="Top" Width="137" Grid.Column="6" RenderTransformOrigin="0.5,0.5" Background="#FFCDBDDF"/>
-    <TextBlock Grid.Column="6" HorizontalAlignment="Center" Margin="0,144,0,0" Text="{DynamicResource saturdayTextBlock}" TextWrapping="Wrap" VerticalAlignment="Top"  Height="24" RenderTransformOrigin="0.542,-1.324"/>
-    <Border BorderThickness="2"  BorderBrush="#FFE7C3B2" HorizontalAlignment="Center" Height="46" Margin="0,133,0,0" VerticalAlignment="Top" Width="137" Grid.Column="7" RenderTransformOrigin="0.5,0.5" Background="#FFE7C3B2"/>
-    <TextBlock Grid.Column="7" HorizontalAlignment="Center" Margin="0,144,0,0" Text="{DynamicResource sundayTextBlock}" TextWrapping="Wrap" VerticalAlignment="Top"  Height="24"/>
-    <Rectangle HorizontalAlignment="Center" Height="370" Margin="0,215,0,0" Stroke="#FFF3CBA2" VerticalAlignment="Top" Width="137" Grid.Column="1"/>
-    <Rectangle Grid.Column="1" HorizontalAlignment="Left" Height="370" Margin="132,215,0,0" Stroke="#FFA7F3A2" VerticalAlignment="Top" Width="137" Grid.ColumnSpan="2"/>
-    <Rectangle Grid.Column="2" HorizontalAlignment="Left" Height="370" Margin="132,215,0,0" Stroke="#FFF3A2F1" VerticalAlignment="Top" Width="137" Grid.ColumnSpan="2"/>
-    <Rectangle Grid.Column="4" HorizontalAlignment="Center" Height="370" Margin="0,215,0,0" Stroke="#FFA2EFF3" VerticalAlignment="Top" Width="137"/>
-    <Rectangle Grid.Column="5" HorizontalAlignment="Center" Height="370" Margin="0,215,0,0" Stroke="#FFCAABEE" VerticalAlignment="Top" Width="137"/>
-    <Rectangle Grid.Column="6" HorizontalAlignment="Center" Height="370" Margin="0,215,0,0" Stroke="#FFF0EB54" VerticalAlignment="Top" Width="137"/>
-    <Rectangle Grid.Column="7" HorizontalAlignment="Center" Height="370" Margin="0,215,0,0" Stroke="#FFEDB5CB" VerticalAlignment="Top" Width="137">
-    </Rectangle>
-    <Button x:Name="CreateButton" Content="{DynamicResource SaveButton}" Grid.Column="4" HorizontalAlignment="Center" Margin="10.4,653,7.6,0" VerticalAlignment="Top" Height="43" Width="118" Click="SaveButtonClick" BorderBrush="#FFDF96C0" Background="#FFB5E7D0" RenderTransformOrigin="0.538,-0.424"/>
-    <TextBox x:Name="ThuersdayTextBox" Grid.Column="4" HorizontalAlignment="Center" Height="370" Margin="0,215,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="137" BorderBrush="White" TextChanged="TextBox_TextChanged" Background="#FFE0DE9B"/>
-    <TextBox x:Name="TuesdayTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="370" Margin="132,215,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="137" BorderBrush="White" TextChanged="TextBox_TextChanged" Background="#FFBCDCB3" Grid.ColumnSpan="2"/>
-    <TextBox x:Name="WednesdayTextBox" Grid.Column="2" HorizontalAlignment="Left" Height="370" Margin="132,215,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="137" BorderBrush="White" TextChanged="TextBox_TextChanged" Background="#FFBDEED1" Grid.ColumnSpan="2"/>
-    <TextBox x:Name="FridayTextBox" Grid.Column="5" HorizontalAlignment="Center" Height="370" Margin="0,215,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="137" BorderBrush="White" TextChanged="TextBox_TextChanged" Background="#FFBCD1E5"/>
-    <TextBox x:Name="SaturdayTextBox" HorizontalAlignment="Center" Height="370" Margin="0,215,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="137" BorderBrush="White" TextChanged="TextBox_TextChanged" Grid.Column="6" Background="#FFCDBDDF"/>
-    <TextBox x:Name="SundayTextBox" HorizontalAlignment="Center" Height="370" Margin="0,215,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="137" BorderBrush="White" TextChanged="TextBox_TextChanged" Grid.Column="7" Background="#FFE7C3B2"/>
-    <TextBox  x:Name="MondayTextBox" HorizontalAlignment="Left" Height="370" Margin="41,215,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="137" BorderBrush="White" TextChanged="TextBox_TextChanged" Background="#FFE7C4C4" Grid.ColumnSpan="2"/>
-    <TextBlock Grid.Column="2" HorizontalAlignment="Center" Height="23" Margin="0,144,0,0" Text="{DynamicResource tuesdayTextBlock}" TextWrapping="Wrap" VerticalAlignment="Top" Width="62" RenderTransformOrigin="0.5,0.5">
-    </TextBlock>
-    <TextBox x:Name="nameTextBox" TextAlignment="Center" FontSize="18px" Grid.ColumnSpan="3" Grid.Column="3" HorizontalAlignment="Left" Height="50" Margin="90.4,10,0,0" TextWrapping="Wrap" Text="{DynamicResource candidateNameTextBlock}" VerticalAlignment="Top" Width="227" Background="#FFB5E7D0"/>
-    <TextBox x:Name="surnameTextBox" TextAlignment="Center" FontSize="18px" Grid.ColumnSpan="3" Grid.Column="3" HorizontalAlignment="Left" Height="50" Margin="90.4,65,0,0" TextWrapping="Wrap" Text="{DynamicResource candidateSurnameTextBlock}" VerticalAlignment="Top" Width="227" TextChanged="TextBox_TextChanged_1" Background="#FFB5E7D0"/>
-    <TextBlock x:Name="actionStatusTextBlock" FontSize="14 px" Grid.ColumnSpan="3" Grid.Column="3" HorizontalAlignment="Left" Height="35" Margin="45.4,590,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="313"/>
-  </Grid>
+    <Grid >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="50*"/>
+            <ColumnDefinition Width="150*"/>
+            <ColumnDefinition Width="150*"/>
+            <ColumnDefinition Width="150*"/>
+            <ColumnDefinition Width="150*"/>
+            <ColumnDefinition Width="150*"/>
+            <ColumnDefinition Width="150*"/>
+            <ColumnDefinition Width="150*"/>
+            <ColumnDefinition Width="50*"/>
+        </Grid.ColumnDefinitions>
+        <Border BorderThickness="2"  BorderBrush="#FFE7C4C4" HorizontalAlignment="Center" Height="46" Margin="0,133,0,0" VerticalAlignment="Top" Width="137" Grid.Column="1" RenderTransformOrigin="0.5,0.5" Background="#FFE7C4C4"/>
+        <Border BorderThickness="2"  BorderBrush="#FFBCDCB3" HorizontalAlignment="Center" Height="46" Margin="0,133,0,0" VerticalAlignment="Top" Width="137" Grid.Column="2" RenderTransformOrigin="0.5,0.5" Background="#FFBCDCB3"/>
+        <Border BorderThickness="2"  BorderBrush="#FFBDEED1" HorizontalAlignment="Center" Height="46" Margin="0,133,0,0" VerticalAlignment="Top" Width="137" Grid.Column="3" RenderTransformOrigin="0.5,0.5" Background="#FFBDEED1"/>
+        <TextBlock Grid.Column="3" HorizontalAlignment="Center" Margin="0,144,0,0" Text="{DynamicResource wednesdayTextBlock}" TextWrapping="Wrap" VerticalAlignment="Top" Height="22" RenderTransformOrigin="0.614,0.94"/>
+        <Border BorderThickness="2"  BorderBrush="#FFE0DE9B" HorizontalAlignment="Center" Height="46" Margin="0,133,0,0" VerticalAlignment="Top" Width="137" Grid.Column="4" RenderTransformOrigin="0.5,0.5" Background="#FFE0DE9B"/>
+    <TextBlock Grid.Column="4" HorizontalAlignment="Center" Margin="0,144,0,0" Text="{DynamicResource thuersdayTextBlock}" TextWrapping="Wrap" VerticalAlignment="Top" Height="22" RenderTransformOrigin="0.614,0.94"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Center" Margin="0,144,0,0" Text="{DynamicResource mondayTextBlock}" TextWrapping="Wrap" VerticalAlignment="Top"  Height="24" RenderTransformOrigin="0.53,-0.905"/>
+        <Border BorderThickness="2"  BorderBrush="#FFBCD1E5" HorizontalAlignment="Center" Height="46" Margin="0,133,0,0" VerticalAlignment="Top" Width="137" Grid.Column="5" RenderTransformOrigin="0.5,0.5" Background="#FFBCD1E5"/>
+        <TextBlock Grid.Column="5" HorizontalAlignment="Center" Margin="0,144,0,0" TextWrapping="Wrap" VerticalAlignment="Top"  Height="23" RenderTransformOrigin="0.443,0.785"><Run Text="{DynamicResource fridayTextBlock}"/></TextBlock>
+        <Border BorderThickness="2"  BorderBrush="#FFCDBDDF" HorizontalAlignment="Center" Height="46" Margin="0,133,0,0" VerticalAlignment="Top" Width="137" Grid.Column="6" RenderTransformOrigin="0.5,0.5" Background="#FFCDBDDF"/>
+        <TextBlock Grid.Column="6" HorizontalAlignment="Center" Margin="0,144,0,0" Text="{DynamicResource saturdayTextBlock}" TextWrapping="Wrap" VerticalAlignment="Top"  Height="24" RenderTransformOrigin="0.542,-1.324"/>
+        <Border BorderThickness="2"  BorderBrush="#FFE7C3B2" HorizontalAlignment="Center" Height="46" Margin="0,133,0,0" VerticalAlignment="Top" Width="137" Grid.Column="7" RenderTransformOrigin="0.5,0.5" Background="#FFE7C3B2"/>
+        <TextBlock Grid.Column="7" HorizontalAlignment="Center" Margin="0,144,0,0" Text="{DynamicResource sundayTextBlock}" TextWrapping="Wrap" VerticalAlignment="Top"  Height="24"/>
+        <Rectangle HorizontalAlignment="Center" Height="370" Margin="0,215,0,0" Stroke="#FFF3CBA2" VerticalAlignment="Top" Width="137" Grid.Column="1"/>
+        <Rectangle Grid.Column="1" HorizontalAlignment="Left" Height="370" Margin="132,215,0,0" Stroke="#FFA7F3A2" VerticalAlignment="Top" Width="137" Grid.ColumnSpan="2"/>
+        <Rectangle Grid.Column="2" HorizontalAlignment="Left" Height="370" Margin="132,215,0,0" Stroke="#FFF3A2F1" VerticalAlignment="Top" Width="137" Grid.ColumnSpan="2"/>
+        <Rectangle Grid.Column="4" HorizontalAlignment="Center" Height="370" Margin="0,215,0,0" Stroke="#FFA2EFF3" VerticalAlignment="Top" Width="137"/>
+        <Rectangle Grid.Column="5" HorizontalAlignment="Center" Height="370" Margin="0,215,0,0" Stroke="#FFCAABEE" VerticalAlignment="Top" Width="137"/>
+        <Rectangle Grid.Column="6" HorizontalAlignment="Center" Height="370" Margin="0,215,0,0" Stroke="#FFF0EB54" VerticalAlignment="Top" Width="137"/>
+        <Rectangle Grid.Column="7" HorizontalAlignment="Center" Height="370" Margin="0,215,0,0" Stroke="#FFEDB5CB" VerticalAlignment="Top" Width="137">
+        </Rectangle>
+        <Button x:Name="CreateButton" Content="{DynamicResource SaveButton}" Grid.Column="4" HorizontalAlignment="Center" Margin="10.4,653,7.6,0" VerticalAlignment="Top" Height="43" Width="118" Click="SaveButtonClick" BorderBrush="#FFDF96C0" Background="#FFB5E7D0" RenderTransformOrigin="0.538,-0.424"/>
+        <TextBox x:Name="ThuersdayTextBox" Grid.Column="4" HorizontalAlignment="Center" Height="370" Margin="0,215,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="137" BorderBrush="White" TextChanged="TextBox_TextChanged" Background="#FFE0DE9B"/>
+        <TextBox x:Name="TuesdayTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="370" Margin="132,215,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="137" BorderBrush="White" TextChanged="TextBox_TextChanged" Background="#FFBCDCB3" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="WednesdayTextBox" Grid.Column="2" HorizontalAlignment="Left" Height="370" Margin="132,215,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="137" BorderBrush="White" TextChanged="TextBox_TextChanged" Background="#FFBDEED1" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="FridayTextBox" Grid.Column="5" HorizontalAlignment="Center" Height="370" Margin="0,215,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="137" BorderBrush="White" TextChanged="TextBox_TextChanged" Background="#FFBCD1E5"/>
+        <TextBox x:Name="SaturdayTextBox" HorizontalAlignment="Center" Height="370" Margin="0,215,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="137" BorderBrush="White" TextChanged="TextBox_TextChanged" Grid.Column="6" Background="#FFCDBDDF"/>
+        <TextBox x:Name="SundayTextBox" HorizontalAlignment="Center" Height="370" Margin="0,215,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="137" BorderBrush="White" TextChanged="TextBox_TextChanged" Grid.Column="7" Background="#FFE7C3B2"/>
+        <TextBox  x:Name="MondayTextBox" HorizontalAlignment="Left" Height="370" Margin="41,215,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="137" BorderBrush="White" TextChanged="TextBox_TextChanged" Background="#FFE7C4C4" Grid.ColumnSpan="2"/>
+        <TextBlock Grid.Column="2" HorizontalAlignment="Center" Height="23" Margin="0,144,0,0" Text="{DynamicResource tuesdayTextBlock}" TextWrapping="Wrap" VerticalAlignment="Top" Width="62" RenderTransformOrigin="0.5,0.5">
+        </TextBlock>
+        <TextBox  x:Name="nameTextBox" LostFocus="nameTextBox_LostFocus" TextAlignment="Center" FontSize="18px" Grid.ColumnSpan="3" Grid.Column="3" HorizontalAlignment="Left" Height="50" Margin="90.4,10,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="227" Background="#FFB5E7D0"/>
+        <TextBox x:Name="surnameTextBox" LostFocus="surnameTextBox_LostFocus" TextAlignment="Center" FontSize="18px" Grid.ColumnSpan="3" Grid.Column="3" HorizontalAlignment="Left" Height="50" Margin="90.4,65,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="227" TextChanged="TextBox_TextChanged_1" Background="#FFB5E7D0"/>
+        <TextBox TextAlignment="Center" FontSize="18px" x:Name="watermarkNameTextBox" GotFocus="watermakNameTextBox_GotFocus" Grid.ColumnSpan="3" Text="{DynamicResource candidateNameTextBlock}" Grid.Column="3" HorizontalAlignment="Left"  Margin="90.4,10,0,0" Background="#FFB5E7D0" TextWrapping="Wrap"  VerticalAlignment="Top" Height="50" Width="227"/>
+        <TextBlock x:Name="actionStatusTextBlock" FontSize="14 px" Grid.ColumnSpan="3" Grid.Column="3" HorizontalAlignment="Left" Height="35" Margin="45.4,590,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="313"/>
+        <TextBox x:Name="watermarkSurnameTextBox" GotFocus="watermakSurnameTextBox_GotFocus" FontSize="18px" TextAlignment="Center" Grid.ColumnSpan="3" Grid.Column="3" HorizontalAlignment="Left" Height="50" Margin="90.4,65,0,0" TextWrapping="Wrap" Text="{DynamicResource candidateSurnameTextBlock}"  VerticalAlignment="Top" Width="227" Background="#FFB5E7D0"/>
+    </Grid>
 </Window>
 

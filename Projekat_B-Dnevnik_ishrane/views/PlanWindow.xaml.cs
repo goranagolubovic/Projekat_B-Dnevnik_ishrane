@@ -54,6 +54,8 @@ namespace Dnevnik_ishrane.views
       initializeTextFields(whatIsUpdating);
       nameTextBox.Visibility = Visibility.Hidden;
       surnameTextBox.Visibility = Visibility.Hidden;
+      watermarkNameTextBox.Visibility = Visibility.Hidden;
+      watermarkSurnameTextBox.Visibility = Visibility.Hidden;
     }
 
     private void initializeTextFields(string whatIsUpdating)
@@ -444,6 +446,38 @@ namespace Dnevnik_ishrane.views
     private void TextBox_TextChanged_1(object sender, TextChangedEventArgs e)
     {
 
+    }
+
+    private void nameTextBox_LostFocus(object sender, RoutedEventArgs e)
+    {
+      if (string.IsNullOrEmpty(nameTextBox.Text))
+      {
+        nameTextBox.Visibility = System.Windows.Visibility.Collapsed;
+        watermarkNameTextBox.Visibility = Visibility.Visible;
+      }
+    }
+
+    private void watermakNameTextBox_GotFocus(object sender, RoutedEventArgs e)
+    {
+      watermarkNameTextBox.Visibility = Visibility.Collapsed;
+      nameTextBox.Visibility = System.Windows.Visibility.Visible;
+      nameTextBox.Focus();
+    }
+
+    private void surnameTextBox_LostFocus(object sender, RoutedEventArgs e)
+    {
+      if (string.IsNullOrEmpty(surnameTextBox.Text))
+      {
+        surnameTextBox.Visibility = System.Windows.Visibility.Collapsed;
+        watermarkSurnameTextBox.Visibility = Visibility.Visible;
+      }
+    }
+
+    private void watermakSurnameTextBox_GotFocus(object sender, RoutedEventArgs e)
+    {
+      watermarkSurnameTextBox.Visibility = Visibility.Collapsed;
+      surnameTextBox.Visibility = System.Windows.Visibility.Visible;
+      surnameTextBox.Focus();
     }
   }
 }

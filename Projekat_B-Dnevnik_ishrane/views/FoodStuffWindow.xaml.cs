@@ -39,6 +39,10 @@ namespace Projekat_B_Dnevnik_ishrane.views
       var list = new List<dynamic>();
       foreach (var elem in listOfFoodStuffs)
       {
+        int idFoodStuff = findFoodStuffId(elem);
+        DateTime date = DateTime.Now.Date;
+        obrok meal = dnevnikIshraneEntities.obroks.Where(e => e.NAMIRNICA_idNAMIRNICA == idFoodStuff && e.KANDIDAT_KORISNIK_idKORISNIK == candidateId && e.TipObroka == typeOfMeal && e.Datum.Equals(date)).FirstOrDefault();
+        if (meal==null)
         list.Add(new
         {
           Namirnica = elem
@@ -56,7 +60,16 @@ namespace Projekat_B_Dnevnik_ishrane.views
       this.Hide();
       window.Show();
     }
-
+    private int findFoodStuffId(string name)
+    {
+      int id = 0;
+      namirnica n = dnevnikIshraneEntities.namirnicas.Where(elem => elem.Naziv.Equals(name)).FirstOrDefault();
+      if (n != null)
+      {
+        id = n.idNAMIRNICA;
+      }
+      return id;
+    }
     private void dataGridViewFoodStuff_SelectionChanged(object sender, SelectionChangedEventArgs e)
     {
 
@@ -68,7 +81,11 @@ namespace Projekat_B_Dnevnik_ishrane.views
       var list = new List<dynamic>();
       foreach (var elem in listOfFoodStuffs)
       {
-        list.Add(new
+        int idFoodStuff = findFoodStuffId(elem);
+        DateTime date = DateTime.Now.Date;
+        obrok meal = dnevnikIshraneEntities.obroks.Where(el => el.NAMIRNICA_idNAMIRNICA == idFoodStuff && el.KANDIDAT_KORISNIK_idKORISNIK == candidateId && el.TipObroka == typeOfMeal && el.Datum.Equals(date)).FirstOrDefault();
+        if (meal == null)
+          list.Add(new
         {
           Namirnica = elem
         });
@@ -81,6 +98,22 @@ namespace Projekat_B_Dnevnik_ishrane.views
     {
       this.Hide();
       previousWindow.Show();
+    }
+
+    private void searchTextBox_LostFocus(object sender, RoutedEventArgs e)
+    {
+      if (string.IsNullOrEmpty(searchTextBox.Text))
+      {
+        searchTextBox.Visibility = System.Windows.Visibility.Collapsed;
+        watermarkSearchTextBox.Visibility = Visibility.Visible;
+      }
+    }
+
+    private void watermakSearchTextBox_GotFocus(object sender, RoutedEventArgs e)
+    {
+      watermarkSearchTextBox.Visibility = Visibility.Collapsed;
+      searchTextBox.Visibility = System.Windows.Visibility.Visible;
+      searchTextBox.Focus();
     }
   }
 }

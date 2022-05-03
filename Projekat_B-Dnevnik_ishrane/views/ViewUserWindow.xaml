@@ -10,34 +10,34 @@
         Top="0"
         Left="300" ResizeMode="NoResize"
         Title="ViewUserWindow" Height="619.898" Width="721.939">
-  <Grid  Margin="0,0,-0.4,-19">
-    <Grid  HorizontalAlignment="Left" Height="356" Margin="121,127,0,0" VerticalAlignment="Top" Width="551">
-      <Grid.RowDefinitions>
+    <Grid  Margin="0,0,-0.4,-19">
+        <Grid  HorizontalAlignment="Left" Height="356" Margin="121,127,0,0" VerticalAlignment="Top" Width="551">
+            <Grid.RowDefinitions>
 
-        <RowDefinition></RowDefinition>
-        <RowDefinition></RowDefinition>
-        <RowDefinition></RowDefinition>
-        <RowDefinition></RowDefinition>
-        <RowDefinition></RowDefinition>
-        <RowDefinition></RowDefinition>
-        <RowDefinition></RowDefinition>
-        <RowDefinition></RowDefinition>
-      </Grid.RowDefinitions>
-      <TextBox IsReadOnly="True" x:Name="nameTextBox" TextAlignment="Center" FontSize="22px" HorizontalAlignment="Left" Height="45" Margin="279,0.2,0,0" Grid.Row="1" Grid.RowSpan="2" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="132" Background="#FFF2F3B2"/>
-      <TextBox IsReadOnly="True" x:Name="surnameTextBox" TextAlignment="Center" FontSize="22px" HorizontalAlignment="Left" Height="44" Margin="279,0,0,0.4" Grid.Row="2" TextWrapping="Wrap" Text="" VerticalAlignment="Bottom" Width="132" Background="#FFF2F3B2"/>
-      <TextBox IsReadOnly="True" x:Name="yearTextBox" TextAlignment="Center" FontSize="22px" HorizontalAlignment="Left" Height="45" Margin="279,44.4,0,0" Grid.Row="2" Grid.RowSpan="2" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="132" Background="#FFF2F3B2"/>
-      <TextBox IsReadOnly="True" x:Name="usernameTextBox" TextAlignment="Center" FontSize="22px" HorizontalAlignment="Left" Height="45" Margin="279,44.6,0,0" Grid.Row="3" Grid.RowSpan="2" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="132" Background="#FFF2F3B2"/>
-      <PasswordBox  HorizontalContentAlignment="Center" IsEnabled="False" x:Name="passwordBox" HorizontalAlignment="Left" Height="44" Margin="279,0,0,0" Grid.Row="5" VerticalAlignment="Bottom" Width="132" Background="#FFF2F3B2"/>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <TextBox IsReadOnly="True" x:Name="nameTextBox" TextAlignment="Center" FontSize="22px" HorizontalAlignment="Left" Height="45" Margin="279,0.2,0,0" Grid.Row="1" Grid.RowSpan="2" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="132" Background="#FFF2F3B2"/>
+            <TextBox IsReadOnly="True" x:Name="surnameTextBox" TextAlignment="Center" FontSize="22px" HorizontalAlignment="Left" Height="44" Margin="279,0,0,0.4" Grid.Row="2" TextWrapping="Wrap" Text="" VerticalAlignment="Bottom" Width="132" Background="#FFF2F3B2"/>
+            <TextBox IsReadOnly="True" x:Name="yearTextBox" TextAlignment="Center" FontSize="22px" HorizontalAlignment="Left" Height="45" Margin="279,44.4,0,0" Grid.Row="2" Grid.RowSpan="2" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="132" Background="#FFF2F3B2"/>
+            <TextBox IsReadOnly="True" x:Name="usernameTextBox" TextAlignment="Center" FontSize="22px" HorizontalAlignment="Left" Height="45" Margin="279,44.6,0,0" Grid.Row="3" Grid.RowSpan="2" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="132" Background="#FFF2F3B2"/>
+            <PasswordBox  HorizontalContentAlignment="Center" IsEnabled="False" x:Name="passwordBox" HorizontalAlignment="Left" Height="44" Margin="279,0,0,0" Grid.Row="5" VerticalAlignment="Bottom" Width="132" Background="#FFF2F3B2"/>
+        </Grid>
+        <TextBlock Text="{DynamicResource nameTextBlock}" HorizontalAlignment="Left" FontSize="22px" TextAlignment="Center" Margin="171,172,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="48" Width="197"></TextBlock>
+        <TextBlock Text="{DynamicResource passwordTextBlock}" HorizontalAlignment="Left" FontSize="22px" TextAlignment="Center" Margin="171,364,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="48" Width="197"/>
+        <TextBlock Text="{DynamicResource usernameTextBlock}" HorizontalAlignment="Left" FontSize="22px" TextAlignment="Center" Margin="171,316,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="48" Width="197" />
+        <TextBlock Text="{DynamicResource yearOfBirthTextBlock}" HorizontalAlignment="Left" FontSize="22px" TextAlignment="Center" Margin="171,268,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="48" Width="197" />
+        <TextBlock Text="{DynamicResource surnameTextBlock}" HorizontalAlignment="Left" FontSize="22px" TextAlignment="Center" Margin="171,220,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="48" Width="197" RenderTransformOrigin="0.521,1.355"/>
+        <Canvas PreviewMouseDown="goBack"  HorizontalAlignment="Left" Height="87" Margin="43,35,0,0" VerticalAlignment="Top" Width="85">
+            <Canvas.Background>
+                <ImageBrush ImageSource="left-arrow3.png"/>
+            </Canvas.Background>
+        </Canvas>
     </Grid>
-    <TextBlock Text="{DynamicResource nameTextBlock}" HorizontalAlignment="Left" FontSize="22px" TextAlignment="Center" Margin="200,172,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="48" Width="168"></TextBlock>
-    <TextBlock Text="{DynamicResource passwordTextBlock}" HorizontalAlignment="Left" FontSize="22px" TextAlignment="Center" Margin="200,364,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="48" Width="168"/>
-    <TextBlock Text="{DynamicResource usernameTextBlock}" HorizontalAlignment="Left" FontSize="22px" TextAlignment="Center" Margin="200,316,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="48" Width="168" />
-    <TextBlock Text="{DynamicResource yearOfBirthTextBlock}" HorizontalAlignment="Left" FontSize="22px" TextAlignment="Center" Margin="200,268,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="48" Width="168" />
-    <TextBlock Text="{DynamicResource surnameTextBlock}" HorizontalAlignment="Left" FontSize="22px" TextAlignment="Center" Margin="200,220,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="48" Width="168" RenderTransformOrigin="0.521,1.355"/>
-    <Canvas PreviewMouseDown="goBack"  HorizontalAlignment="Left" Height="87" Margin="43,35,0,0" VerticalAlignment="Top" Width="85">
-      <Canvas.Background>
-        <ImageBrush ImageSource="left-arrow3.png"/>
-      </Canvas.Background>
-    </Canvas>
-  </Grid>
 </Window>

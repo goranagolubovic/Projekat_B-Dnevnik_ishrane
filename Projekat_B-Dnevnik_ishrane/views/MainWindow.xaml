@@ -12,11 +12,11 @@
         Left="300" ResizeMode="NoResize">
   <Grid>
     <Button x:Name="loginButton" BorderThickness="4" Content="{DynamicResource loginButton}" HorizontalAlignment="Left" Margin="451,549,0,0" VerticalAlignment="Top" Height="64" Width="178" Click="Button_Click" FontSize="20"  RenderTransformOrigin="-0.095,0.54"/>
-    <TextBox BorderThickness="2" x:Name="UserNameField" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="428,257,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="229" Height="76" Cursor="" RenderTransformOrigin="0.531,1.55"  FontSize="24"/>
-    <PasswordBox BorderThickness="2" x:Name="PasswordField" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="428,377,0,0" VerticalAlignment="Top" Width="229" Height="80"  FontSize="24"/>
-    <TextBlock x:Name="titleTextBlock" Text="{DynamicResource titleTextBlock}" HorizontalAlignment="Right" Height="112" Margin="0,124,23.6,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="508"  FontSize="65"/>
-    <TextBlock x:Name="usernameTextBlock" HorizontalAlignment="Left" Height="58" Margin="228,275,0,0" Text="{DynamicResource usernameTextBlock}" TextWrapping="Wrap" VerticalAlignment="Top" Width="200"  FontSize="24" RenderTransformOrigin="0.524,0.801"/>
-    <TextBlock x:Name="passwordTextBlock" HorizontalAlignment="Left" Height="58" Margin="228,399,0,0" Text="{DynamicResource passwordTextBlock}" TextWrapping="Wrap" VerticalAlignment="Top" Width="195" FontSize="24" />
+    <TextBox BorderThickness="2" x:Name="UserNameField" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="428,293,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="229" Height="76" Cursor="" RenderTransformOrigin="0.531,1.55"  FontSize="24"/>
+    <PasswordBox BorderThickness="2" x:Name="PasswordField" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="428,399,0,0" VerticalAlignment="Top" Width="229" Height="80"  FontSize="24"/>
+    <TextBlock x:Name="titleTextBlock" Text="{DynamicResource titleTextBlock}" HorizontalAlignment="Right" Height="164" Margin="0,124,23.6,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="500"  FontSize="65"/>
+    <TextBlock x:Name="usernameTextBlock" HorizontalAlignment="Left" Height="58" Margin="228,311,0,0" Text="{DynamicResource usernameTextBlock}" TextWrapping="Wrap" VerticalAlignment="Top" Width="200"  FontSize="24" RenderTransformOrigin="0.524,0.801"/>
+    <TextBlock x:Name="passwordTextBlock" HorizontalAlignment="Left" Height="58" Margin="228,421,0,0" Text="{DynamicResource passwordTextBlock}" TextWrapping="Wrap" VerticalAlignment="Top" Width="195" FontSize="24" />
     <RadioButton GroupName="modesSelection" IsChecked="true"  Content="{DynamicResource pink}" HorizontalAlignment="Left" Margin="776,76,0,0" Height="19" VerticalAlignment="Top" Width="94" Checked="CandyMode_Checked"/>
     <RadioButton GroupName="modesSelection"  Content="{DynamicResource light}" HorizontalAlignment="Left" Margin="776,52,0,0" Height="19" VerticalAlignment="Top" Width="94" Checked="LightMode_Checked"/>
     <RadioButton GroupName="modesSelection"  Content="{DynamicResource dark}" HorizontalAlignment="Left" Margin="776,100,0,0" Height="19" VerticalAlignment="Top" Width="94" Checked="DarkMode_Checked"/>

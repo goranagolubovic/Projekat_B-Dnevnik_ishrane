@@ -23,8 +23,8 @@
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
-        <TextBox x:Name="searchTextBox"  Text="{DynamicResource searchTextBox}" VerticalAlignment="Top" Background="#FFFEEBBB" Margin="275,41,249.6,0" Height="48"/>
-        <Canvas PreviewMouseDown="search" HorizontalAlignment="Left" Height="48" Margin="477,41,0,0" VerticalAlignment="Top" Width="47">
+    <TextBox x:Name="searchTextBox" LostFocus="searchTextBox_LostFocus"   VerticalAlignment="Top" Background="#FFFEEBBB" Margin="275,25,249.6,0" Height="64"/>
+        <Canvas PreviewMouseDown="search" HorizontalAlignment="Left" Height="34" Margin="486,41,0,0" VerticalAlignment="Top" Width="41" RenderTransformOrigin="0.439,0.144">
             <Canvas.Background>
                 <ImageBrush ImageSource="search.png"/>
             </Canvas.Background>
@@ -34,5 +34,6 @@
                 <ImageBrush ImageSource="left-arrow3.png"/>
             </Canvas.Background>
         </Canvas>
+        <TextBox GotFocus="watermakSearchTextBox_GotFocus" x:Name="watermarkSearchTextBox"  HorizontalAlignment="Left" Height="64" Margin="275,25,0,0" TextWrapping="Wrap" Text="{DynamicResource searchTextBox}" VerticalAlignment="Top" Width="269" Background="#FFFEEBBB"/>
     </Grid>
 </Window>

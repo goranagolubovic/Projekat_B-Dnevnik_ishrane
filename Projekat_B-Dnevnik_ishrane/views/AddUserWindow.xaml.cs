@@ -105,12 +105,12 @@ namespace Projekat_B_Dnevnik_ishrane.views
         errorTextBlock.Text = "The combination of username and password is already in usage.";
         return;
       }
-      int id = findId(ime, prezime, godiste);
-      korisnik oldUser=dnevnikIshraneEntities.korisniks.Where(elem => elem.idKORISNIK == id).FirstOrDefault();
-      oldUser.Aktivan = 0;
-      dnevnikIshraneEntities.korisniks.Add(oldUser);
-      dnevnikIshraneEntities.Entry(oldUser).State = System.Data.Entity.EntityState.Modified;
-      dnevnikIshraneEntities.SaveChanges();
+        int id = findId(ime, prezime, godiste);
+        korisnik oldUser=dnevnikIshraneEntities.korisniks.Where(elem => elem.idKORISNIK == id).FirstOrDefault();
+        oldUser.Aktivan = 0;
+        dnevnikIshraneEntities.korisniks.Add(oldUser);
+        dnevnikIshraneEntities.Entry(oldUser).State = System.Data.Entity.EntityState.Modified;
+        dnevnikIshraneEntities.SaveChanges();
       var korisnik = new korisnik()
       {
         
@@ -176,29 +176,39 @@ namespace Projekat_B_Dnevnik_ishrane.views
           errorTextBlock.Text = "The combination of username and password is already in usage.";
         return;
       }
-    
-      var korisnik = new korisnik()
-      { 
-        Ime = NameTextBox.Text,
-        Prezime = SurnameTextBox.Text,
-        Godiste = Convert.ToInt32(YearOfBirthTextBox.Text),
-        KorisnickoIme = UsernameTextBox.Text,
-        Lozinka = PasswordTextBox.Password.ToString(),
-        Aktivan = 1
-      };
-      dnevnikIshraneEntities.korisniks.Add(korisnik);
-      dnevnikIshraneEntities.SaveChanges();
-      var kandidat = new kandidat()
+      try
       {
-        KORISNIK_idKORISNIK = korisnik.idKORISNIK,
-        TRENER_KORISNIK_idKORISNIK = coachId
-      };
+        var korisnik = new korisnik()
+        {
+          Ime = NameTextBox.Text,
+          Prezime = SurnameTextBox.Text,
+          Godiste = Convert.ToInt32(YearOfBirthTextBox.Text),
+          KorisnickoIme = UsernameTextBox.Text,
+          Lozinka = PasswordTextBox.Password.ToString(),
+          Aktivan = 1
+        };
+        dnevnikIshraneEntities.korisniks.Add(korisnik);
+        dnevnikIshraneEntities.SaveChanges();
+        var kandidat = new kandidat()
+        {
+          KORISNIK_idKORISNIK = korisnik.idKORISNIK,
+          TRENER_KORISNIK_idKORISNIK = coachId
+        };
         dnevnikIshraneEntities.kandidats.Add(kandidat);
-      dnevnikIshraneEntities.SaveChanges();
+        dnevnikIshraneEntities.SaveChanges();
 
-      this.Hide();
-      previousWindow.initializeDataGrid();
-      previousWindow.Show();
+        this.Hide();
+        previousWindow.initializeDataGrid();
+        previousWindow.Show();
+      }
+      catch(Exception ex)
+      {
+        if (MainWindow.language.Equals("Serbian"))
+          errorTextBlock.Text = "U polje godište unesite brojnu vrijednost i pokušajte ponovo.";
+        else
+          errorTextBlock.Text = "Enter a numeric value in the field year of birth and try again.";
+        return;
+      }
     }
 
     private int findId(string name, string surname, int year)
